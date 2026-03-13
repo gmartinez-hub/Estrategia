@@ -1,1214 +1,322 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=1500">
-<title>Paisanos - Framework Modular V2</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BocaOS — Sistema Operativo de Boca</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  
-  body {
-    background: #f5f3f0;
-    font-family: 'DM Sans', sans-serif;
-    color: #1a1a2e;
-    padding: 40px;
-  }
-
-  .page {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  /* HEADER */
-  .header {
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 3px solid #1a1a2e;
-  }
-  .header-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #888;
-    margin-bottom: 6px;
-  }
-  .header h1 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.15;
-  }
-  .header p {
-    font-size: 14px;
-    color: #666;
-    margin-top: 8px;
-    max-width: 700px;
-    line-height: 1.6;
-  }
-
-  /* STRATEGY TEMPLATE */
-  .strategy {
-    background: #fff;
-    border: 2px solid #1a1a2e;
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin-bottom: 28px;
-    position: relative;
-  }
-  .strategy::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #e85d26, #f0a030, #e85d26);
-    border-radius: 12px 12px 0 0;
-  }
-  .strategy-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #e85d26;
-    margin-bottom: 8px;
-  }
-  .strategy h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-  .strategy-sub {
-    font-size: 12px;
-    color: #888;
-    margin-bottom: 16px;
-  }
-  .strategy-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-  .strategy-field {
-    background: #fafaf8;
-    border: 1px solid #e0ddd8;
-    border-radius: 8px;
-    padding: 12px 14px;
-  }
-  .strategy-field.wide {
-    grid-column: span 2;
-  }
-  .field-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #999;
-    margin-bottom: 4px;
-  }
-  .field-value {
-    font-size: 12px;
-    color: #555;
-    font-style: italic;
-    line-height: 1.5;
-  }
-
-  /* TOOLS PIPELINE */
-  .pipeline {
-    background: #fff;
-    border: 1px dashed #b8b0c8;
-    border-radius: 10px;
-    padding: 18px 24px;
-    margin-bottom: 28px;
-  }
-  .pipeline-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #7c5cbf;
-    margin-bottom: 12px;
-  }
-  .pipeline-flow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-  }
-  .pipe-step {
-    background: #faf8ff;
-    border: 1px solid #e0d8f0;
-    border-radius: 8px;
-    padding: 10px 16px;
-    text-align: center;
-    min-width: 140px;
-  }
-  .pipe-step-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: #1a1a2e;
-    margin-bottom: 2px;
-  }
-  .pipe-step-sub {
-    font-size: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: #999;
-  }
-  .pipe-arrow {
-    font-size: 18px;
-    color: #ccc;
-    padding: 0 8px;
-    flex-shrink: 0;
-  }
-
-  /* SCOPE BAR */
-  .scope-bar {
-    display: flex;
-    gap: 0;
-    margin-bottom: 28px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #ddd;
-  }
-  .scope-state {
-    flex: 1;
-    padding: 10px 16px;
-    text-align: center;
-    border-right: 1px solid #ddd;
-  }
-  .scope-state:last-child { border-right: none; }
-  .scope-state.vivo { background: #fff8ed; }
-  .scope-state.validacion { background: #fff0e8; }
-  .scope-state.cerrado { background: #edfff4; }
-  .scope-name {
-    font-size: 12px;
-    font-weight: 700;
-  }
-  .scope-name.vivo { color: #d97706; }
-  .scope-name.validacion { color: #e85d26; }
-  .scope-name.cerrado { color: #059669; }
-  .scope-desc {
-    font-size: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: #999;
-    margin-top: 2px;
-  }
-
-  /* THREE COLUMNS */
-  .verticals {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 28px;
-  }
-
-  .vertical {
-    background: #fff;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    padding: 0;
-    overflow: hidden;
-  }
-  .vertical.cuenta { border-color: #e85d26; }
-  .vertical.delivery { border-color: #3b82f6; }
-  .vertical.discovery { border-color: #7c5cbf; }
-
-  .vertical-header {
-    padding: 16px 20px;
-    text-align: center;
-  }
-  .vertical.cuenta .vertical-header { background: #e85d2610; }
-  .vertical.delivery .vertical-header { background: #3b82f610; }
-  .vertical.discovery .vertical-header { background: #7c5cbf10; }
-
-  .vertical-title {
-    font-size: 16px;
-    font-weight: 700;
-  }
-  .vertical.cuenta .vertical-title { color: #e85d26; }
-  .vertical.delivery .vertical-title { color: #3b82f6; }
-  .vertical.discovery .vertical-title { color: #7c5cbf; }
-
-  .vertical-subtitle {
-    font-size: 11px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: #999;
-    margin-top: 2px;
-  }
-
-  .vertical-body {
-    padding: 16px 18px;
-  }
-
-  /* SUB-FLOWS inside cuenta */
-  .subflow {
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #eee;
-  }
-  .subflow:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .subflow-title {
-    font-size: 11px;
-    font-family: 'IBM Plex Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 10px;
-    padding-bottom: 4px;
-  }
-  .subflow-title.features { color: #e85d26; border-bottom: 1px solid #e85d2633; }
-  .subflow-title.fixes { color: #059669; border-bottom: 1px solid #05966933; }
-  .subflow-title.bugs { color: #dc2626; border-bottom: 1px solid #dc262633; }
-
-  /* MODULE BOXES */
-  .module {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 10px;
-    background: #fafaf8;
-    border: 1px solid #e8e6e0;
-    border-radius: 6px;
-    margin-bottom: 4px;
-    font-size: 12px;
-    position: relative;
-  }
-  .module.highlight {
-    border-color: #e85d2644;
-    background: #fff8f5;
-  }
-  .module.shared {
-    border-left: 3px solid #888;
-  }
-  .module.scope-closure {
-    border: 2px solid #dc2626;
-    background: #fef2f2;
-  }
-  .module.decision {
-    background: #fffbeb;
-    border: 1px dashed #d97706;
-    border-radius: 0;
-    transform: rotate(0deg);
-  }
-  .module.go-nogo {
-    background: #fef2f2;
-    border: 1px solid #dc262644;
-  }
-
-  .module-icon {
-    font-size: 14px;
-    flex-shrink: 0;
-    width: 20px;
-    text-align: center;
-  }
-  .module-content {
-    flex: 1;
-    min-width: 0;
-  }
-  .module-name {
-    font-size: 11px;
-    font-weight: 600;
-    color: #1a1a2e;
-    line-height: 1.3;
-  }
-  .module-owner {
-    font-size: 9px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: #aaa;
-  }
-  .module-tools {
-    display: flex;
-    gap: 3px;
-    flex-shrink: 0;
-  }
-  .tool-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
-    font-size: 8px;
-    font-weight: 700;
-    font-family: 'IBM Plex Mono', monospace;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-  }
-  .tool-dot.notion { background: #333; }
-  .tool-dot.jira { background: #2563eb; }
-  .tool-dot.trans { background: #7c5cbf; }
-  .tool-dot.typeform { background: #06b6d4; }
-  .tool-dot.task { background: #d97706; }
-  .tool-dot.github { background: #555; }
-
-  /* ARROWS */
-  .arrow {
-    text-align: center;
-    color: #ccc;
-    font-size: 12px;
-    padding: 2px 0;
-    line-height: 1;
-  }
-
-  .branch {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    margin: 4px 0;
-  }
-  .branch-label {
-    font-size: 9px;
-    font-family: 'IBM Plex Mono', monospace;
-    text-align: center;
-    padding: 4px 6px;
-    border-radius: 4px;
-  }
-  .branch-label.yes { color: #059669; background: #ecfdf5; }
-  .branch-label.no { color: #dc2626; background: #fef2f2; }
-
-  /* SCALABLE INDICATOR */
-  .scalable-tag {
-    font-size: 8px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: #d97706;
-    background: #fffbeb;
-    border: 1px solid #fde68a;
-    border-radius: 3px;
-    padding: 0px 4px;
-    flex-shrink: 0;
-  }
-
-  /* LEGEND */
-  .legend {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 18px 24px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .legend-section-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #999;
-    margin-bottom: 8px;
-    grid-column: span 3;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #eee;
-  }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    color: #666;
-  }
-  .legend-dot {
-    width: 18px;
-    height: 18px;
-    border-radius: 3px;
-    font-size: 9px;
-    font-weight: 700;
-    font-family: 'IBM Plex Mono', monospace;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    flex-shrink: 0;
-  }
-  .legend-line {
-    width: 20px;
-    height: 0;
-    flex-shrink: 0;
-  }
-
-  /* FEEDBACK LOOPS */
-  .feedback {
-    background: #fff;
-    border: 1px solid #e0d8f0;
-    border-radius: 10px;
-    padding: 16px 20px;
-    margin-bottom: 20px;
-  }
-  .feedback-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #7c5cbf;
-    margin-bottom: 10px;
-  }
-  .feedback-item {
-    font-size: 11px;
-    color: #555;
-    line-height: 1.7;
-    padding-left: 20px;
-    position: relative;
-    margin-bottom: 4px;
-  }
-  .feedback-item::before {
-    content: '↻';
-    position: absolute;
-    left: 0;
-    color: #7c5cbf;
-    font-size: 13px;
-  }
-  .feedback-item strong {
-    color: #1a1a2e;
-  }
-
-  .section-divider {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #999;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #ddd;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=VT323&family=Silkscreen:wght@400;700&display=swap');
+  :root{--boca-blue:#002b5c;--boca-gold:#f4c430;--surface:#0a0c14;--surface-light:#121626;--text:#e8eaf0;--text-mid:#8a8ea4;--text-dim:#4a4e64;--green:#34d399;--red:#f87171;--amber:#fbbf24;--purple:#a78bfa;--cyan:#22d3ee}
+  .reveal{font-family:'Outfit',sans-serif;color:var(--text)}.reveal .slides{text-align:left}.reveal .slides section{padding:40px 60px 80px 60px}
+  .reveal h1,.reveal h2,.reveal h3{font-family:'Outfit',sans-serif;font-weight:800;text-transform:none;letter-spacing:-0.02em}
+  .reveal h1{font-size:3.2em;line-height:1.05}.reveal h2{font-size:2.2em;line-height:1.1;margin-bottom:0.4em}.reveal h3{font-size:1.4em;color:var(--boca-gold)}
+  .reveal p,.reveal li{font-size:0.85em;line-height:1.7;color:var(--text-mid)}.reveal .slide-background{background:var(--surface)}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.04em}
+  .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.12em;padding:4px 12px;border-radius:4px;margin-bottom:16px}
+  .tag-gold{background:var(--boca-gold);color:var(--boca-blue)}.tag-blue{background:var(--boca-blue);color:var(--boca-gold);border:1px solid var(--boca-gold)}
+  .gold{color:var(--boca-gold)}.blue{color:#5b8fd9}.green{color:var(--green)}.red{color:var(--red)}.amber{color:var(--amber)}.purple{color:var(--purple)}.cyan{color:var(--cyan)}.dim{color:var(--text-dim)}.mid{color:var(--text-mid)}
+  .big{font-size:1.3em}.small{font-size:0.75em}.tiny{font-size:0.6em}
+  .accent-line{width:60px;height:4px;background:var(--boca-gold);margin:20px 0;border-radius:2px}
+  .accent-line-wide{width:100%;height:2px;background:linear-gradient(90deg,var(--boca-gold),transparent);margin:24px 0}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:20px}
+  .card{background:var(--surface-light);border:1px solid #1e2236;border-radius:10px;padding:20px}
+  .card-gold{background:rgba(244,196,48,0.06);border:1px solid rgba(244,196,48,0.2);border-radius:10px;padding:20px}
+  .card-blue{background:rgba(0,43,92,0.3);border:1px solid rgba(91,143,217,0.2);border-radius:10px;padding:20px}
+  .card-green{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:20px}
+  .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:20px}
+  .card h4{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.9em;margin:0 0 8px 0;color:var(--text)}.card p,.card li{font-size:0.72em;margin:0}
+  .flow{display:flex;align-items:center;gap:0;margin:20px 0;flex-wrap:wrap;justify-content:center}
+  .flow-step{background:var(--surface-light);border:1px solid #1e2236;border-radius:8px;padding:10px 16px;text-align:center;font-size:0.65em;font-weight:600;min-width:100px}
+  .flow-step.active{border-color:var(--boca-gold);background:rgba(244,196,48,0.08);color:var(--boca-gold)}.flow-step.closure{border-color:var(--red);background:rgba(248,113,113,0.08);color:var(--red)}
+  .flow-arrow{font-size:0.9em;color:var(--text-dim);padding:0 6px}
+  .terminal{background:#0d0f18;border:1px solid #1e2236;border-radius:10px;padding:20px 24px;font-family:'JetBrains Mono',monospace;font-size:0.65em;line-height:1.8;margin:16px 0}
+  .terminal .prompt{color:var(--boca-gold)}.terminal .cmd{color:var(--text)}.terminal .output{color:var(--text-dim)}.terminal .success{color:var(--green)}.terminal .error{color:var(--red)}.terminal .info{color:var(--cyan)}
+  .metric{text-align:center;padding:16px}.metric-value{font-family:'Outfit',sans-serif;font-weight:800;font-size:2.4em;line-height:1}
+  .metric-label{font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin-top:6px}
+  .reveal table{font-size:0.65em;border-collapse:collapse;width:100%;margin:16px 0}
+  .reveal table th{font-family:'JetBrains Mono',monospace;font-size:0.85em;text-transform:uppercase;letter-spacing:0.06em;color:var(--boca-gold);border-bottom:2px solid var(--boca-gold);padding:8px 12px;text-align:left}
+  .reveal table td{padding:8px 12px;border-bottom:1px solid #1e2236;color:var(--text-mid)}
+  .scope-bar{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #1e2236;margin:16px 0}
+  .scope-segment{flex:1;padding:10px 16px;text-align:center;font-size:0.65em;font-weight:600;border-right:1px solid #1e2236}
+  .scope-segment:last-child{border-right:none}.scope-segment.vivo{background:rgba(251,191,36,0.08);color:var(--amber)}.scope-segment.val{background:rgba(244,196,48,0.08);color:var(--boca-gold)}.scope-segment.closed{background:rgba(52,211,153,0.08);color:var(--green)}
+  .scope-sub{font-family:'JetBrains Mono',monospace;font-size:0.8em;font-weight:400;display:block;margin-top:2px;opacity:0.6}
+  .clean-list{list-style:none;padding:0;margin:12px 0}.clean-list li{padding:6px 0;font-size:0.8em;border-bottom:1px solid #1a1e30}.clean-list li:last-child{border-bottom:none}
+  .yes-list li::before{content:'✓ ';color:var(--green);font-weight:700}.no-list li::before{content:'✕ ';color:var(--red);font-weight:700}
+  .title-slide{text-align:center!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center}
+  .win98-title{font-family:'Silkscreen','VT323',monospace;font-size:5em;line-height:1;letter-spacing:0.02em;text-shadow:4px 4px 0px rgba(0,43,92,0.8),0 0 40px rgba(244,196,48,0.2)}
+  .win98-sub{font-family:'VT323',monospace;font-size:1.4em;letter-spacing:0.06em;color:var(--text-dim);margin-top:16px}
+  .win98-blink{animation:blink98 1s step-end infinite}@keyframes blink98{0%,100%{opacity:1}50%{opacity:0}}
+  .version-tag{font-family:'JetBrains Mono',monospace;font-size:0.5em;color:var(--text-dim);margin-top:24px;letter-spacing:0.1em}
+  #boot-console{position:fixed;bottom:0;left:0;right:0;height:48px;background:#06080e;border-top:1px solid #1a1e2e;z-index:100;display:flex;align-items:center;padding:0 24px;gap:12px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:11px}
+  #boot-console .console-icon{color:var(--boca-gold);font-size:10px;opacity:0.5;flex-shrink:0;font-family:'Silkscreen',monospace}
+  #boot-console .console-lines{display:flex;gap:20px;overflow:hidden;flex:1;mask-image:linear-gradient(90deg,transparent 0%,black 5%,black 90%,transparent 100%)}
+  #boot-console .console-line{white-space:nowrap;opacity:0;transition:opacity 0.4s ease;flex-shrink:0}
+  #boot-console .console-line.visible{opacity:1}
+  #boot-console .console-line.success{color:var(--green)}#boot-console .console-line.info{color:var(--cyan)}#boot-console .console-line.warn{color:var(--amber)}#boot-console .console-line.loading{color:var(--text-dim)}#boot-console .console-line.gold{color:var(--boca-gold)}
+  .reveal ul,.reveal ol{margin-left:0}.reveal ul li,.reveal ol li{margin-bottom:4px}.reveal .slides section .fragment.visible{opacity:1}
 </style>
 </head>
 <body>
-<div class="page">
+<div class="reveal"><div class="slides">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-tag">Paisanos · Framework Modular · V2</div>
-    <h1>Sistema de Módulos por Tipo de Proyecto</h1>
-    <p>La estrategia gobierna qué entra. Cada vertical tiene su flujo de módulos estándar. Las herramientas conectan el pipeline de información. El scope se cierra cuando el cliente valida software funcionando.</p>
+<!-- SLIDE 1: TITLE WIN98 -->
+<section class="title-slide" data-background-color="#0a0c14" data-console="boot">
+  <svg width="80" height="90" viewBox="0 0 80 90" style="margin-bottom:16px;filter:drop-shadow(0 0 20px rgba(244,196,48,0.3))">
+    <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="#f4c430" stroke-width="2.5"/>
+    <path d="M40 10 L66 22 L66 50 Q66 72 40 80 Q14 72 14 50 L14 22 Z" fill="#002b5c" stroke="#f4c430" stroke-width="1" opacity="0.6"/>
+    <text x="40" y="52" text-anchor="middle" font-family="Silkscreen,monospace" font-size="20" fill="#f4c430" font-weight="700">OS</text>
+  </svg>
+  <div class="win98-title"><span class="gold">Boca</span><span style="color:var(--text-dim)">OS</span></div>
+  <div class="win98-sub">El sistema que decide qué se construye,<br>cómo se ejecuta y cuándo llega al hincha.<span class="win98-blink">_</span></div>
+  <div style="margin-top:32px;display:flex;gap:16px;justify-content:center">
+    <div style="font-family:'VT323',monospace;font-size:0.7em;color:var(--text-dim);background:#0d0f18;border:1px solid #1e2236;border-radius:4px;padding:6px 14px">▸ kernel cargado</div>
+    <div style="font-family:'VT323',monospace;font-size:0.7em;color:var(--green);background:#0d0f18;border:1px solid #1e2236;border-radius:4px;padding:6px 14px">● sistema activo — 2026</div>
   </div>
+  <div class="version-tag" style="margin-top:28px">paisanos · uso interno · v2026.1</div>
+</section>
 
-  <!-- STRATEGY TEMPLATE -->
-  <div class="strategy">
-    <div class="strategy-label">Directiva Marco · Obligatoria para todo proyecto</div>
-    <h2>Estrategia del Proyecto</h2>
-    <div class="strategy-sub">Toda iniciativa se filtra contra esta directiva antes de entrar al flujo. Vive en Notion.</div>
-    <div class="strategy-grid">
-      <div class="strategy-field wide">
-        <div class="field-label">Contexto</div>
-        <div class="field-value">Cómo funciona el negocio del cliente, qué rol cumple el producto, estado actual y presiones.</div>
-      </div>
-      <div class="strategy-field">
-        <div class="field-label">Problema prioritario</div>
-        <div class="field-value">Qué problema mover, para quién (ICP), por qué ahora.</div>
-      </div>
-      <div class="strategy-field">
-        <div class="field-label">Métrica norte</div>
-        <div class="field-value">Una métrica principal + 2-3 métricas de soporte con baseline y target.</div>
-      </div>
-      <div class="strategy-field">
-        <div class="field-label">Apuestas / Hipótesis</div>
-        <div class="field-value">Qué creemos que va a mover la aguja. Con criterios de validación.</div>
-      </div>
-      <div class="strategy-field">
-        <div class="field-label">Qué SÍ hacer</div>
-        <div class="field-value">Acciones explícitas alineadas al foco del proyecto.</div>
-      </div>
-      <div class="strategy-field">
-        <div class="field-label">Qué NO hacer</div>
-        <div class="field-value">Límites explícitos. Qué decidimos no priorizar ahora y por qué.</div>
-      </div>
-      <div class="strategy-field wide">
-        <div class="field-label">Matriz Go / No-Go</div>
-        <div class="field-value">Criterios estándar para decidir si una propuesta avanza: impacto, viabilidad operativa, control de promesa. Cada criterio con definición de Go / Condicional / No-Go.</div>
-      </div>
+<!-- SLIDE 2: BOOT -->
+<section data-background-color="#0a0c14" data-console="kernel">
+  <span class="tag tag-gold">BOOT SEQUENCE</span>
+  <h2>¿Qué es <span class="gold">BocaOS</span>?</h2><div class="accent-line"></div>
+  <div class="terminal">
+    <span class="prompt">bocaos $</span> <span class="cmd">describe --system</span><br><br>
+    <span class="output">BocaOS es el sistema operativo que gobierna cómo Paisanos</span><br>
+    <span class="output">planifica, construye y entrega el ecosistema digital de Boca.</span><br><br>
+    <span class="prompt">bocaos $</span> <span class="cmd">list --core-functions</span><br><br>
+    <span class="info">→ KERNEL &nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="output">Estrategia y directiva marco</span><br>
+    <span class="info">→ SCHEDULER </span> <span class="output">Refinamiento y planificación</span><br>
+    <span class="info">→ RUNTIME &nbsp;&nbsp;</span> <span class="output">Desarrollo y ejecución</span><br>
+    <span class="info">→ RELEASE &nbsp;&nbsp;</span> <span class="output">Entrega al usuario final</span><br><br>
+    <span class="prompt">bocaos $</span> <span class="cmd">status</span><br>
+    <span class="success">● Sistema activo — Temporada 2026</span>
+  </div>
+</section>
+
+<!-- SLIDE 3: CONTEXT -->
+<section data-background-color="#0a0c14" data-console="context">
+  <span class="tag tag-blue">SYSTEM CONTEXT</span>
+  <h2>El terreno de juego</h2><div class="accent-line"></div>
+  <p class="big" style="color:var(--text);max-width:700px">Boca está migrando todos sus sistemas de venta de entradas y abonos. Un movimiento crítico en un ecosistema expuesto a ataques constantes de reventa.</p>
+  <div class="grid-3" style="margin-top:30px">
+    <div class="card">
+      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="16" fill="none" stroke="#fbbf24" stroke-width="2"/><path d="M18 6 L18 18 L26 22" stroke="#fbbf24" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="metric"><div class="metric-value amber">60-70%</div><div class="metric-label">ventas en primeros 5 min</div></div>
+      <p class="small dim" style="text-align:center">Pico artificial, no demanda legítima</p>
     </div>
-  </div>
-
-  <!-- TOOLS PIPELINE -->
-  <div class="pipeline">
-    <div class="pipeline-label">Pipeline de información · Refi → Jira</div>
-    <div class="pipeline-flow">
-      <div class="pipe-step">
-        <div class="pipe-step-name">🎙 Transcripción</div>
-        <div class="pipe-step-sub">Meet se graba automático</div>
-      </div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step">
-        <div class="pipe-step-name">📄 Notion</div>
-        <div class="pipe-step-sub">PM procesa resumen</div>
-      </div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step">
-        <div class="pipe-step-name">📎 PM enriquece</div>
-        <div class="pipe-step-sub">Brief + feedback + docs cliente</div>
-      </div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step">
-        <div class="pipe-step-name">🎫 Jira</div>
-        <div class="pipe-step-sub">Solo el PM carga tickets</div>
-      </div>
-      <div class="pipe-arrow">→</div>
-      <div class="pipe-step">
-        <div class="pipe-step-name">📊 Task Reporting</div>
-        <div class="pipe-step-sub">Cliente ve avance</div>
-      </div>
+    <div class="card">
+      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="36" viewBox="0 0 36 36"><rect x="4" y="8" width="28" height="20" rx="3" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="18" cy="18" r="3" fill="none" stroke="#f87171" stroke-width="1.5"/><line x1="21" y1="15" x2="28" y2="8" stroke="#f87171" stroke-width="1.5"/></svg></div>
+      <div class="metric"><div class="metric-value red">&lt;2 min</div><div class="metric-label">tiempo promedio de compra</div></div>
+      <p class="small dim" style="text-align:center">Indica automatización (bots)</p>
+    </div>
+    <div class="card">
+      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 3 L33 11 L33 23 Q33 35 18 37 Q3 35 3 23 L3 11 Z" fill="none" stroke="#f4c430" stroke-width="2"/><line x1="11" y1="20" x2="25" y2="20" stroke="#f4c430" stroke-width="2" stroke-dasharray="3 3"/></svg></div>
+      <div class="metric"><div class="metric-value gold">0%</div><div class="metric-label">visibilidad de transacciones</div></div>
+      <p class="small dim" style="text-align:center">No hay métricas end-to-end hoy</p>
     </div>
   </div>
+</section>
 
-  <!-- SCOPE BAR -->
-  <div class="scope-bar">
-    <div class="scope-state vivo">
-      <div class="scope-name vivo">Scope Vivo</div>
-      <div class="scope-desc">Puede mutar libremente</div>
+<!-- SLIDE 4: KERNEL STRATEGY -->
+<section data-background-color="#0a0c14" data-console="strategy">
+  <span class="tag tag-gold">KERNEL</span>
+  <h2>Cómo se <span class="gold">planifica</span></h2>
+  <p>El kernel define las reglas del sistema. Todo lo que entra al flujo pasa por este filtro.</p><div class="accent-line-wide"></div>
+  <div class="grid-2">
+    <div class="card-gold">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <svg width="28" height="32" viewBox="0 0 28 32"><path d="M14 1 L26 7 L26 19 Q26 29 14 31 Q2 29 2 19 L2 7 Z" fill="none" stroke="#f4c430" stroke-width="1.8"/><circle cx="14" cy="15" r="5" fill="none" stroke="#f4c430" stroke-width="1.5"/><circle cx="14" cy="15" r="1.5" fill="#f4c430"/></svg>
+        <h4 style="margin:0">Métrica Norte</h4>
+      </div>
+      <p style="color:var(--text);font-size:0.8em;font-weight:600">Distribución temporal de ventas en primeros 20 minutos</p>
+      <table style="margin-top:12px"><tr><td class="dim">Baseline</td><td class="red">~60-70% en 5 min</td></tr><tr><td class="dim">Target Q2</td><td class="amber">&lt;30% en 5 min</td></tr><tr><td class="dim">Target Q4</td><td class="green">&lt;25% en 5 min</td></tr></table>
     </div>
-    <div class="scope-state validacion">
-      <div class="scope-name validacion">En Validación</div>
-      <div class="scope-desc">Ajustes sí, features no</div>
-    </div>
-    <div class="scope-state cerrado">
-      <div class="scope-name cerrado">Scope Cerrado</div>
-      <div class="scope-desc">Cambios = nuevo ítem</div>
+    <div class="card-blue">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <svg width="28" height="32" viewBox="0 0 28 32"><path d="M14 1 L26 7 L26 19 Q26 29 14 31 Q2 29 2 19 L2 7 Z" fill="none" stroke="#5b8fd9" stroke-width="1.8"/><path d="M9 16 L13 20 L20 11" stroke="#5b8fd9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <h4 style="margin:0">Problema Prioritario</h4>
+      </div>
+      <p style="color:var(--text);font-size:0.8em">Bypass técnico de QueueIT mediante cookie, URLs directas y acceso sin token válido.</p>
+      <div style="margin-top:12px"><p class="small"><span class="gold">P1:</span> <span class="mid">Socio activo sin filtro (mayoría de la base)</span></p><p class="small"><span class="gold">P2:</span> <span class="mid">Socio con filtro que necesita mejor comunicación</span></p></div>
     </div>
   </div>
+</section>
 
-  <div class="section-divider">Tres verticales · Módulos por tipo de proyecto</div>
-
-  <!-- THREE VERTICALS -->
-  <div class="verticals">
-
-    <!-- ==================== CUENTA ==================== -->
-    <div class="vertical cuenta">
-      <div class="vertical-header">
-        <div class="vertical-title">Cuenta</div>
-        <div class="vertical-subtitle">Largo plazo · Renovación anual · 3 flujos</div>
-      </div>
-      <div class="vertical-body">
-
-        <!-- NUEVAS FUNCIONALIDADES -->
-        <div class="subflow">
-          <div class="subflow-title features">Nuevas Funcionalidades</div>
-
-          <div class="module shared">
-            <span class="module-icon">→</span>
-            <div class="module-content">
-              <div class="module-name">Kickoff / Handoff</div>
-              <div class="module-owner">PM + Account</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot notion">N</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module shared">
-            <span class="module-icon">◉</span>
-            <div class="module-content">
-              <div class="module-name">Product Brief / Inception</div>
-              <div class="module-owner">PM</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot notion">N</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module go-nogo">
-            <span class="module-icon">⊘</span>
-            <div class="module-content">
-              <div class="module-name">¿Pasa filtro estrategia?</div>
-              <div class="module-owner">Validar contra directiva marco</div>
-            </div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">⟨/⟩</span>
-            <div class="module-content">
-              <div class="module-name">Refi Técnica Backend</div>
-              <div class="module-owner">PM + Devs</div>
-            </div>
-            <div class="module-tools">
-              <div class="tool-dot trans">T</div>
-              <div class="tool-dot notion">N</div>
-            </div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">◎</span>
-            <div class="module-content">
-              <div class="module-name">Refi UX/UI</div>
-              <div class="module-owner">PM + Design</div>
-            </div>
-            <div class="module-tools">
-              <div class="tool-dot trans">T</div>
-              <div class="tool-dot notion">N</div>
-            </div>
-            <span class="scalable-tag">~tamaño</span>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module shared">
-            <span class="module-icon">⬡</span>
-            <div class="module-content">
-              <div class="module-name">PM carga Jira</div>
-              <div class="module-owner">Solo PM escribe</div>
-            </div>
-            <div class="module-tools">
-              <div class="tool-dot jira">J</div>
-              <div class="tool-dot notion">N</div>
-            </div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module shared">
-            <span class="module-icon">▦</span>
-            <div class="module-content">
-              <div class="module-name">Planning</div>
-              <div class="module-owner">PM + Equipo</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot jira">J</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module shared">
-            <span class="module-icon">⟨⟩</span>
-            <div class="module-content">
-              <div class="module-name">Desarrollo</div>
-              <div class="module-owner">Devs + Design</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot github">G</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module highlight">
-            <span class="module-icon">⊡</span>
-            <div class="module-content">
-              <div class="module-name">Functional Walkthrough</div>
-              <div class="module-owner">PM + Equipo</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot notion">N</div></div>
-            <span class="scalable-tag">~tamaño</span>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module shared">
-            <span class="module-icon">✓</span>
-            <div class="module-content">
-              <div class="module-name">QA Interno</div>
-              <div class="module-owner">Equipo</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot jira">J</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module scope-closure">
-            <span class="module-icon">◐</span>
-            <div class="module-content">
-              <div class="module-name">Cliente Valida (cierre scope)</div>
-              <div class="module-owner">PM + Cliente</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot task">R</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module shared">
-            <span class="module-icon">▲</span>
-            <div class="module-content">
-              <div class="module-name">Deploy</div>
-              <div class="module-owner">Devs · PM comunica</div>
-            </div>
-            <div class="module-tools">
-              <div class="tool-dot jira">J</div>
-              <div class="tool-dot github">G</div>
-              <div class="tool-dot task">R</div>
-            </div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">◈</span>
-            <div class="module-content">
-              <div class="module-name">Check Métricas</div>
-              <div class="module-owner">PM · Feedback loop</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot notion">N</div></div>
-          </div>
-        </div>
-
-        <!-- FIXES -->
-        <div class="subflow">
-          <div class="subflow-title fixes">Fixes y Cambios Menores</div>
-
-          <div class="module">
-            <span class="module-icon">◧</span>
-            <div class="module-content">
-              <div class="module-name">Task Reporting</div>
-              <div class="module-owner">PM / Cliente identifica</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot task">R</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">⟳</span>
-            <div class="module-content">
-              <div class="module-name">Refinamiento General</div>
-              <div class="module-owner">PM + Equipo</div>
-            </div>
-            <div class="module-tools">
-              <div class="tool-dot trans">T</div>
-              <div class="tool-dot notion">N</div>
-            </div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">⬡</span>
-            <div class="module-content">
-              <div class="module-name">PM carga Jira</div>
-              <div class="module-owner">Solo PM</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot jira">J</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">▦</span>
-            <div class="module-content">
-              <div class="module-name">Planning</div>
-              <div class="module-owner">PM + Equipo</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot jira">J</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module decision">
-            <span class="module-icon">◇</span>
-            <div class="module-content">
-              <div class="module-name">¿Requiere Walkthrough?</div>
-              <div class="module-owner">PM decide según complejidad</div>
-            </div>
-          </div>
-          <div class="branch">
-            <div class="branch-label yes">Sí → Walkthrough</div>
-            <div class="branch-label no">No → directo QA</div>
-          </div>
-
-          <div class="module">
-            <span class="module-icon">✓</span>
-            <div class="module-content">
-              <div class="module-name">QA</div>
-              <div class="module-owner">Equipo</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot jira">J</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">▲</span>
-            <div class="module-content">
-              <div class="module-name">Deploy Rápido</div>
-              <div class="module-owner">Devs · PM comunica</div>
-            </div>
-            <div class="module-tools">
-              <div class="tool-dot jira">J</div>
-              <div class="tool-dot github">G</div>
-              <div class="tool-dot task">R</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- BUGS -->
-        <div class="subflow">
-          <div class="subflow-title bugs">Gestión de Bugs</div>
-
-          <div class="module">
-            <span class="module-icon">⊕</span>
-            <div class="module-content">
-              <div class="module-name">Reporte Typeform</div>
-              <div class="module-owner">Cliente / Equipo</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot typeform">F</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module decision">
-            <span class="module-icon">◇</span>
-            <div class="module-content">
-              <div class="module-name">Bug Triage</div>
-              <div class="module-owner">PM clasifica</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot notion">N</div></div>
-          </div>
-          <div class="branch">
-            <div class="branch-label yes">Priorizado →</div>
-            <div class="branch-label no">Descartado → Cerrar</div>
-          </div>
-
-          <div class="module">
-            <span class="module-icon">⬡</span>
-            <div class="module-content">
-              <div class="module-name">Carga en Jira</div>
-              <div class="module-owner">PM</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot jira">J</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">✓</span>
-            <div class="module-content">
-              <div class="module-name">QA</div>
-              <div class="module-owner">Equipo</div>
-            </div>
-            <div class="module-tools"><div class="tool-dot jira">J</div></div>
-          </div>
-          <div class="arrow">↓</div>
-
-          <div class="module">
-            <span class="module-icon">▲</span>
-            <div class="module-content">
-              <div class="module-name">Deploy</div>
-              <div class="module-owner">Devs</div>
-            </div>
-            <div class="module-tools">
-              <div class="tool-dot jira">J</div>
-              <div class="tool-dot github">G</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+<!-- SLIDE 5: BETS -->
+<section data-background-color="#0a0c14" data-console="bets">
+  <span class="tag tag-gold">KERNEL · APUESTAS</span>
+  <h2>3 hipótesis <span class="gold">core</span></h2><div class="accent-line"></div>
+  <div class="grid-3">
+    <div class="card-gold">
+      <div style="text-align:center;margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 3 L35 11 L35 25 Q35 37 20 39 Q5 37 5 25 L5 11 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><path d="M14 20 L14 14 Q14 11 20 11 Q26 11 26 14 L26 20 M11 20 L29 20 L29 30 L11 30 Z" fill="none" stroke="#f4c430" stroke-width="1.5"/></svg></div>
+      <h4 style="text-align:center">Cookie Binding</h4>
+      <p class="small mid">Si asociamos cookie ↔ socio_id de forma permanente, eliminamos el 80% del fraude por cookie.</p>
+      <div style="margin-top:12px"><p class="tiny"><span class="green">Validamos:</span> <span class="dim">cookies compartidas &lt;2%</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — ya implementado</span></p></div>
     </div>
-
-    <!-- ==================== DELIVERY PUNTUAL ==================== -->
-    <div class="vertical delivery">
-      <div class="vertical-header">
-        <div class="vertical-title">Delivery Puntual</div>
-        <div class="vertical-subtitle">Scope fijo · Corto plazo · 1 flujo</div>
-      </div>
-      <div class="vertical-body">
-
-        <div class="module shared">
-          <span class="module-icon">→</span>
-          <div class="module-content">
-            <div class="module-name">Kickoff / Handoff</div>
-            <div class="module-owner">PM + Account</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot notion">N</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module shared">
-          <span class="module-icon">◉</span>
-          <div class="module-content">
-            <div class="module-name">Scope fijo + Brief</div>
-            <div class="module-owner">PM · Scope cerrado desde inicio</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot notion">N</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module go-nogo">
-          <span class="module-icon">⊘</span>
-          <div class="module-content">
-            <div class="module-name">¿Pasa filtro estrategia?</div>
-            <div class="module-owner">Validar viabilidad y alcance</div>
-          </div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module">
-          <span class="module-icon">⟨/⟩</span>
-          <div class="module-content">
-            <div class="module-name">Refi Técnica</div>
-            <div class="module-owner">PM + Devs</div>
-          </div>
-          <div class="module-tools">
-            <div class="tool-dot trans">T</div>
-            <div class="tool-dot notion">N</div>
-          </div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module">
-          <span class="module-icon">◎</span>
-          <div class="module-content">
-            <div class="module-name">Refi UX/UI</div>
-            <div class="module-owner">PM + Design</div>
-          </div>
-          <div class="module-tools">
-            <div class="tool-dot trans">T</div>
-            <div class="tool-dot notion">N</div>
-          </div>
-          <span class="scalable-tag">~tamaño</span>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module shared">
-          <span class="module-icon">⬡</span>
-          <div class="module-content">
-            <div class="module-name">PM carga Jira</div>
-            <div class="module-owner">Solo PM</div>
-          </div>
-          <div class="module-tools">
-            <div class="tool-dot jira">J</div>
-            <div class="tool-dot notion">N</div>
-          </div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module shared">
-          <span class="module-icon">▦</span>
-          <div class="module-content">
-            <div class="module-name">Planning</div>
-            <div class="module-owner">PM + Equipo</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot jira">J</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module shared">
-          <span class="module-icon">⟨⟩</span>
-          <div class="module-content">
-            <div class="module-name">Desarrollo</div>
-            <div class="module-owner">Devs + Design</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot github">G</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module highlight">
-          <span class="module-icon">⊡</span>
-          <div class="module-content">
-            <div class="module-name">Functional Walkthrough</div>
-            <div class="module-owner">PM + Equipo</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot notion">N</div></div>
-          <span class="scalable-tag">~tamaño</span>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module shared">
-          <span class="module-icon">✓</span>
-          <div class="module-content">
-            <div class="module-name">QA Interno</div>
-            <div class="module-owner">Equipo</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot jira">J</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module scope-closure">
-          <span class="module-icon">◐</span>
-          <div class="module-content">
-            <div class="module-name">Cliente Valida (cierre scope)</div>
-            <div class="module-owner">PM + Cliente</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot task">R</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module shared">
-          <span class="module-icon">▲</span>
-          <div class="module-content">
-            <div class="module-name">Deploy</div>
-            <div class="module-owner">Devs · PM comunica</div>
-          </div>
-          <div class="module-tools">
-            <div class="tool-dot jira">J</div>
-            <div class="tool-dot github">G</div>
-            <div class="tool-dot task">R</div>
-          </div>
-        </div>
-
-        <div style="margin-top: 20px; padding-top: 14px; border-top: 1px dashed #3b82f633;">
-          <div style="font-size: 10px; font-family: 'IBM Plex Mono', monospace; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">No incluye</div>
-          <div style="font-size: 11px; color: #999; line-height: 1.7;">
-            ✕ Bug Triage (proyecto corto)<br>
-            ✕ Fixes como flujo separado<br>
-            ✕ Check Métricas post-deploy<br>
-            ✕ Feedback loops a estrategia
-          </div>
-        </div>
-      </div>
+    <div class="card-gold">
+      <div style="text-align:center;margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 3 L35 11 L35 25 Q35 37 20 39 Q5 37 5 25 L5 11 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><path d="M13 14 L27 14 M13 20 L27 20 M13 26 L27 26" stroke="#f4c430" stroke-width="1.5" stroke-linecap="round"/><path d="M17 11 L17 29" stroke="#f4c430" stroke-width="1.5" stroke-dasharray="2 2"/></svg></div>
+      <h4 style="text-align:center">Stepper Obligatorio</h4>
+      <p class="small mid">Si forzamos recorrer pasos secuenciales con tokens de sesión, eliminamos acceso directo a /checkout.</p>
+      <div style="margin-top:12px"><p class="tiny"><span class="green">Validamos:</span> <span class="dim">ventas 5min &lt;30%</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — implementar</span></p></div>
     </div>
-
-    <!-- ==================== DISCOVERY ==================== -->
-    <div class="vertical discovery">
-      <div class="vertical-header">
-        <div class="vertical-title">Discovery Only</div>
-        <div class="vertical-subtitle">Exploración · Validación · Sin deploy</div>
-      </div>
-      <div class="vertical-body">
-
-        <div class="module shared">
-          <span class="module-icon">→</span>
-          <div class="module-content">
-            <div class="module-name">Kickoff / Handoff</div>
-            <div class="module-owner">PM + Account</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot notion">N</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module shared">
-          <span class="module-icon">◉</span>
-          <div class="module-content">
-            <div class="module-name">Product Brief / Inception</div>
-            <div class="module-owner">PM · Hipótesis a validar</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot notion">N</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module go-nogo">
-          <span class="module-icon">⊘</span>
-          <div class="module-content">
-            <div class="module-name">¿Pasa filtro estrategia?</div>
-            <div class="module-owner">Validar contra directiva marco</div>
-          </div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module">
-          <span class="module-icon">◎</span>
-          <div class="module-content">
-            <div class="module-name">Refi UX/UI / Research</div>
-            <div class="module-owner">PM + Design</div>
-          </div>
-          <div class="module-tools">
-            <div class="tool-dot trans">T</div>
-            <div class="tool-dot notion">N</div>
-          </div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module">
-          <span class="module-icon">🔬</span>
-          <div class="module-content">
-            <div class="module-name">Investigación / Prototipado</div>
-            <div class="module-owner">Design + PM</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot notion">N</div></div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module">
-          <span class="module-icon">⟳</span>
-          <div class="module-content">
-            <div class="module-name">Iteración con Cliente</div>
-            <div class="module-owner">PM + Design + Cliente</div>
-          </div>
-          <div class="module-tools">
-            <div class="tool-dot trans">T</div>
-            <div class="tool-dot notion">N</div>
-          </div>
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module scope-closure">
-          <span class="module-icon">◐</span>
-          <div class="module-content">
-            <div class="module-name">Entregable Discovery</div>
-            <div class="module-owner">PM + Design · Cliente valida</div>
-          </div>
-          <div class="module-tools">
-            <div class="tool-dot notion">N</div>
-            <div class="tool-dot task">R</div>
-          </div>
-        </div>
-        <div style="font-size: 10px; color: #999; padding: 6px 10px; line-height: 1.6;">
-          Hallazgos · Prototipos validados · Recomendaciones · Próximos pasos
-        </div>
-        <div class="arrow">↓</div>
-
-        <div class="module go-nogo" style="border-color: #7c5cbf88;">
-          <span class="module-icon">⊘</span>
-          <div class="module-content">
-            <div class="module-name" style="color: #7c5cbf;">Go / No-Go → ¿Pasa a Delivery?</div>
-            <div class="module-owner">PM + Cliente + Account</div>
-          </div>
-        </div>
-        <div class="branch">
-          <div class="branch-label yes">Sí → Delivery Puntual</div>
-          <div class="branch-label no">No → Cierra o pivotea</div>
-        </div>
-
-        <div class="module">
-          <span class="module-icon">◈</span>
-          <div class="module-content">
-            <div class="module-name">Check Métricas / Aprendizajes</div>
-            <div class="module-owner">PM · Feedback loop</div>
-          </div>
-          <div class="module-tools"><div class="tool-dot notion">N</div></div>
-        </div>
-
-        <div style="margin-top: 20px; padding-top: 14px; border-top: 1px dashed #7c5cbf33;">
-          <div style="font-size: 10px; font-family: 'IBM Plex Mono', monospace; color: #7c5cbf; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">No incluye</div>
-          <div style="font-size: 11px; color: #999; line-height: 1.7;">
-            ✕ Refi Técnica Backend<br>
-            ✕ Jira (no hay tickets de dev)<br>
-            ✕ Planning / Desarrollo / Deploy<br>
-            ✕ QA / Bug Triage / Fixes
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- FEEDBACK LOOPS -->
-  <div class="feedback">
-    <div class="feedback-label">Feedback Loops · Aplica a Cuenta y Discovery</div>
-    <div class="feedback-item"><strong>Check Métricas post-deploy</strong> → <strong>Estrategia + Roadmap</strong> · Confirma o invalida apuestas. Ajusta prioridades del próximo ciclo.</div>
-    <div class="feedback-item"><strong>Bug Triage (patrones)</strong> → <strong>Backlog</strong> · Señales del sistema que repriorización automáticamente.</div>
-    <div class="feedback-item"><strong>Validación Cliente</strong> → <strong>Roadmap</strong> · Feedback del cliente ajusta foco de próximas iniciativas.</div>
-    <div class="feedback-item"><strong>Entregable Discovery</strong> → <strong>Delivery Puntual</strong> · Discovery validado puede convertirse en proyecto de delivery.</div>
-  </div>
-
-  <!-- LEGEND -->
-  <div class="legend">
-    <div class="legend-section-title">Leyenda</div>
-
-    <div class="legend-item">
-      <div class="legend-dot notion">N</div>
-      Notion · Documentación viva
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot" style="background:#2563eb;">J</div>
-      Jira · Tracking interno (solo PM)
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot" style="background:#7c5cbf;">T</div>
-      Transcripción · Input de meets
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot" style="background:#06b6d4;">F</div>
-      Typeform · Bug reporting
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot" style="background:#d97706;">R</div>
-      Task Reporting · Cliente ve avance
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot" style="background:#555;">G</div>
-      GitHub/CI · Deploy
-    </div>
-
-    <div class="legend-section-title">Módulos especiales</div>
-
-    <div class="legend-item">
-      <div style="width:20px; height:16px; border:2px solid #dc2626; border-radius:4px; background:#fef2f2; flex-shrink:0;"></div>
-      Cierre de scope · Cliente valida
-    </div>
-    <div class="legend-item">
-      <div style="width:20px; height:16px; border:1px dashed #d97706; background:#fffbeb; flex-shrink:0;"></div>
-      Punto de decisión
-    </div>
-    <div class="legend-item">
-      <div style="width:20px; height:16px; border:1px solid #dc262644; background:#fef2f2; border-radius:4px; flex-shrink:0;"></div>
-      Go / No-Go
-    </div>
-    <div class="legend-item">
-      <div style="width:20px; height:16px; border-left:3px solid #888; background:#fafaf8; flex-shrink:0;"></div>
-      Módulo compartido entre verticales
-    </div>
-    <div class="legend-item">
-      <span class="scalable-tag">~tamaño</span>
-      Escala con tamaño de iniciativa
+    <div class="card-gold">
+      <div style="text-align:center;margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 3 L35 11 L35 25 Q35 37 20 39 Q5 37 5 25 L5 11 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><rect x="14" y="14" width="12" height="14" rx="2" fill="none" stroke="#f4c430" stroke-width="1.5"/><path d="M17 18 L23 18 M17 22 L21 22" stroke="#f4c430" stroke-width="1" stroke-linecap="round"/></svg></div>
+      <h4 style="text-align:center">Validación QueueIT</h4>
+      <p class="small mid">Si validamos que el token de QueueIT sea válido en TODOS los endpoints, cerramos bypass de fila.</p>
+      <div style="margin-top:12px"><p class="tiny"><span class="green">Validamos:</span> <span class="dim">correlación posición ↔ compra</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — implementar</span></p></div>
     </div>
   </div>
+</section>
 
+<!-- SLIDE 6: GO/NO-GO -->
+<section data-background-color="#0a0c14" data-console="gonogo">
+  <span class="tag tag-gold">KERNEL · FILTRO</span>
+  <h2>Matriz <span class="gold">Go / No-Go</span></h2>
+  <p>Toda propuesta pasa por este filtro antes de entrar al runtime.</p><div class="accent-line-wide"></div>
+  <table><thead><tr><th>Criterio</th><th><span class="green">GO</span></th><th><span class="amber">Condicional</span></th><th><span class="red">NO GO</span></th></tr></thead>
+  <tbody><tr><td style="color:var(--text);font-weight:600">Impacto anti-fraude</td><td>Reduce bypass directo</td><td>Impacto indirecto</td><td>Sin impacto claro</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">Viabilidad operativa</td><td>Ecosistema actual (front+gw)</td><td>Ajustes acotados</td><td>Cambios estructurales</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">Control de promesa</td><td>Boca controla end-to-end</td><td>Manejable con front y gw</td><td>Fuera de control</td></tr></tbody></table>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card-green"><h4 class="green">Qué SÍ hacer</h4><ul class="clean-list yes-list"><li>3 protecciones core (cookie, stepper, QueueIT)</li><li>Mejoras de seguridad contra reventa</li><li>Métricas end-to-end + reportería fraude</li><li>Mejoras de checkout (velocidad, menos errores)</li></ul></div>
+    <div class="card-red"><h4 class="red">Qué NO hacer</h4><ul class="clean-list no-list"><li>Features no relacionadas con seguridad</li><li>Cambios en backend de Boca</li><li>Bloquear socios automáticamente</li><li>Modificaciones gráficas sensibles</li></ul></div>
+  </div>
+</section>
+
+<!-- SLIDE 7: SCHEDULER -->
+<section data-background-color="#0a0c14" data-console="scheduler">
+  <span class="tag tag-gold">SCHEDULER</span>
+  <h2>Cómo se <span class="gold">refina</span></h2><p>El scheduler procesa cada input hasta que se convierte en trabajo ejecutable.</p><div class="accent-line-wide"></div>
+  <div class="terminal">
+    <span class="prompt">bocaos/scheduler $</span> <span class="cmd">pipeline --show</span><br><br>
+    <span class="info">[1] TRANSCRIPCIÓN</span> <span class="output">→ Meet se graba automáticamente</span><br>
+    <span class="info">[2] NOTION</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ PM procesa y estructura resumen</span><br>
+    <span class="info">[3] ENRIQUECIMIENTO</span> <span class="output">→ PM agrega brief + feedback + docs cliente</span><br>
+    <span class="info">[4] JIRA</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ PM carga tickets (devs NO tocan)</span><br>
+    <span class="info">[5] TASK REPORTING</span> <span class="output">→ Cliente ve avance en roadmap compartido</span><br><br>
+    <span class="prompt">bocaos/scheduler $</span> <span class="cmd">scope --status</span><br>
+    <span class="success">● Scope VIVO hasta functional walkthrough</span>
+  </div>
+  <div class="scope-bar"><div class="scope-segment vivo">Scope Vivo<span class="scope-sub">muta libremente</span></div><div class="scope-segment val">En Validación<span class="scope-sub">ajustes sí, features no</span></div><div class="scope-segment closed">Scope Cerrado<span class="scope-sub">cambios = nuevo ítem</span></div></div>
+</section>
+
+<!-- SLIDE 8: REFIS -->
+<section data-background-color="#0a0c14" data-console="refis">
+  <span class="tag tag-gold">SCHEDULER · PROCESOS</span>
+  <h2>Doble refinamiento</h2><p>Cada funcionalidad nueva pasa por dos instancias de refinamiento.</p><div class="accent-line-wide"></div>
+  <div class="grid-2">
+    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="4" fill="rgba(91,143,217,0.1)" stroke="#5b8fd9" stroke-width="1.5"/><text x="20" y="24" text-anchor="middle" font-family="JetBrains Mono" font-size="14" fill="#5b8fd9">&lt;/&gt;</text></svg></div><h4>Refi Técnica Backend</h4><p class="mid">PM + Devs analizan dependencias, riesgos técnicos, complejidad y puntos de contacto con el ecosistema de Boca.</p><div style="margin-top:12px"><p class="tiny dim">INPUT: Transcripción + Brief</p><p class="tiny dim">OUTPUT: Resumen técnico en Notion</p></div></div>
+    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><circle cx="20" cy="20" r="6" fill="none" stroke="#f4c430" stroke-width="1.5"/><circle cx="20" cy="20" r="1.5" fill="#f4c430"/></svg></div><h4>Refi UX/UI</h4><p class="mid">PM + Design refinan la experiencia del socio. Escala con el tamaño de la iniciativa.</p><div style="margin-top:12px"><p class="tiny dim">INPUT: Resumen técnico + contexto usuario</p><p class="tiny dim">OUTPUT: Specs de diseño en Notion</p></div></div>
+  </div>
+</section>
+
+<!-- SLIDE 9: RUNTIME -->
+<section data-background-color="#0a0c14" data-console="runtime">
+  <span class="tag tag-gold">RUNTIME</span>
+  <h2>Cómo se <span class="gold">ejecuta</span></h2><p>El runtime maneja 3 tipos de procesos en paralelo.</p><div class="accent-line-wide"></div>
+  <div class="grid-3">
+    <div class="card-gold"><div style="text-align:center;margin-bottom:10px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 2 L33 10 L33 24 Q33 36 18 38 Q3 36 3 24 L3 10 Z" fill="rgba(244,196,48,0.15)" stroke="#f4c430" stroke-width="1.5"/><path d="M12 18 L16 22 L24 14" stroke="#f4c430" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><h4 class="gold" style="text-align:center">Nuevas Funcionalidades</h4><p class="small mid" style="margin-bottom:12px">Brief → doble refi → planning → desarrollo → walkthrough → QA → cliente valida → deploy</p><p class="tiny dim" style="text-align:center">12 pasos · Scope vivo hasta testing</p></div>
+    <div class="card-green"><div style="text-align:center;margin-bottom:10px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 2 L33 10 L33 24 Q33 36 18 38 Q3 36 3 24 L3 10 Z" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.5"/><path d="M13 16 L23 16 M13 20 L23 20 M13 24 L19 24" stroke="#34d399" stroke-width="1.5" stroke-linecap="round"/></svg></div><h4 class="green" style="text-align:center">Fixes y Cambios Menores</h4><p class="small mid" style="margin-bottom:12px">Task reporting → refi → planning → ¿walkthrough? → QA → deploy rápido</p><p class="tiny dim" style="text-align:center">7 pasos · PM decide walkthrough</p></div>
+    <div class="card-red"><div style="text-align:center;margin-bottom:10px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 2 L33 10 L33 24 Q33 36 18 38 Q3 36 3 24 L3 10 Z" fill="rgba(248,113,113,0.1)" stroke="#f87171" stroke-width="1.5"/><circle cx="18" cy="17" r="4" fill="none" stroke="#f87171" stroke-width="1.5"/><line x1="18" y1="23" x2="18" y2="27" stroke="#f87171" stroke-width="2" stroke-linecap="round"/></svg></div><h4 class="red" style="text-align:center">Gestión de Bugs</h4><p class="small mid" style="margin-bottom:12px">Typeform → triage PM → priorizado/descartado → QA → deploy</p><p class="tiny dim" style="text-align:center">6 pasos · Bifurcación en triage</p></div>
+  </div>
+</section>
+
+<!-- SLIDE 10: FLOW -->
+<section data-background-color="#0a0c14" data-console="flow">
+  <span class="tag tag-gold">RUNTIME · NUEVAS FUNCIONALIDADES</span>
+  <h2>El flujo completo</h2><div class="accent-line"></div>
+  <div class="flow"><div class="flow-step">Kickoff</div><span class="flow-arrow">→</span><div class="flow-step">Brief</div><span class="flow-arrow">→</span><div class="flow-step active">Go/No-Go</div><span class="flow-arrow">→</span><div class="flow-step">Refi Tech</div><span class="flow-arrow">→</span><div class="flow-step">Refi UX</div><span class="flow-arrow">→</span><div class="flow-step">Jira</div></div>
+  <div class="flow"><div class="flow-step">Planning</div><span class="flow-arrow">→</span><div class="flow-step">Desarrollo</div><span class="flow-arrow">→</span><div class="flow-step active">Walkthrough</div><span class="flow-arrow">→</span><div class="flow-step">QA Interno</div><span class="flow-arrow">→</span><div class="flow-step closure">Cliente Valida</div><span class="flow-arrow">→</span><div class="flow-step">Deploy</div></div>
+  <div class="grid-3" style="margin-top:24px"><div class="card" style="text-align:center"><p class="small"><span class="amber">●</span> <span class="amber mono">GO/NO-GO</span></p><p class="tiny dim">Filtro contra directiva marco</p></div><div class="card" style="text-align:center"><p class="small"><span class="gold">●</span> <span class="gold mono">WALKTHROUGH</span></p><p class="tiny dim">Scope entra en validación</p></div><div class="card" style="text-align:center"><p class="small"><span class="red">●</span> <span class="red mono">CLIENTE VALIDA</span></p><p class="tiny dim">Scope se cierra definitivamente</p></div></div>
+</section>
+
+<!-- SLIDE 11: RELEASE -->
+<section data-background-color="#0a0c14" data-console="release">
+  <span class="tag tag-gold">RELEASE</span>
+  <h2>Cómo se <span class="gold">entrega</span></h2><p>El release pipeline tiene 3 checkpoints antes de llegar al usuario final.</p><div class="accent-line-wide"></div>
+  <div class="grid-3">
+    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 4 L34 12 L34 24 Q34 34 20 36 Q6 34 6 24 L6 12 Z" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.5"/><path d="M14 20 L18 24 L26 16" stroke="#34d399" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><h4>QA Interno</h4><p class="small mid">El equipo verifica criterios de aceptación antes de exponer al cliente.</p></div>
+    <div class="card" style="border-color:var(--red)"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 4 L34 12 L34 24 Q34 34 20 36 Q6 34 6 24 L6 12 Z" fill="rgba(248,113,113,0.1)" stroke="#f87171" stroke-width="1.5"/><rect x="14" y="14" width="12" height="12" rx="2" fill="none" stroke="#f87171" stroke-width="1.5"/><line x1="17" y1="17" x2="23" y2="23" stroke="#f87171" stroke-width="1.5"/><line x1="23" y1="17" x2="17" y2="23" stroke="#f87171" stroke-width="1.5"/></svg></div><h4>Cliente Valida <span class="tiny red">(SCOPE LOCK)</span></h4><p class="small mid">Software funcionando en testing. Scope se cierra. Ajustes menores, no features nuevas.</p></div>
+    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 4 L34 12 L34 24 Q34 34 20 36 Q6 34 6 24 L6 12 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><path d="M15 24 L20 14 L25 24 Z" fill="none" stroke="#f4c430" stroke-width="1.5"/></svg></div><h4>Deploy a Producción</h4><p class="small mid">Deploy + release notes en Jira + comunicación al cliente vía Task Reporting.</p></div>
+  </div>
+</section>
+
+<!-- SLIDE 12: SERVICES -->
+<section data-background-color="#0a0c14" data-console="services">
+  <span class="tag tag-gold">SYSTEM SERVICES</span>
+  <h2>Stack de <span class="gold">herramientas</span></h2><div class="accent-line"></div>
+  <table><thead><tr><th>Servicio</th><th>Función en el OS</th><th>Quién opera</th></tr></thead><tbody>
+  <tr><td style="color:var(--text);font-weight:600">📄 Notion</td><td>Filesystem — estrategia, briefs, specs, resúmenes</td><td>PM escribe · Equipo consulta</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">🎫 Jira</td><td>Process Manager — tickets + log de versiones</td><td>PM carga · Devs consultan</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">🎙 Transcripción</td><td>Input Device — captura automática de meets</td><td>Automático</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">📝 Typeform</td><td>Bug Reporter — reporte estructurado</td><td>Cliente / Equipo</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">📊 Task Reporting</td><td>Display Server — roadmap compartido</td><td>PM actualiza · Cliente ve</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">🔧 GitHub/CI</td><td>Compiler & Deployer — código + releases</td><td>Devs</td></tr></tbody></table>
+</section>
+
+<!-- SLIDE 13: METRICS -->
+<section data-background-color="#0a0c14" data-console="metrics">
+  <span class="tag tag-gold">SYSTEM METRICS</span>
+  <h2>Métricas de <span class="gold">éxito 2026</span></h2><div class="accent-line"></div>
+  <div class="grid-2">
+    <div><h3 style="font-size:1em">Detección de Bypass</h3><table><tr><td>Cookies compartidas</td><td class="green">&lt;2%</td></tr><tr><td>Intentos saltear stepper</td><td class="green">100% bloqueados</td></tr><tr><td>Requests sin QueueIT token</td><td class="green">100% bloqueados</td></tr></table></div>
+    <div><h3 style="font-size:1em">Performance Técnico</h3><table><tr><td>Sesiones sin error</td><td class="green">&gt;95%</td></tr><tr><td>Tiempo checkout</td><td class="green">3-5 min</td></tr><tr><td>Errores 5XX</td><td class="green">&lt;2%</td></tr></table></div>
+  </div>
+  <div class="grid-2" style="margin-top:20px">
+    <div><h3 style="font-size:1em">Experiencia del Socio</h3><table><tr><td>Tickets soporte</td><td class="green">-30%</td></tr><tr><td>Visibilidad transacciones</td><td class="green">100%</td></tr></table></div>
+    <div><h3 style="font-size:1em">Distribución de Ventas</h3><table><tr><td>Baseline</td><td class="red">60-70% en 5 min</td></tr><tr><td>Target Q2</td><td class="amber">&lt;30%</td></tr><tr><td>Target Q4</td><td class="green">&lt;25%</td></tr></table></div>
+  </div>
+</section>
+
+<!-- SLIDE 14: LOOPS -->
+<section data-background-color="#0a0c14" data-console="loops">
+  <span class="tag tag-gold">SYSTEM LOOPS</span>
+  <h2>Feedback <span class="gold">loops</span></h2><p>BocaOS no es lineal. Cada ciclo alimenta al siguiente.</p><div class="accent-line-wide"></div>
+  <div class="grid-2">
+    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Métricas → Estrategia</h4></div><p class="small mid">Cada release valida o invalida apuestas. Las métricas ajustan prioridades.</p></div>
+    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Bug patterns → Backlog</h4></div><p class="small mid">Patrones recurrentes repriorización automáticamente el backlog.</p></div>
+    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Cliente → Roadmap</h4></div><p class="small mid">Feedback en testing ajusta foco de próximas iniciativas.</p></div>
+    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Eventos → Aprendizaje</h4></div><p class="small mid">Cada partido es un test en producción. Datos alimentan la estrategia.</p></div>
+  </div>
+</section>
+
+<!-- SLIDE 15: CLOSING -->
+<section class="title-slide" data-background-color="#0a0c14" data-console="end">
+  <svg width="70" height="80" viewBox="0 0 80 90" style="margin-bottom:16px;filter:drop-shadow(0 0 24px rgba(244,196,48,0.4))">
+    <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="#f4c430" stroke-width="2.5"/>
+    <path d="M40 10 L66 22 L66 50 Q66 72 40 80 Q14 72 14 50 L14 22 Z" fill="#002b5c" stroke="#f4c430" stroke-width="1" opacity="0.6"/>
+    <text x="40" y="52" text-anchor="middle" font-family="Silkscreen,monospace" font-size="20" fill="#f4c430" font-weight="700">OS</text>
+  </svg>
+  <div class="win98-title" style="font-size:3.6em"><span class="gold">Boca</span><span style="color:var(--text-dim)">OS</span><span style="display:block;font-size:0.35em;color:var(--text-dim);font-family:'VT323',monospace;font-weight:400;margin-top:8px">sistema operativo</span></div>
+  <div class="terminal" style="max-width:500px;text-align:left;margin-top:24px">
+    <span class="prompt">bocaos $</span> <span class="cmd">summary --2026</span><br><br>
+    <span class="success">✓ Kernel cargado (estrategia definida)</span><br>
+    <span class="success">✓ 3 apuestas core en ejecución</span><br>
+    <span class="success">✓ Pipeline de información conectado</span><br>
+    <span class="success">✓ Métricas end-to-end en implementación</span><br>
+    <span class="info">→ Próximo evento: validación en producción</span>
+  </div>
+  <div class="version-tag" style="margin-top:20px">paisanos · 2026</div>
+</section>
+
+</div></div>
+
+<!-- BOOT CONSOLE -->
+<div id="boot-console">
+  <div class="console-icon">BocaOS://</div>
+  <div class="console-lines" id="console-lines"></div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+const CONSOLE_MESSAGES={boot:[{text:"bocaos v2026.1 — booting...",cls:"gold"},{text:"loading kernel modules...",cls:"loading"},{text:"✓ shield_auth initialized",cls:"success"}],kernel:[{text:"✓ core_functions loaded [4]",cls:"success"},{text:"→ mounting KERNEL...",cls:"info"},{text:"→ mounting SCHEDULER...",cls:"info"},{text:"→ mounting RUNTIME...",cls:"info"},{text:"→ mounting RELEASE...",cls:"info"},{text:"✓ all systems nominal",cls:"success"}],context:[{text:"scanning match_day environment...",cls:"loading"},{text:"⚠ anomaly: 60-70% ventas en 5min",cls:"warn"},{text:"⚠ checkout_time < 2min — bot pattern",cls:"warn"},{text:"✗ visibility_layer: not found",cls:"warn"},{text:"→ initiating anti-fraud protocols",cls:"info"}],strategy:[{text:"✓ kernel.strategy loaded",cls:"success"},{text:"→ north_star: venta_distribution_20min",cls:"info"},{text:"→ target Q2: <30% | Q4: <25%",cls:"info"},{text:"✓ priorities bound to kernel",cls:"success"}],bets:[{text:"loading bet_modules...",cls:"loading"},{text:"✓ cookie_binding.so — deployed Q1",cls:"success"},{text:"→ stepper_enforcement.so — compiling",cls:"info"},{text:"→ queueit_validation.so — compiling",cls:"info"},{text:"✓ 3 hypotheses registered",cls:"success"}],gonogo:[{text:"✓ go_nogo_matrix loaded",cls:"success"},{text:"→ filter: impact × viability × control",cls:"info"},{text:"✓ whitelist: 6 ops | blacklist: 8 ops",cls:"success"}],scheduler:[{text:"✓ scheduler.pipeline connected",cls:"success"},{text:"→ transcription_svc: online",cls:"info"},{text:"→ notion_fs: mounted /docs",cls:"info"},{text:"→ jira_pm: write (PM only)",cls:"info"},{text:"→ task_reporting: client display on",cls:"info"},{text:"✓ scope_tracker: LIVE",cls:"success"}],refis:[{text:"→ refi_backend.process spawned",cls:"info"},{text:"→ refi_ux.process spawned",cls:"info"},{text:"✓ dual refinement ready",cls:"success"},{text:"→ scaling: adjusts to init size",cls:"loading"}],runtime:[{text:"✓ runtime.features — 12 steps",cls:"success"},{text:"✓ runtime.fixes — 7 steps",cls:"success"},{text:"✓ runtime.bugs — 6 steps",cls:"success"},{text:"→ 3 parallel processes running",cls:"info"}],flow:[{text:"→ tracing features flow...",cls:"loading"},{text:"✓ checkpoint: GO/NO-GO [3]",cls:"success"},{text:"✓ checkpoint: WALKTHROUGH [9]",cls:"success"},{text:"⊘ SCOPE_LOCK: client validates [11]",cls:"warn"},{text:"✓ pipeline mapped",cls:"success"}],release:[{text:"→ release: 3 checkpoints set",cls:"info"},{text:"✓ qa_internal: pre-client gate",cls:"success"},{text:"⊘ client_validation: scope lock",cls:"warn"},{text:"✓ deploy: jira+github+reporting",cls:"success"}],services:[{text:"✓ notion_fs: ready",cls:"success"},{text:"✓ jira_pm: ready",cls:"success"},{text:"✓ transcription: ready",cls:"success"},{text:"✓ typeform: ready",cls:"success"},{text:"✓ task_reporting: ready",cls:"success"},{text:"✓ github_ci: ready",cls:"success"},{text:"→ 6 services operational",cls:"info"}],metrics:[{text:"→ loading metrics dashboard...",cls:"loading"},{text:"✓ bypass_detection: 3 KPIs",cls:"success"},{text:"✓ performance: 3 KPIs",cls:"success"},{text:"✓ experience: 2 KPIs",cls:"success"},{text:"→ 11 metrics monitored",cls:"info"}],loops:[{text:"✓ loop: metrics → strategy",cls:"success"},{text:"✓ loop: bugs → backlog",cls:"success"},{text:"✓ loop: client → roadmap",cls:"success"},{text:"✓ loop: match_day → learning",cls:"success"},{text:"→ system is self-correcting",cls:"info"}],end:[{text:"═══════════════════════════════",cls:"gold"},{text:"BocaOS v2026.1 — all operational",cls:"success"},{text:"kernel ✓ | scheduler ✓ | runtime ✓ | release ✓",cls:"info"},{text:"→ awaiting next match_day event...",cls:"loading"},{text:"═══════════════════════════════",cls:"gold"}]};
+let allAdded=new Set();const cl=document.getElementById("console-lines");
+function addMsgs(key){const msgs=CONSOLE_MESSAGES[key];if(!msgs)return;msgs.forEach((m,i)=>{if(allAdded.has(m.text))return;allAdded.add(m.text);setTimeout(()=>{const el=document.createElement("span");el.className="console-line "+m.cls;el.textContent=m.text;cl.appendChild(el);requestAnimationFrame(()=>el.classList.add("visible"));cl.scrollLeft=cl.scrollWidth},i*250)})}
+Reveal.initialize({hash:true,controls:true,progress:true,center:true,transition:"fade",transitionSpeed:"default",backgroundTransition:"fade",width:1280,height:720,margin:0.04});
+Reveal.on("slidechanged",e=>{const k=e.currentSlide.getAttribute("data-console");if(k)addMsgs(k)});
+const fk=Reveal.getCurrentSlide().getAttribute("data-console");if(fk)addMsgs(fk);
+</script>
 </body>
 </html>
