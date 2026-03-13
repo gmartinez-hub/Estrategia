@@ -9,44 +9,44 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=VT323&family=Silkscreen:wght@400;700&display=swap');
   :root{--boca-blue:#002b5c;--boca-gold:#f4c430;--surface:#0a0c14;--surface-light:#121626;--text:#e8eaf0;--text-mid:#8a8ea4;--text-dim:#4a4e64;--green:#34d399;--red:#f87171;--amber:#fbbf24;--purple:#a78bfa;--cyan:#22d3ee}
-  .reveal{font-family:'Outfit',sans-serif;color:var(--text)}.reveal .slides{text-align:left}.reveal .slides section{padding:40px 60px 80px 60px}
+  .reveal{font-family:'Outfit',sans-serif;color:var(--text)}.reveal .slides{text-align:left}.reveal .slides section{padding:28px 50px 100px 50px; box-sizing: border-box;}
   .reveal h1,.reveal h2,.reveal h3{font-family:'Outfit',sans-serif;font-weight:800;text-transform:none;letter-spacing:-0.02em}
-  .reveal h1{font-size:3.2em;line-height:1.05}.reveal h2{font-size:2.2em;line-height:1.1;margin-bottom:0.4em}.reveal h3{font-size:1.4em;color:var(--boca-gold)}
-  .reveal p,.reveal li{font-size:0.85em;line-height:1.7;color:var(--text-mid)}.reveal .slide-background{background:var(--surface)}
+  .reveal h1{font-size:2.8em;line-height:1.05}.reveal h2{font-size:1.8em;line-height:1.1;margin-bottom:0.3em}.reveal h3{font-size:1.2em;color:var(--boca-gold)}
+  .reveal p,.reveal li{font-size:0.78em;line-height:1.6;color:var(--text-mid)}.reveal .slide-background{background:var(--surface)}
   .mono{font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.04em}
   .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.12em;padding:4px 12px;border-radius:4px;margin-bottom:16px}
   .tag-gold{background:var(--boca-gold);color:var(--boca-blue)}.tag-blue{background:var(--boca-blue);color:var(--boca-gold);border:1px solid var(--boca-gold)}
   .gold{color:var(--boca-gold)}.blue{color:#5b8fd9}.green{color:var(--green)}.red{color:var(--red)}.amber{color:var(--amber)}.purple{color:var(--purple)}.cyan{color:var(--cyan)}.dim{color:var(--text-dim)}.mid{color:var(--text-mid)}
   .big{font-size:1.3em}.small{font-size:0.75em}.tiny{font-size:0.6em}
-  .accent-line{width:60px;height:4px;background:var(--boca-gold);margin:20px 0;border-radius:2px}
-  .accent-line-wide{width:100%;height:2px;background:linear-gradient(90deg,var(--boca-gold),transparent);margin:24px 0}
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:20px}
-  .card{background:var(--surface-light);border:1px solid #1e2236;border-radius:10px;padding:20px}
-  .card-gold{background:rgba(244,196,48,0.06);border:1px solid rgba(244,196,48,0.2);border-radius:10px;padding:20px}
-  .card-blue{background:rgba(0,43,92,0.3);border:1px solid rgba(91,143,217,0.2);border-radius:10px;padding:20px}
-  .card-green{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:20px}
-  .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:20px}
+  .accent-line{width:60px;height:4px;background:var(--boca-gold);margin:12px 0;border-radius:2px}
+  .accent-line-wide{width:100%;height:2px;background:linear-gradient(90deg,var(--boca-gold),transparent);margin:14px 0}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+  .card{background:var(--surface-light);border:1px solid #1e2236;border-radius:10px;padding:14px}
+  .card-gold{background:rgba(244,196,48,0.06);border:1px solid rgba(244,196,48,0.2);border-radius:10px;padding:14px}
+  .card-blue{background:rgba(0,43,92,0.3);border:1px solid rgba(91,143,217,0.2);border-radius:10px;padding:14px}
+  .card-green{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:14px}
+  .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:14px}
   .card h4{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.9em;margin:0 0 8px 0;color:var(--text)}.card p,.card li{font-size:0.72em;margin:0}
   .flow{display:flex;align-items:center;gap:0;margin:20px 0;flex-wrap:wrap;justify-content:center}
   .flow-step{background:var(--surface-light);border:1px solid #1e2236;border-radius:8px;padding:10px 16px;text-align:center;font-size:0.65em;font-weight:600;min-width:100px}
   .flow-step.active{border-color:var(--boca-gold);background:rgba(244,196,48,0.08);color:var(--boca-gold)}.flow-step.closure{border-color:var(--red);background:rgba(248,113,113,0.08);color:var(--red)}
   .flow-arrow{font-size:0.9em;color:var(--text-dim);padding:0 6px}
-  .terminal{background:#0d0f18;border:1px solid #1e2236;border-radius:10px;padding:20px 24px;font-family:'JetBrains Mono',monospace;font-size:0.65em;line-height:1.8;margin:16px 0}
+  .terminal{background:#0d0f18;border:1px solid #1e2236;border-radius:10px;padding:14px 18px;font-family:'JetBrains Mono',monospace;font-size:0.58em;line-height:1.7;margin:10px 0}
   .terminal .prompt{color:var(--boca-gold)}.terminal .cmd{color:var(--text)}.terminal .output{color:var(--text-dim)}.terminal .success{color:var(--green)}.terminal .error{color:var(--red)}.terminal .info{color:var(--cyan)}
-  .metric{text-align:center;padding:16px}.metric-value{font-family:'Outfit',sans-serif;font-weight:800;font-size:2.4em;line-height:1}
+  .metric{text-align:center;padding:10px}.metric-value{font-family:'Outfit',sans-serif;font-weight:800;font-size:2em;line-height:1}
   .metric-label{font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin-top:6px}
-  .reveal table{font-size:0.65em;border-collapse:collapse;width:100%;margin:16px 0}
-  .reveal table th{font-family:'JetBrains Mono',monospace;font-size:0.85em;text-transform:uppercase;letter-spacing:0.06em;color:var(--boca-gold);border-bottom:2px solid var(--boca-gold);padding:8px 12px;text-align:left}
-  .reveal table td{padding:8px 12px;border-bottom:1px solid #1e2236;color:var(--text-mid)}
-  .scope-bar{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #1e2236;margin:16px 0}
-  .scope-segment{flex:1;padding:10px 16px;text-align:center;font-size:0.65em;font-weight:600;border-right:1px solid #1e2236}
+  .reveal table{font-size:0.6em;border-collapse:collapse;width:100%;margin:10px 0}
+  .reveal table th{font-family:'JetBrains Mono',monospace;font-size:0.85em;text-transform:uppercase;letter-spacing:0.06em;color:var(--boca-gold);border-bottom:2px solid var(--boca-gold);padding:6px 10px;text-align:left}
+  .reveal table td{padding:6px 10px;border-bottom:1px solid #1e2236;color:var(--text-mid)}
+  .scope-bar{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #1e2236;margin:10px 0}
+  .scope-segment{flex:1;padding:8px 12px;text-align:center;font-size:0.6em;font-weight:600;border-right:1px solid #1e2236}
   .scope-segment:last-child{border-right:none}.scope-segment.vivo{background:rgba(251,191,36,0.08);color:var(--amber)}.scope-segment.val{background:rgba(244,196,48,0.08);color:var(--boca-gold)}.scope-segment.closed{background:rgba(52,211,153,0.08);color:var(--green)}
   .scope-sub{font-family:'JetBrains Mono',monospace;font-size:0.8em;font-weight:400;display:block;margin-top:2px;opacity:0.6}
-  .clean-list{list-style:none;padding:0;margin:12px 0}.clean-list li{padding:6px 0;font-size:0.8em;border-bottom:1px solid #1a1e30}.clean-list li:last-child{border-bottom:none}
+  .clean-list{list-style:none;padding:0;margin:8px 0}.clean-list li{padding:4px 0;font-size:0.72em;border-bottom:1px solid #1a1e30}.clean-list li:last-child{border-bottom:none}
   .yes-list li::before{content:'✓ ';color:var(--green);font-weight:700}.no-list li::before{content:'✕ ';color:var(--red);font-weight:700}
-  .title-slide{text-align:center!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;min-height:100%}
-  .win98-title{font-family:'Silkscreen','VT323',monospace;font-size:5em;line-height:1;letter-spacing:0.02em;text-shadow:4px 4px 0px rgba(0,43,92,0.8),0 0 40px rgba(244,196,48,0.2)}
-  .win98-sub{font-family:'VT323',monospace;font-size:1.4em;letter-spacing:0.06em;color:var(--text-dim);margin-top:16px}
+  .title-slide{text-align:center!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;min-height:100%; padding-bottom: 60px; box-sizing: border-box;}
+  .win98-title{font-family:'Silkscreen','VT323',monospace;font-size:4.2em;line-height:1;letter-spacing:0.02em;text-shadow:4px 4px 0px rgba(0,43,92,0.8),0 0 40px rgba(244,196,48,0.2)}
+  .win98-sub{font-family:'VT323',monospace;font-size:1.2em;letter-spacing:0.06em;color:var(--text-dim);margin-top:12px}
   .win98-blink{animation:blink98 1s step-end infinite}@keyframes blink98{0%,100%{opacity:1}50%{opacity:0}}
   .version-tag{font-family:'JetBrains Mono',monospace;font-size:0.5em;color:var(--text-dim);margin-top:24px;letter-spacing:0.1em}
   #boot-console{position:fixed;bottom:0;left:0;right:0;height:48px;background:#06080eee;border-top:1px solid #1a1e2e;z-index:100;display:flex;align-items:center;padding:0 24px;gap:12px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:11px;backdrop-filter:blur(8px)}
@@ -61,7 +61,6 @@
 <body>
 <div class="reveal"><div class="slides">
 
-<!-- SLIDE 1: TITLE WIN98 -->
 <section class="title-slide" data-background-color="#0a0c14" data-console="boot">
   <svg width="80" height="90" viewBox="0 0 80 90" style="margin-bottom:16px;filter:drop-shadow(0 0 20px rgba(244,196,48,0.3))">
     <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="#f4c430" stroke-width="2.5"/>
@@ -77,7 +76,6 @@
   <div class="version-tag" style="margin-top:28px">paisanos · uso interno · v2026.1</div>
 </section>
 
-<!-- SLIDE 2: BOOT -->
 <section data-background-color="#0a0c14" data-console="kernel">
   <span class="tag tag-gold">BOOT SEQUENCE</span>
   <h2>¿Qué es <span class="gold">BocaOS</span>?</h2><div class="accent-line"></div>
@@ -95,7 +93,6 @@
   </div>
 </section>
 
-<!-- SLIDE 3: CONTEXT -->
 <section data-background-color="#0a0c14" data-console="context">
   <span class="tag tag-blue">SYSTEM CONTEXT</span>
   <h2>El terreno de juego</h2><div class="accent-line"></div>
@@ -119,7 +116,6 @@
   </div>
 </section>
 
-<!-- SLIDE 4: KERNEL STRATEGY -->
 <section data-background-color="#0a0c14" data-console="strategy">
   <span class="tag tag-gold">KERNEL</span>
   <h2>Cómo se <span class="gold">planifica</span></h2>
@@ -144,7 +140,6 @@
   </div>
 </section>
 
-<!-- SLIDE 5: BETS -->
 <section data-background-color="#0a0c14" data-console="bets">
   <span class="tag tag-gold">KERNEL · APUESTAS</span>
   <h2>3 hipótesis <span class="gold">core</span></h2><div class="accent-line"></div>
@@ -170,7 +165,6 @@
   </div>
 </section>
 
-<!-- SLIDE 6: GO/NO-GO -->
 <section data-background-color="#0a0c14" data-console="gonogo">
   <span class="tag tag-gold">KERNEL · FILTRO</span>
   <h2>Matriz <span class="gold">Go / No-Go</span></h2>
@@ -185,7 +179,6 @@
   </div>
 </section>
 
-<!-- SLIDE 7: SCHEDULER -->
 <section data-background-color="#0a0c14" data-console="scheduler">
   <span class="tag tag-gold">SCHEDULER</span>
   <h2>Cómo se <span class="gold">refina</span></h2><p>El scheduler procesa cada input hasta que se convierte en trabajo ejecutable.</p><div class="accent-line-wide"></div>
@@ -202,7 +195,6 @@
   <div class="scope-bar"><div class="scope-segment vivo">Scope Vivo<span class="scope-sub">muta libremente</span></div><div class="scope-segment val">En Validación<span class="scope-sub">ajustes sí, features no</span></div><div class="scope-segment closed">Scope Cerrado<span class="scope-sub">cambios = nuevo ítem</span></div></div>
 </section>
 
-<!-- SLIDE 8: REFIS -->
 <section data-background-color="#0a0c14" data-console="refis">
   <span class="tag tag-gold">SCHEDULER · PROCESOS</span>
   <h2>Doble refinamiento</h2><p>Cada funcionalidad nueva pasa por dos instancias de refinamiento.</p><div class="accent-line-wide"></div>
@@ -212,7 +204,6 @@
   </div>
 </section>
 
-<!-- SLIDE 9: RUNTIME -->
 <section data-background-color="#0a0c14" data-console="runtime">
   <span class="tag tag-gold">RUNTIME</span>
   <h2>Cómo se <span class="gold">ejecuta</span></h2><p>El runtime maneja 3 tipos de procesos en paralelo.</p><div class="accent-line-wide"></div>
@@ -223,7 +214,6 @@
   </div>
 </section>
 
-<!-- SLIDE 10: FLOW -->
 <section data-background-color="#0a0c14" data-console="flow">
   <span class="tag tag-gold">RUNTIME · NUEVAS FUNCIONALIDADES</span>
   <h2>El flujo completo</h2><div class="accent-line"></div>
@@ -232,7 +222,6 @@
   <div class="grid-3" style="margin-top:24px"><div class="card" style="text-align:center"><p class="small"><span class="amber">●</span> <span class="amber mono">GO/NO-GO</span></p><p class="tiny dim">Filtro contra directiva marco</p></div><div class="card" style="text-align:center"><p class="small"><span class="gold">●</span> <span class="gold mono">WALKTHROUGH</span></p><p class="tiny dim">Scope entra en validación</p></div><div class="card" style="text-align:center"><p class="small"><span class="red">●</span> <span class="red mono">CLIENTE VALIDA</span></p><p class="tiny dim">Scope se cierra definitivamente</p></div></div>
 </section>
 
-<!-- SLIDE 11: RELEASE -->
 <section data-background-color="#0a0c14" data-console="release">
   <span class="tag tag-gold">RELEASE</span>
   <h2>Cómo se <span class="gold">entrega</span></h2><p>El release pipeline tiene 3 checkpoints antes de llegar al usuario final.</p><div class="accent-line-wide"></div>
@@ -243,7 +232,6 @@
   </div>
 </section>
 
-<!-- SLIDE 12: SERVICES -->
 <section data-background-color="#0a0c14" data-console="services">
   <span class="tag tag-gold">SYSTEM SERVICES</span>
   <h2>Stack de <span class="gold">herramientas</span></h2><div class="accent-line"></div>
@@ -256,7 +244,6 @@
   <tr><td style="color:var(--text);font-weight:600">🔧 GitHub/CI</td><td>Compiler & Deployer — código + releases</td><td>Devs</td></tr></tbody></table>
 </section>
 
-<!-- SLIDE 13: METRICS -->
 <section data-background-color="#0a0c14" data-console="metrics">
   <span class="tag tag-gold">SYSTEM METRICS</span>
   <h2>Métricas de <span class="gold">éxito 2026</span></h2><div class="accent-line"></div>
@@ -270,7 +257,6 @@
   </div>
 </section>
 
-<!-- SLIDE 14: LOOPS -->
 <section data-background-color="#0a0c14" data-console="loops">
   <span class="tag tag-gold">SYSTEM LOOPS</span>
   <h2>Feedback <span class="gold">loops</span></h2><p>BocaOS no es lineal. Cada ciclo alimenta al siguiente.</p><div class="accent-line-wide"></div>
@@ -282,7 +268,6 @@
   </div>
 </section>
 
-<!-- SLIDE 15: CLOSING -->
 <section class="title-slide" data-background-color="#0a0c14" data-console="end">
   <svg width="70" height="80" viewBox="0 0 80 90" style="margin-bottom:16px;filter:drop-shadow(0 0 24px rgba(244,196,48,0.4))">
     <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="#f4c430" stroke-width="2.5"/>
@@ -303,7 +288,6 @@
 
 </div></div>
 
-<!-- BOOT CONSOLE -->
 <div id="boot-console">
   <div class="console-icon">BocaOS://</div>
   <div class="console-lines" id="console-lines"></div>
@@ -314,7 +298,7 @@
 const CONSOLE_MESSAGES={boot:[{text:"bocaos v2026.1 — booting...",cls:"gold"},{text:"loading kernel modules...",cls:"loading"},{text:"✓ shield_auth initialized",cls:"success"}],kernel:[{text:"✓ core_functions loaded [4]",cls:"success"},{text:"→ mounting KERNEL...",cls:"info"},{text:"→ mounting SCHEDULER...",cls:"info"},{text:"→ mounting RUNTIME...",cls:"info"},{text:"→ mounting RELEASE...",cls:"info"},{text:"✓ all systems nominal",cls:"success"}],context:[{text:"scanning match_day environment...",cls:"loading"},{text:"⚠ anomaly: 60-70% ventas en 5min",cls:"warn"},{text:"⚠ checkout_time < 2min — bot pattern",cls:"warn"},{text:"✗ visibility_layer: not found",cls:"warn"},{text:"→ initiating anti-fraud protocols",cls:"info"}],strategy:[{text:"✓ kernel.strategy loaded",cls:"success"},{text:"→ north_star: venta_distribution_20min",cls:"info"},{text:"→ target Q2: <30% | Q4: <25%",cls:"info"},{text:"✓ priorities bound to kernel",cls:"success"}],bets:[{text:"loading bet_modules...",cls:"loading"},{text:"✓ cookie_binding.so — deployed Q1",cls:"success"},{text:"→ stepper_enforcement.so — compiling",cls:"info"},{text:"→ queueit_validation.so — compiling",cls:"info"},{text:"✓ 3 hypotheses registered",cls:"success"}],gonogo:[{text:"✓ go_nogo_matrix loaded",cls:"success"},{text:"→ filter: impact × viability × control",cls:"info"},{text:"✓ whitelist: 6 ops | blacklist: 8 ops",cls:"success"}],scheduler:[{text:"✓ scheduler.pipeline connected",cls:"success"},{text:"→ transcription_svc: online",cls:"info"},{text:"→ notion_fs: mounted /docs",cls:"info"},{text:"→ jira_pm: write (PM only)",cls:"info"},{text:"→ task_reporting: client display on",cls:"info"},{text:"✓ scope_tracker: LIVE",cls:"success"}],refis:[{text:"→ refi_backend.process spawned",cls:"info"},{text:"→ refi_ux.process spawned",cls:"info"},{text:"✓ dual refinement ready",cls:"success"},{text:"→ scaling: adjusts to init size",cls:"loading"}],runtime:[{text:"✓ runtime.features — 12 steps",cls:"success"},{text:"✓ runtime.fixes — 7 steps",cls:"success"},{text:"✓ runtime.bugs — 6 steps",cls:"success"},{text:"→ 3 parallel processes running",cls:"info"}],flow:[{text:"→ tracing features flow...",cls:"loading"},{text:"✓ checkpoint: GO/NO-GO [3]",cls:"success"},{text:"✓ checkpoint: WALKTHROUGH [9]",cls:"success"},{text:"⊘ SCOPE_LOCK: client validates [11]",cls:"warn"},{text:"✓ pipeline mapped",cls:"success"}],release:[{text:"→ release: 3 checkpoints set",cls:"info"},{text:"✓ qa_internal: pre-client gate",cls:"success"},{text:"⊘ client_validation: scope lock",cls:"warn"},{text:"✓ deploy: jira+github+reporting",cls:"success"}],services:[{text:"✓ notion_fs: ready",cls:"success"},{text:"✓ jira_pm: ready",cls:"success"},{text:"✓ transcription: ready",cls:"success"},{text:"✓ typeform: ready",cls:"success"},{text:"✓ task_reporting: ready",cls:"success"},{text:"✓ github_ci: ready",cls:"success"},{text:"→ 6 services operational",cls:"info"}],metrics:[{text:"→ loading metrics dashboard...",cls:"loading"},{text:"✓ bypass_detection: 3 KPIs",cls:"success"},{text:"✓ performance: 3 KPIs",cls:"success"},{text:"✓ experience: 2 KPIs",cls:"success"},{text:"→ 11 metrics monitored",cls:"info"}],loops:[{text:"✓ loop: metrics → strategy",cls:"success"},{text:"✓ loop: bugs → backlog",cls:"success"},{text:"✓ loop: client → roadmap",cls:"success"},{text:"✓ loop: match_day → learning",cls:"success"},{text:"→ system is self-correcting",cls:"info"}],end:[{text:"═══════════════════════════════",cls:"gold"},{text:"BocaOS v2026.1 — all operational",cls:"success"},{text:"kernel ✓ | scheduler ✓ | runtime ✓ | release ✓",cls:"info"},{text:"→ awaiting next match_day event...",cls:"loading"},{text:"═══════════════════════════════",cls:"gold"}]};
 let allAdded=new Set();const cl=document.getElementById("console-lines");
 function addMsgs(key){const msgs=CONSOLE_MESSAGES[key];if(!msgs)return;msgs.forEach((m,i)=>{if(allAdded.has(m.text))return;allAdded.add(m.text);setTimeout(()=>{const el=document.createElement("span");el.className="console-line "+m.cls;el.textContent=m.text;cl.appendChild(el);requestAnimationFrame(()=>el.classList.add("visible"));cl.scrollLeft=cl.scrollWidth},i*250)})}
-Reveal.initialize({hash:true,controls:false,progress:true,center:false,transition:"fade",transitionSpeed:"default",backgroundTransition:"fade",width:1280,height:720,margin:0.04,scrollActivationWidth:null,view:"scroll",scrollProgress:true});
+Reveal.initialize({hash:true,controls:false,progress:true,center:false,transition:"fade",transitionSpeed:"default",backgroundTransition:"fade",width:1280,height:720,margin:0.02});
 Reveal.on("slidechanged",e=>{const k=e.currentSlide.getAttribute("data-console");if(k)addMsgs(k)});
 const fk=Reveal.getCurrentSlide().getAttribute("data-console");if(fk)addMsgs(fk);
 </script>
