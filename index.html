@@ -8,54 +8,94 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=VT323&family=Silkscreen:wght@400;700&display=swap');
+  
   :root{--boca-blue:#002b5c;--boca-gold:#f4c430;--surface:#0a0c14;--surface-light:#121626;--text:#e8eaf0;--text-mid:#8a8ea4;--text-dim:#4a4e64;--green:#34d399;--red:#f87171;--amber:#fbbf24;--purple:#a78bfa;--cyan:#22d3ee}
-  .reveal{font-family:'Outfit',sans-serif;color:var(--text)}.reveal .slides{text-align:left}.reveal .slides section{padding:28px 50px 100px 50px; box-sizing: border-box;}
+  .reveal{font-family:'Outfit',sans-serif;color:var(--text)}.reveal .slides{text-align:left}
+  .reveal .slides section{padding:28px 50px 100px 50px; box-sizing: border-box;}
+  
   .reveal h1,.reveal h2,.reveal h3{font-family:'Outfit',sans-serif;font-weight:800;text-transform:none;letter-spacing:-0.02em}
   .reveal h1{font-size:2.8em;line-height:1.05}.reveal h2{font-size:1.8em;line-height:1.1;margin-bottom:0.3em}.reveal h3{font-size:1.2em;color:var(--boca-gold)}
-  .reveal p,.reveal li{font-size:0.78em;line-height:1.6;color:var(--text-mid)}.reveal .slide-background{background:var(--surface)}
+  .reveal p,.reveal li{font-size:0.75em;line-height:1.5;color:var(--text-mid)}.reveal .slide-background{background:var(--surface)}
+  
   .mono{font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.04em}
   .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.12em;padding:4px 12px;border-radius:4px;margin-bottom:16px}
   .tag-gold{background:var(--boca-gold);color:var(--boca-blue)}.tag-blue{background:var(--boca-blue);color:var(--boca-gold);border:1px solid var(--boca-gold)}
-  .gold{color:var(--boca-gold)}.blue{color:#5b8fd9}.green{color:var(--green)}.red{color:var(--red)}.amber{color:var(--amber)}.purple{color:var(--purple)}.cyan{color:var(--cyan)}.dim{color:var(--text-dim)}.mid{color:var(--text-mid)}
-  .big{font-size:1.3em}.small{font-size:0.75em}.tiny{font-size:0.6em}
+  
+  .gold{color:var(--boca-gold)}.blue{color:#5b8fd9}.green{color:var(--green)}.red{color:var(--red)}.amber{color:var(--amber)}.cyan{color:var(--cyan)}.dim{color:var(--text-dim)}.mid{color:var(--text-mid)}
+  .big{font-size:1.1em}.small{font-size:0.75em}.tiny{font-size:0.6em}
+  
   .accent-line{width:60px;height:4px;background:var(--boca-gold);margin:12px 0;border-radius:2px}
   .accent-line-wide{width:100%;height:2px;background:linear-gradient(90deg,var(--boca-gold),transparent);margin:14px 0}
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+  
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+  
   .card{background:var(--surface-light);border:1px solid #1e2236;border-radius:10px;padding:14px}
   .card-gold{background:rgba(244,196,48,0.06);border:1px solid rgba(244,196,48,0.2);border-radius:10px;padding:14px}
   .card-blue{background:rgba(0,43,92,0.3);border:1px solid rgba(91,143,217,0.2);border-radius:10px;padding:14px}
   .card-green{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:14px}
   .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:14px}
   .card h4{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.9em;margin:0 0 8px 0;color:var(--text)}.card p,.card li{font-size:0.72em;margin:0}
-  .flow{display:flex;align-items:center;gap:0;margin:20px 0;flex-wrap:wrap;justify-content:center}
-  .flow-step{background:var(--surface-light);border:1px solid #1e2236;border-radius:8px;padding:10px 16px;text-align:center;font-size:0.65em;font-weight:600;min-width:100px}
-  .flow-step.active{border-color:var(--boca-gold);background:rgba(244,196,48,0.08);color:var(--boca-gold)}.flow-step.closure{border-color:var(--red);background:rgba(248,113,113,0.08);color:var(--red)}
-  .flow-arrow{font-size:0.9em;color:var(--text-dim);padding:0 6px}
-  .terminal{background:#0d0f18;border:1px solid #1e2236;border-radius:10px;padding:14px 18px;font-family:'JetBrains Mono',monospace;font-size:0.58em;line-height:1.7;margin:10px 0}
+  
+  .terminal{background:#0d0f18;border:1px solid #1e2236;border-radius:10px;padding:14px 18px;font-family:'JetBrains Mono',monospace;font-size:0.55em;line-height:1.7;margin:10px 0}
   .terminal .prompt{color:var(--boca-gold)}.terminal .cmd{color:var(--text)}.terminal .output{color:var(--text-dim)}.terminal .success{color:var(--green)}.terminal .error{color:var(--red)}.terminal .info{color:var(--cyan)}
-  .metric{text-align:center;padding:10px}.metric-value{font-family:'Outfit',sans-serif;font-weight:800;font-size:2em;line-height:1}
-  .metric-label{font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin-top:6px}
-  .reveal table{font-size:0.6em;border-collapse:collapse;width:100%;margin:10px 0}
+  
+  .reveal table{font-size:0.55em;border-collapse:collapse;width:100%;margin:10px 0}
   .reveal table th{font-family:'JetBrains Mono',monospace;font-size:0.85em;text-transform:uppercase;letter-spacing:0.06em;color:var(--boca-gold);border-bottom:2px solid var(--boca-gold);padding:6px 10px;text-align:left}
   .reveal table td{padding:6px 10px;border-bottom:1px solid #1e2236;color:var(--text-mid)}
-  .scope-bar{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #1e2236;margin:10px 0}
-  .scope-segment{flex:1;padding:8px 12px;text-align:center;font-size:0.6em;font-weight:600;border-right:1px solid #1e2236}
-  .scope-segment:last-child{border-right:none}.scope-segment.vivo{background:rgba(251,191,36,0.08);color:var(--amber)}.scope-segment.val{background:rgba(244,196,48,0.08);color:var(--boca-gold)}.scope-segment.closed{background:rgba(52,211,153,0.08);color:var(--green)}
-  .scope-sub{font-family:'JetBrains Mono',monospace;font-size:0.8em;font-weight:400;display:block;margin-top:2px;opacity:0.6}
-  .clean-list{list-style:none;padding:0;margin:8px 0}.clean-list li{padding:4px 0;font-size:0.72em;border-bottom:1px solid #1a1e30}.clean-list li:last-child{border-bottom:none}
+  
+  .clean-list{list-style:none;padding:0;margin:8px 0}.clean-list li{padding:4px 0;font-size:0.65em;border-bottom:1px solid #1a1e30; line-height:1.3}.clean-list li:last-child{border-bottom:none}
   .yes-list li::before{content:'✓ ';color:var(--green);font-weight:700}.no-list li::before{content:'✕ ';color:var(--red);font-weight:700}
+  
   .title-slide{text-align:center!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;min-height:100%; padding-bottom: 60px; box-sizing: border-box;}
   .win98-title{font-family:'Silkscreen','VT323',monospace;font-size:4.2em;line-height:1;letter-spacing:0.02em;text-shadow:4px 4px 0px rgba(0,43,92,0.8),0 0 40px rgba(244,196,48,0.2)}
   .win98-sub{font-family:'VT323',monospace;font-size:1.2em;letter-spacing:0.06em;color:var(--text-dim);margin-top:12px}
   .win98-blink{animation:blink98 1s step-end infinite}@keyframes blink98{0%,100%{opacity:1}50%{opacity:0}}
   .version-tag{font-family:'JetBrains Mono',monospace;font-size:0.5em;color:var(--text-dim);margin-top:24px;letter-spacing:0.1em}
+  
   #boot-console{position:fixed;bottom:0;left:0;right:0;height:48px;background:#06080eee;border-top:1px solid #1a1e2e;z-index:100;display:flex;align-items:center;padding:0 24px;gap:12px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:11px;backdrop-filter:blur(8px)}
   #boot-console .console-icon{color:var(--boca-gold);font-size:10px;opacity:0.5;flex-shrink:0;font-family:'Silkscreen',monospace}
   #boot-console .console-lines{display:flex;gap:20px;overflow:hidden;flex:1;mask-image:linear-gradient(90deg,transparent 0%,black 5%,black 90%,transparent 100%)}
   #boot-console .console-line{white-space:nowrap;opacity:0;transition:opacity 0.4s ease;flex-shrink:0}
   #boot-console .console-line.visible{opacity:1}
   #boot-console .console-line.success{color:var(--green)}#boot-console .console-line.info{color:var(--cyan)}#boot-console .console-line.warn{color:var(--amber)}#boot-console .console-line.loading{color:var(--text-dim)}#boot-console .console-line.gold{color:var(--boca-gold)}
-  .reveal ul,.reveal ol{margin-left:0}.reveal ul li,.reveal ol li{margin-bottom:4px}.reveal .slides section .fragment.visible{opacity:1}
+
+  /* --- MODULAR FLOW STYLES (ADAPTED FOR DARK MODE & COMPACTNESS) --- */
+  .mod-flow-col { display: flex; flex-direction: column; gap: 0; }
+  .mod-header { text-align: center; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid #1e2236; }
+  .mod-header h4 { font-family: 'JetBrains Mono', monospace; font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
+  .mod-header.features h4 { color: var(--boca-gold); border-bottom-color: rgba(244,196,48,0.3); }
+  .mod-header.fixes h4 { color: var(--green); border-bottom-color: rgba(52,211,153,0.3); }
+  .mod-header.bugs h4 { color: var(--red); border-bottom-color: rgba(248,113,113,0.3); }
+  
+  .module { display: flex; align-items: center; gap: 6px; padding: 4px 8px; background: #121626; border: 1px solid #1e2236; border-radius: 6px; margin-bottom: 2px; font-size: 0.55em; }
+  .module.highlight { border-color: rgba(244,196,48,0.4); background: rgba(244,196,48,0.05); }
+  .module.shared { border-left: 3px solid #4a4e64; }
+  .module.scope-closure { border: 1px solid var(--red); background: rgba(248,113,113,0.08); }
+  .module.decision { background: rgba(251,191,36,0.05); border: 1px dashed var(--amber); }
+  .module.go-nogo { background: rgba(248,113,113,0.05); border: 1px solid rgba(248,113,113,0.4); }
+  
+  .module-icon { font-size: 1.2em; flex-shrink: 0; width: 16px; text-align: center; color: var(--text-mid); }
+  .module-content { flex: 1; min-width: 0; line-height: 1.2; }
+  .module-name { font-weight: 600; color: var(--text); }
+  .module-owner { font-size: 0.85em; font-family: 'JetBrains Mono', monospace; color: var(--text-dim); }
+  
+  .module-tools { display: flex; gap: 2px; flex-shrink: 0; }
+  .tool-dot { width: 14px; height: 14px; border-radius: 3px; font-size: 8px; font-weight: 700; font-family: 'JetBrains Mono', monospace; display: flex; align-items: center; justify-content: center; color: #fff; }
+  .tool-dot.notion { background: #4a4e64; }
+  .tool-dot.jira { background: #2563eb; }
+  .tool-dot.trans { background: #7c5cbf; }
+  .tool-dot.typeform { background: #06b6d4; }
+  .tool-dot.task { background: #d97706; }
+  .tool-dot.github { background: #555; }
+  
+  .m-arrow { text-align: center; color: #4a4e64; font-size: 0.6em; line-height: 1; margin: 1px 0; }
+  .m-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 2px 0; }
+  .m-branch-label { font-size: 0.45em; font-family: 'JetBrains Mono', monospace; text-align: center; padding: 2px; border-radius: 3px; }
+  .m-branch-label.yes { color: var(--green); background: rgba(52,211,153,0.1); }
+  .m-branch-label.no { color: var(--red); background: rgba(248,113,113,0.1); }
+
+  .reveal ul,.reveal ol{margin-left:0}.reveal ul li,.reveal ol li{margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -68,204 +108,187 @@
     <text x="40" y="52" text-anchor="middle" font-family="Silkscreen,monospace" font-size="20" fill="#f4c430" font-weight="700">OS</text>
   </svg>
   <div class="win98-title"><span class="gold">Boca</span><span style="color:var(--text-dim)">OS</span></div>
-  <div class="win98-sub">El sistema que decide qué se construye,<br>cómo se ejecuta y cuándo llega al hincha.<span class="win98-blink">_</span></div>
+  <div class="win98-sub">Un sistema operativo aceitado. Funciona como un relojito.<span class="win98-blink">_</span></div>
   <div style="margin-top:32px;display:flex;gap:16px;justify-content:center">
-    <div style="font-family:'VT323',monospace;font-size:0.7em;color:var(--text-dim);background:#0d0f18;border:1px solid #1e2236;border-radius:4px;padding:6px 14px">▸ kernel cargado</div>
-    <div style="font-family:'VT323',monospace;font-size:0.7em;color:var(--green);background:#0d0f18;border:1px solid #1e2236;border-radius:4px;padding:6px 14px">● sistema activo — 2026</div>
+    <div style="font-family:'VT323',monospace;font-size:0.7em;color:var(--text-dim);background:#0d0f18;border:1px solid #1e2236;border-radius:4px;padding:6px 14px">▸ +3 años de evolución continua</div>
+    <div style="font-family:'VT323',monospace;font-size:0.7em;color:var(--green);background:#0d0f18;border:1px solid #1e2236;border-radius:4px;padding:6px 14px">● calidad y estabilidad activas</div>
   </div>
   <div class="version-tag" style="margin-top:28px">paisanos · uso interno · v2026.1</div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="kernel">
-  <span class="tag tag-gold">BOOT SEQUENCE</span>
+  <span class="tag tag-gold">OPERATING SYSTEM</span>
   <h2>¿Qué es <span class="gold">BocaOS</span>?</h2><div class="accent-line"></div>
-  <div class="terminal">
-    <span class="prompt">bocaos $</span> <span class="cmd">describe --system</span><br><br>
-    <span class="output">BocaOS es el sistema operativo que gobierna cómo Paisanos</span><br>
-    <span class="output">planifica, construye y entrega el ecosistema digital de Boca.</span><br><br>
+  <p class="big">No es solo código. Es cómo un equipo de producto demuestra <strong>calidad y estabilidad</strong> tras 3 años de trabajo continuo, definiendo qué se prioriza, cómo se ejecuta y cómo se entrega valor con releases ordenados y sin bugs.</p>
+  <div class="terminal" style="margin-top:20px;">
     <span class="prompt">bocaos $</span> <span class="cmd">list --core-functions</span><br><br>
-    <span class="info">→ KERNEL &nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="output">Estrategia y directiva marco</span><br>
-    <span class="info">→ SCHEDULER </span> <span class="output">Refinamiento y planificación</span><br>
-    <span class="info">→ RUNTIME &nbsp;&nbsp;</span> <span class="output">Desarrollo y ejecución</span><br>
-    <span class="info">→ RELEASE &nbsp;&nbsp;</span> <span class="output">Entrega al usuario final</span><br><br>
+    <span class="info">→ CÓMO SE DEFINE &nbsp;&nbsp;&nbsp;</span> <span class="output">Estrategia y métricas norte</span><br>
+    <span class="info">→ CÓMO SE PLANIFICA &nbsp;</span> <span class="output">Pipeline de información y refinamiento</span><br>
+    <span class="info">→ CÓMO SE PRIORIZA &nbsp;&nbsp;</span> <span class="output">Matrices Go/No-Go estrictas</span><br>
+    <span class="info">→ CÓMO SE EJECUTA &nbsp;&nbsp;&nbsp;</span> <span class="output">Módulos estandarizados (Features/Fixes/Bugs)</span><br>
+    <span class="info">→ CÓMO SE ENTREGA &nbsp;&nbsp;&nbsp;</span> <span class="output">Scope cerrado y validación del cliente</span><br><br>
     <span class="prompt">bocaos $</span> <span class="cmd">status</span><br>
     <span class="success">● Sistema activo — Temporada 2026</span>
   </div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="context">
-  <span class="tag tag-blue">SYSTEM CONTEXT</span>
-  <h2>El terreno de juego</h2><div class="accent-line"></div>
-  <p class="big" style="color:var(--text);max-width:700px">Boca está migrando todos sus sistemas de venta de entradas y abonos. Un movimiento crítico en un ecosistema expuesto a ataques constantes de reventa.</p>
-  <div class="grid-3" style="margin-top:30px">
+  <span class="tag tag-blue">STRATEGY 2026</span>
+  <h2>El problema prioritario</h2><div class="accent-line"></div>
+  <p class="big" style="color:var(--text);max-width:800px">Bypass técnico de QueueIT mediante cookie, URLs directas y acceso sin token válido. Los socios legítimos reportan sistemáticamente no conseguir entradas.</p>
+  
+  <div class="grid-3" style="margin-top:24px">
     <div class="card">
-      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="16" fill="none" stroke="#fbbf24" stroke-width="2"/><path d="M18 6 L18 18 L26 22" stroke="#fbbf24" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
       <div class="metric"><div class="metric-value amber">60-70%</div><div class="metric-label">ventas en primeros 5 min</div></div>
-      <p class="small dim" style="text-align:center">Pico artificial, no demanda legítima</p>
+      <p class="small dim" style="text-align:center">Pico artificial, no refleja salida de fila</p>
     </div>
     <div class="card">
-      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="36" viewBox="0 0 36 36"><rect x="4" y="8" width="28" height="20" rx="3" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="18" cy="18" r="3" fill="none" stroke="#f87171" stroke-width="1.5"/><line x1="21" y1="15" x2="28" y2="8" stroke="#f87171" stroke-width="1.5"/></svg></div>
-      <div class="metric"><div class="metric-value red">&lt;2 min</div><div class="metric-label">tiempo promedio de compra</div></div>
-      <p class="small dim" style="text-align:center">Indica automatización (bots)</p>
+      <div class="metric"><div class="metric-value red">&lt;2 min</div><div class="metric-label">tiempo promedio compra</div></div>
+      <p class="small dim" style="text-align:center">Velocidad que indica automatización</p>
     </div>
     <div class="card">
-      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 3 L33 11 L33 23 Q33 35 18 37 Q3 35 3 23 L3 11 Z" fill="none" stroke="#f4c430" stroke-width="2"/><line x1="11" y1="20" x2="25" y2="20" stroke="#f4c430" stroke-width="2" stroke-dasharray="3 3"/></svg></div>
-      <div class="metric"><div class="metric-value gold">0%</div><div class="metric-label">visibilidad de transacciones</div></div>
-      <p class="small dim" style="text-align:center">No hay métricas end-to-end hoy</p>
+      <div class="metric"><div class="metric-value gold">P1 y P2</div><div class="metric-label">socios afectados</div></div>
+      <p class="small dim" style="text-align:center">Compite vs bots / falta de comunicación</p>
     </div>
   </div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="strategy">
-  <span class="tag tag-gold">KERNEL</span>
-  <h2>Cómo se <span class="gold">planifica</span></h2>
-  <p>El kernel define las reglas del sistema. Todo lo que entra al flujo pasa por este filtro.</p><div class="accent-line-wide"></div>
-  <div class="grid-2">
-    <div class="card-gold">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-        <svg width="28" height="32" viewBox="0 0 28 32"><path d="M14 1 L26 7 L26 19 Q26 29 14 31 Q2 29 2 19 L2 7 Z" fill="none" stroke="#f4c430" stroke-width="1.8"/><circle cx="14" cy="15" r="5" fill="none" stroke="#f4c430" stroke-width="1.5"/><circle cx="14" cy="15" r="1.5" fill="#f4c430"/></svg>
-        <h4 style="margin:0">Métrica Norte</h4>
-      </div>
-      <p style="color:var(--text);font-size:0.8em;font-weight:600">Distribución temporal de ventas en primeros 20 minutos</p>
-      <table style="margin-top:12px"><tr><td class="dim">Baseline</td><td class="red">~60-70% en 5 min</td></tr><tr><td class="dim">Target Q2</td><td class="amber">&lt;30% en 5 min</td></tr><tr><td class="dim">Target Q4</td><td class="green">&lt;25% en 5 min</td></tr></table>
-    </div>
-    <div class="card-blue">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-        <svg width="28" height="32" viewBox="0 0 28 32"><path d="M14 1 L26 7 L26 19 Q26 29 14 31 Q2 29 2 19 L2 7 Z" fill="none" stroke="#5b8fd9" stroke-width="1.8"/><path d="M9 16 L13 20 L20 11" stroke="#5b8fd9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-        <h4 style="margin:0">Problema Prioritario</h4>
-      </div>
-      <p style="color:var(--text);font-size:0.8em">Bypass técnico de QueueIT mediante cookie, URLs directas y acceso sin token válido.</p>
-      <div style="margin-top:12px"><p class="small"><span class="gold">P1:</span> <span class="mid">Socio activo sin filtro (mayoría de la base)</span></p><p class="small"><span class="gold">P2:</span> <span class="mid">Socio con filtro que necesita mejor comunicación</span></p></div>
-    </div>
+  <div class="card-blue" style="margin-top:16px; text-align:center;">
+    <p style="margin:0; font-size: 0.85em;"><span class="gold">Objetivo 2026:</span> Cerrar los vectores de bypass y lograr que las ventas reflejen el orden real de acceso de socios legítimos y no bots.</p>
   </div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="bets">
   <span class="tag tag-gold">KERNEL · APUESTAS</span>
-  <h2>3 hipótesis <span class="gold">core</span></h2><div class="accent-line"></div>
+  <h2>Las 3 apuestas core</h2>
+  <p>¿Qué creemos que va a mover la aguja?</p><div class="accent-line-wide"></div>
   <div class="grid-3">
     <div class="card-gold">
-      <div style="text-align:center;margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 3 L35 11 L35 25 Q35 37 20 39 Q5 37 5 25 L5 11 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><path d="M14 20 L14 14 Q14 11 20 11 Q26 11 26 14 L26 20 M11 20 L29 20 L29 30 L11 30 Z" fill="none" stroke="#f4c430" stroke-width="1.5"/></svg></div>
-      <h4 style="text-align:center">Cookie Binding</h4>
-      <p class="small mid">Si asociamos cookie ↔ socio_id de forma permanente, eliminamos el 80% del fraude por cookie.</p>
-      <div style="margin-top:12px"><p class="tiny"><span class="green">Validamos:</span> <span class="dim">cookies compartidas &lt;2%</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — ya implementado</span></p></div>
+      <h4 style="text-align:center">1. Cookie Binding</h4>
+      <p class="small mid">Si asociamos cookie ↔ socio_id, eliminaremos el 80% del fraude por cookie compartida.</p>
+      <ul class="clean-list" style="margin-top:10px;">
+        <li><span class="gold">›</span> Binding en primer login</li>
+        <li><span class="gold">›</span> Bloquear intentos re-uso</li>
+      </ul>
+      <div style="margin-top:12px"><p class="tiny"><span class="green">Target:</span> <span class="dim">cookies compartidas <2%</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — Ya implementado</span></p></div>
     </div>
     <div class="card-gold">
-      <div style="text-align:center;margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 3 L35 11 L35 25 Q35 37 20 39 Q5 37 5 25 L5 11 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><path d="M13 14 L27 14 M13 20 L27 20 M13 26 L27 26" stroke="#f4c430" stroke-width="1.5" stroke-linecap="round"/><path d="M17 11 L17 29" stroke="#f4c430" stroke-width="1.5" stroke-dasharray="2 2"/></svg></div>
-      <h4 style="text-align:center">Stepper Obligatorio</h4>
-      <p class="small mid">Si forzamos recorrer pasos secuenciales con tokens de sesión, eliminamos acceso directo a /checkout.</p>
-      <div style="margin-top:12px"><p class="tiny"><span class="green">Validamos:</span> <span class="dim">ventas 5min &lt;30%</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — implementar</span></p></div>
+      <h4 style="text-align:center">2. Stepper Obligatorio</h4>
+      <p class="small mid">Si forzamos pasos secuenciales, eliminaremos acceso directo a urls como /checkout.</p>
+      <ul class="clean-list" style="margin-top:10px;">
+        <li><span class="gold">›</span> State machine sever-side</li>
+        <li><span class="gold">›</span> Token invalida al saltar pasos</li>
+      </ul>
+      <div style="margin-top:12px"><p class="tiny"><span class="green">Target:</span> <span class="dim">ventas 5min <30%</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — Implementar y testear</span></p></div>
     </div>
     <div class="card-gold">
-      <div style="text-align:center;margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 3 L35 11 L35 25 Q35 37 20 39 Q5 37 5 25 L5 11 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><rect x="14" y="14" width="12" height="14" rx="2" fill="none" stroke="#f4c430" stroke-width="1.5"/><path d="M17 18 L23 18 M17 22 L21 22" stroke="#f4c430" stroke-width="1" stroke-linecap="round"/></svg></div>
-      <h4 style="text-align:center">Validación QueueIT</h4>
-      <p class="small mid">Si validamos que el token de QueueIT sea válido en TODOS los endpoints, cerramos bypass de fila.</p>
-      <div style="margin-top:12px"><p class="tiny"><span class="green">Validamos:</span> <span class="dim">correlación posición ↔ compra</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — implementar</span></p></div>
+      <h4 style="text-align:center">3. Validación QueueIT</h4>
+      <p class="small mid">Si validamos token en TODOS los endpoints críticos, cerramos bypass de fila.</p>
+      <ul class="clean-list" style="margin-top:10px;">
+        <li><span class="gold">›</span> Middleware validación global</li>
+        <li><span class="gold">›</span> Invalidar por inactividad</li>
+      </ul>
+      <div style="margin-top:12px"><p class="tiny"><span class="green">Target:</span> <span class="dim">Tokens inválidos detectados</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 — Implementar</span></p></div>
     </div>
   </div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="gonogo">
-  <span class="tag tag-gold">KERNEL · FILTRO</span>
+  <span class="tag tag-gold">PRIORIZACIÓN ESTRICTA</span>
   <h2>Matriz <span class="gold">Go / No-Go</span></h2>
-  <p>Toda propuesta pasa por este filtro antes de entrar al runtime.</p><div class="accent-line-wide"></div>
-  <table><thead><tr><th>Criterio</th><th><span class="green">GO</span></th><th><span class="amber">Condicional</span></th><th><span class="red">NO GO</span></th></tr></thead>
-  <tbody><tr><td style="color:var(--text);font-weight:600">Impacto anti-fraude</td><td>Reduce bypass directo</td><td>Impacto indirecto</td><td>Sin impacto claro</td></tr>
-  <tr><td style="color:var(--text);font-weight:600">Viabilidad operativa</td><td>Ecosistema actual (front+gw)</td><td>Ajustes acotados</td><td>Cambios estructurales</td></tr>
-  <tr><td style="color:var(--text);font-weight:600">Control de promesa</td><td>Boca controla end-to-end</td><td>Manejable con front y gw</td><td>Fuera de control</td></tr></tbody></table>
-  <div class="grid-2" style="margin-top:24px">
-    <div class="card-green"><h4 class="green">Qué SÍ hacer</h4><ul class="clean-list yes-list"><li>3 protecciones core (cookie, stepper, QueueIT)</li><li>Mejoras de seguridad contra reventa</li><li>Métricas end-to-end + reportería fraude</li><li>Mejoras de checkout (velocidad, menos errores)</li></ul></div>
-    <div class="card-red"><h4 class="red">Qué NO hacer</h4><ul class="clean-list no-list"><li>Features no relacionadas con seguridad</li><li>Cambios en backend de Boca</li><li>Bloquear socios automáticamente</li><li>Modificaciones gráficas sensibles</li></ul></div>
-  </div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="scheduler">
-  <span class="tag tag-gold">SCHEDULER</span>
-  <h2>Cómo se <span class="gold">refina</span></h2><p>El scheduler procesa cada input hasta que se convierte en trabajo ejecutable.</p><div class="accent-line-wide"></div>
-  <div class="terminal">
-    <span class="prompt">bocaos/scheduler $</span> <span class="cmd">pipeline --show</span><br><br>
-    <span class="info">[1] TRANSCRIPCIÓN</span> <span class="output">→ Meet se graba automáticamente</span><br>
-    <span class="info">[2] NOTION</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ PM procesa y estructura resumen</span><br>
-    <span class="info">[3] ENRIQUECIMIENTO</span> <span class="output">→ PM agrega brief + feedback + docs cliente</span><br>
-    <span class="info">[4] JIRA</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ PM carga tickets (devs NO tocan)</span><br>
-    <span class="info">[5] TASK REPORTING</span> <span class="output">→ Cliente ve avance en roadmap compartido</span><br><br>
-    <span class="prompt">bocaos/scheduler $</span> <span class="cmd">scope --status</span><br>
-    <span class="success">● Scope VIVO hasta functional walkthrough</span>
-  </div>
-  <div class="scope-bar"><div class="scope-segment vivo">Scope Vivo<span class="scope-sub">muta libremente</span></div><div class="scope-segment val">En Validación<span class="scope-sub">ajustes sí, features no</span></div><div class="scope-segment closed">Scope Cerrado<span class="scope-sub">cambios = nuevo ítem</span></div></div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="refis">
-  <span class="tag tag-gold">SCHEDULER · PROCESOS</span>
-  <h2>Doble refinamiento</h2><p>Cada funcionalidad nueva pasa por dos instancias de refinamiento.</p><div class="accent-line-wide"></div>
-  <div class="grid-2">
-    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="4" fill="rgba(91,143,217,0.1)" stroke="#5b8fd9" stroke-width="1.5"/><text x="20" y="24" text-anchor="middle" font-family="JetBrains Mono" font-size="14" fill="#5b8fd9">&lt;/&gt;</text></svg></div><h4>Refi Técnica Backend</h4><p class="mid">PM + Devs analizan dependencias, riesgos técnicos, complejidad y puntos de contacto con el ecosistema de Boca.</p><div style="margin-top:12px"><p class="tiny dim">INPUT: Transcripción + Brief</p><p class="tiny dim">OUTPUT: Resumen técnico en Notion</p></div></div>
-    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><circle cx="20" cy="20" r="6" fill="none" stroke="#f4c430" stroke-width="1.5"/><circle cx="20" cy="20" r="1.5" fill="#f4c430"/></svg></div><h4>Refi UX/UI</h4><p class="mid">PM + Design refinan la experiencia del socio. Escala con el tamaño de la iniciativa.</p><div style="margin-top:12px"><p class="tiny dim">INPUT: Resumen técnico + contexto usuario</p><p class="tiny dim">OUTPUT: Specs de diseño en Notion</p></div></div>
+  <p>Cómo decidimos qué entra al backlog para asegurar estabilidad y foco.</p><div class="accent-line-wide"></div>
+  <table><thead><tr><th>Criterio</th><th><span class="green">🟢 GO</span></th><th><span class="amber">🟡 Condicional</span></th><th><span class="red">🔴 NO GO</span></th></tr></thead>
+  <tbody><tr><td style="color:var(--text);font-weight:600">Impacto en anti-fraude</td><td>Reduce bypass o reventa directo</td><td>Impacto indirecto o a validar</td><td>Sin impacto claro</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">Viabilidad operativa</td><td>Ecosistema actual (front+gw)</td><td>Requiere ajustes acotados</td><td>Depende backend Boca</td></tr>
+  <tr><td style="color:var(--text);font-weight:600">Control de promesa</td><td>Boca controla end-to-end</td><td>Manejable front/gw</td><td>Fuera de control</td></tr></tbody></table>
+  
+  <div class="grid-2" style="margin-top:16px">
+    <div class="card-green"><h4 class="green">Qué SÍ hacer</h4><ul class="clean-list yes-list"><li>Las 3 protecciones core (cookie, stepper, queueit)</li><li>Mejoras de seguridad anti-reventa</li><li>Mejoras pago rápido/menos errores</li><li>Visibilidad end-to-end y reportes de fraude automáticos</li></ul></div>
+    <div class="card-red"><h4 class="red">Qué NO hacer</h4><ul class="clean-list no-list"><li>Nuevas features no vinculadas a seguridad</li><li>Tocar funciones que ya rinden bien</li><li>Modificar cupos, categorías o backend de Boca</li><li>Modificaciones gráficas memeables / bloqueos automáticos</li></ul></div>
   </div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="runtime">
-  <span class="tag tag-gold">RUNTIME</span>
-  <h2>Cómo se <span class="gold">ejecuta</span></h2><p>El runtime maneja 3 tipos de procesos en paralelo.</p><div class="accent-line-wide"></div>
+  <span class="tag tag-gold">EJECUCIÓN DEL EQUIPO</span>
+  <h2>Pipeline Modular: <span class="gold">La Máquina</span></h2>
+  <p>Así fluye el trabajo en la Vertical de Cuenta. Tres procesos estandarizados corriendo en paralelo para garantizar entregas ordenadas.</p><div class="accent-line-wide"></div>
+  
   <div class="grid-3">
-    <div class="card-gold"><div style="text-align:center;margin-bottom:10px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 2 L33 10 L33 24 Q33 36 18 38 Q3 36 3 24 L3 10 Z" fill="rgba(244,196,48,0.15)" stroke="#f4c430" stroke-width="1.5"/><path d="M12 18 L16 22 L24 14" stroke="#f4c430" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><h4 class="gold" style="text-align:center">Nuevas Funcionalidades</h4><p class="small mid" style="margin-bottom:12px">Brief → doble refi → planning → desarrollo → walkthrough → QA → cliente valida → deploy</p><p class="tiny dim" style="text-align:center">12 pasos · Scope vivo hasta testing</p></div>
-    <div class="card-green"><div style="text-align:center;margin-bottom:10px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 2 L33 10 L33 24 Q33 36 18 38 Q3 36 3 24 L3 10 Z" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.5"/><path d="M13 16 L23 16 M13 20 L23 20 M13 24 L19 24" stroke="#34d399" stroke-width="1.5" stroke-linecap="round"/></svg></div><h4 class="green" style="text-align:center">Fixes y Cambios Menores</h4><p class="small mid" style="margin-bottom:12px">Task reporting → refi → planning → ¿walkthrough? → QA → deploy rápido</p><p class="tiny dim" style="text-align:center">7 pasos · PM decide walkthrough</p></div>
-    <div class="card-red"><div style="text-align:center;margin-bottom:10px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 2 L33 10 L33 24 Q33 36 18 38 Q3 36 3 24 L3 10 Z" fill="rgba(248,113,113,0.1)" stroke="#f87171" stroke-width="1.5"/><circle cx="18" cy="17" r="4" fill="none" stroke="#f87171" stroke-width="1.5"/><line x1="18" y1="23" x2="18" y2="27" stroke="#f87171" stroke-width="2" stroke-linecap="round"/></svg></div><h4 class="red" style="text-align:center">Gestión de Bugs</h4><p class="small mid" style="margin-bottom:12px">Typeform → triage PM → priorizado/descartado → QA → deploy</p><p class="tiny dim" style="text-align:center">6 pasos · Bifurcación en triage</p></div>
+    
+    <div class="mod-flow-col">
+      <div class="mod-header features"><h4>Nuevas Funciones</h4></div>
+      <div class="module shared"><span class="module-icon">→</span><div class="module-content"><div class="module-name">Kickoff / Brief</div><div class="module-owner">PM + Account</div></div><div class="module-tools"><div class="tool-dot notion">N</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module go-nogo"><span class="module-icon">⊘</span><div class="module-content"><div class="module-name">Filtro Estrategia</div><div class="module-owner">Directiva Marco</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module"><span class="module-icon">⟨/⟩</span><div class="module-content"><div class="module-name">Refi Tech Backend</div><div class="module-owner">PM + Devs</div></div><div class="module-tools"><div class="tool-dot trans">T</div><div class="tool-dot notion">N</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module"><span class="module-icon">◎</span><div class="module-content"><div class="module-name">Refi UX/UI</div><div class="module-owner">PM + Design</div></div><div class="module-tools"><div class="tool-dot notion">N</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">⬡</span><div class="module-content"><div class="module-name">Carga Jira</div><div class="module-owner">Solo PM</div></div><div class="module-tools"><div class="tool-dot jira">J</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">▦</span><div class="module-content"><div class="module-name">Planning</div><div class="module-owner">PM + Equipo</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">⟨⟩</span><div class="module-content"><div class="module-name">Desarrollo</div><div class="module-owner">Devs + Design</div></div><div class="module-tools"><div class="tool-dot github">G</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module highlight"><span class="module-icon">⊡</span><div class="module-content"><div class="module-name">Walkthrough</div><div class="module-owner">PM + Equipo</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">✓</span><div class="module-content"><div class="module-name">QA Interno</div><div class="module-owner">Equipo</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module scope-closure"><span class="module-icon">◐</span><div class="module-content"><div class="module-name">Cliente Valida</div><div class="module-owner">Cierre de scope</div></div><div class="module-tools"><div class="tool-dot task">R</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">▲</span><div class="module-content"><div class="module-name">Deploy</div><div class="module-owner">Devs</div></div><div class="module-tools"><div class="tool-dot github">G</div></div></div>
+    </div>
+
+    <div class="mod-flow-col">
+      <div class="mod-header fixes"><h4>Fixes y Cambios Menores</h4></div>
+      <div class="module"><span class="module-icon">◧</span><div class="module-content"><div class="module-name">Task Reporting</div><div class="module-owner">PM / Cliente</div></div><div class="module-tools"><div class="tool-dot task">R</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module"><span class="module-icon">⟳</span><div class="module-content"><div class="module-name">Refinamiento Gen.</div><div class="module-owner">PM + Equipo</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">⬡</span><div class="module-content"><div class="module-name">Carga Jira</div><div class="module-owner">Solo PM</div></div><div class="module-tools"><div class="tool-dot jira">J</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">▦</span><div class="module-content"><div class="module-name">Planning</div><div class="module-owner">PM + Equipo</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module decision"><span class="module-icon">◇</span><div class="module-content"><div class="module-name">¿Walkthrough?</div><div class="module-owner">PM decide</div></div></div>
+      <div class="m-branch"><div class="m-branch-label yes">Sí</div><div class="m-branch-label no">No</div></div>
+      <div class="module shared"><span class="module-icon">✓</span><div class="module-content"><div class="module-name">QA</div><div class="module-owner">Equipo</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">▲</span><div class="module-content"><div class="module-name">Deploy Rápido</div><div class="module-owner">Devs</div></div></div>
+    </div>
+
+    <div class="mod-flow-col">
+      <div class="mod-header bugs"><h4>Gestión de Bugs</h4></div>
+      <div class="module"><span class="module-icon">⊕</span><div class="module-content"><div class="module-name">Reporte Typeform</div><div class="module-owner">Cliente / Equipo</div></div><div class="module-tools"><div class="tool-dot typeform">F</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module decision"><span class="module-icon">◇</span><div class="module-content"><div class="module-name">Bug Triage</div><div class="module-owner">PM clasifica</div></div></div>
+      <div class="m-branch"><div class="m-branch-label yes">Prio.</div><div class="m-branch-label no">Descart.</div></div>
+      <div class="module shared"><span class="module-icon">⬡</span><div class="module-content"><div class="module-name">Carga Jira</div><div class="module-owner">PM</div></div><div class="module-tools"><div class="tool-dot jira">J</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">✓</span><div class="module-content"><div class="module-name">QA</div><div class="module-owner">Equipo</div></div></div>
+      <div class="m-arrow">↓</div>
+      <div class="module shared"><span class="module-icon">▲</span><div class="module-content"><div class="module-name">Deploy</div><div class="module-owner">Devs</div></div><div class="module-tools"><div class="tool-dot github">G</div></div></div>
+    </div>
+
   </div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="flow">
-  <span class="tag tag-gold">RUNTIME · NUEVAS FUNCIONALIDADES</span>
-  <h2>El flujo completo</h2><div class="accent-line"></div>
-  <div class="flow"><div class="flow-step">Kickoff</div><span class="flow-arrow">→</span><div class="flow-step">Brief</div><span class="flow-arrow">→</span><div class="flow-step active">Go/No-Go</div><span class="flow-arrow">→</span><div class="flow-step">Refi Tech</div><span class="flow-arrow">→</span><div class="flow-step">Refi UX</div><span class="flow-arrow">→</span><div class="flow-step">Jira</div></div>
-  <div class="flow"><div class="flow-step">Planning</div><span class="flow-arrow">→</span><div class="flow-step">Desarrollo</div><span class="flow-arrow">→</span><div class="flow-step active">Walkthrough</div><span class="flow-arrow">→</span><div class="flow-step">QA Interno</div><span class="flow-arrow">→</span><div class="flow-step closure">Cliente Valida</div><span class="flow-arrow">→</span><div class="flow-step">Deploy</div></div>
-  <div class="grid-3" style="margin-top:24px"><div class="card" style="text-align:center"><p class="small"><span class="amber">●</span> <span class="amber mono">GO/NO-GO</span></p><p class="tiny dim">Filtro contra directiva marco</p></div><div class="card" style="text-align:center"><p class="small"><span class="gold">●</span> <span class="gold mono">WALKTHROUGH</span></p><p class="tiny dim">Scope entra en validación</p></div><div class="card" style="text-align:center"><p class="small"><span class="red">●</span> <span class="red mono">CLIENTE VALIDA</span></p><p class="tiny dim">Scope se cierra definitivamente</p></div></div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="release">
-  <span class="tag tag-gold">RELEASE</span>
-  <h2>Cómo se <span class="gold">entrega</span></h2><p>El release pipeline tiene 3 checkpoints antes de llegar al usuario final.</p><div class="accent-line-wide"></div>
-  <div class="grid-3">
-    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 4 L34 12 L34 24 Q34 34 20 36 Q6 34 6 24 L6 12 Z" fill="rgba(52,211,153,0.1)" stroke="#34d399" stroke-width="1.5"/><path d="M14 20 L18 24 L26 16" stroke="#34d399" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><h4>QA Interno</h4><p class="small mid">El equipo verifica criterios de aceptación antes de exponer al cliente.</p></div>
-    <div class="card" style="border-color:var(--red)"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 4 L34 12 L34 24 Q34 34 20 36 Q6 34 6 24 L6 12 Z" fill="rgba(248,113,113,0.1)" stroke="#f87171" stroke-width="1.5"/><rect x="14" y="14" width="12" height="12" rx="2" fill="none" stroke="#f87171" stroke-width="1.5"/><line x1="17" y1="17" x2="23" y2="23" stroke="#f87171" stroke-width="1.5"/><line x1="23" y1="17" x2="17" y2="23" stroke="#f87171" stroke-width="1.5"/></svg></div><h4>Cliente Valida <span class="tiny red">(SCOPE LOCK)</span></h4><p class="small mid">Software funcionando en testing. Scope se cierra. Ajustes menores, no features nuevas.</p></div>
-    <div class="card"><div style="margin-bottom:10px"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 4 L34 12 L34 24 Q34 34 20 36 Q6 34 6 24 L6 12 Z" fill="rgba(244,196,48,0.1)" stroke="#f4c430" stroke-width="1.5"/><path d="M15 24 L20 14 L25 24 Z" fill="none" stroke="#f4c430" stroke-width="1.5"/></svg></div><h4>Deploy a Producción</h4><p class="small mid">Deploy + release notes en Jira + comunicación al cliente vía Task Reporting.</p></div>
-  </div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="services">
-  <span class="tag tag-gold">SYSTEM SERVICES</span>
-  <h2>Stack de <span class="gold">herramientas</span></h2><div class="accent-line"></div>
-  <table><thead><tr><th>Servicio</th><th>Función en el OS</th><th>Quién opera</th></tr></thead><tbody>
-  <tr><td style="color:var(--text);font-weight:600">📄 Notion</td><td>Filesystem — estrategia, briefs, specs, resúmenes</td><td>PM escribe · Equipo consulta</td></tr>
-  <tr><td style="color:var(--text);font-weight:600">🎫 Jira</td><td>Process Manager — tickets + log de versiones</td><td>PM carga · Devs consultan</td></tr>
-  <tr><td style="color:var(--text);font-weight:600">🎙 Transcripción</td><td>Input Device — captura automática de meets</td><td>Automático</td></tr>
-  <tr><td style="color:var(--text);font-weight:600">📝 Typeform</td><td>Bug Reporter — reporte estructurado</td><td>Cliente / Equipo</td></tr>
-  <tr><td style="color:var(--text);font-weight:600">📊 Task Reporting</td><td>Display Server — roadmap compartido</td><td>PM actualiza · Cliente ve</td></tr>
-  <tr><td style="color:var(--text);font-weight:600">🔧 GitHub/CI</td><td>Compiler & Deployer — código + releases</td><td>Devs</td></tr></tbody></table>
 </section>
 
 <section data-background-color="#0a0c14" data-console="metrics">
-  <span class="tag tag-gold">SYSTEM METRICS</span>
-  <h2>Métricas de <span class="gold">éxito 2026</span></h2><div class="accent-line"></div>
-  <div class="grid-2">
-    <div><h3 style="font-size:1em">Detección de Bypass</h3><table><tr><td>Cookies compartidas</td><td class="green">&lt;2%</td></tr><tr><td>Intentos saltear stepper</td><td class="green">100% bloqueados</td></tr><tr><td>Requests sin QueueIT token</td><td class="green">100% bloqueados</td></tr></table></div>
-    <div><h3 style="font-size:1em">Performance Técnico</h3><table><tr><td>Sesiones sin error</td><td class="green">&gt;95%</td></tr><tr><td>Tiempo checkout</td><td class="green">3-5 min</td></tr><tr><td>Errores 5XX</td><td class="green">&lt;2%</td></tr></table></div>
-  </div>
-  <div class="grid-2" style="margin-top:20px">
-    <div><h3 style="font-size:1em">Experiencia del Socio</h3><table><tr><td>Tickets soporte</td><td class="green">-30%</td></tr><tr><td>Visibilidad transacciones</td><td class="green">100%</td></tr></table></div>
-    <div><h3 style="font-size:1em">Distribución de Ventas</h3><table><tr><td>Baseline</td><td class="red">60-70% en 5 min</td></tr><tr><td>Target Q2</td><td class="amber">&lt;30%</td></tr><tr><td>Target Q4</td><td class="green">&lt;25%</td></tr></table></div>
-  </div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="loops">
-  <span class="tag tag-gold">SYSTEM LOOPS</span>
-  <h2>Feedback <span class="gold">loops</span></h2><p>BocaOS no es lineal. Cada ciclo alimenta al siguiente.</p><div class="accent-line-wide"></div>
-  <div class="grid-2">
-    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Métricas → Estrategia</h4></div><p class="small mid">Cada release valida o invalida apuestas. Las métricas ajustan prioridades.</p></div>
-    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Bug patterns → Backlog</h4></div><p class="small mid">Patrones recurrentes repriorización automáticamente el backlog.</p></div>
-    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Cliente → Roadmap</h4></div><p class="small mid">Feedback en testing ajusta foco de próximas iniciativas.</p></div>
-    <div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4 A10 10 0 1 1 4 14" fill="none" stroke="#a78bfa" stroke-width="2"/><path d="M4 8 L4 14 L10 14" fill="none" stroke="#a78bfa" stroke-width="2"/></svg><h4 style="margin:0">Eventos → Aprendizaje</h4></div><p class="small mid">Cada partido es un test en producción. Datos alimentan la estrategia.</p></div>
-  </div>
+  <span class="tag tag-gold">VALIDACIÓN</span>
+  <h2>Métricas de <span class="gold">Éxito</span></h2>
+  <p>Al final del año, el sistema es exitoso si logramos estos cambios.</p><div class="accent-line-wide"></div>
+  
+  <table>
+    <thead><tr><th>Métrica</th><th>Baseline (Hoy)</th><th>Target Q4 2026</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--text);font-weight:600">Ventas en primeros 5min</td><td class="red">~60-70%</td><td class="green">&lt;25% ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Cookies compartidas</td><td class="dim">No medible</td><td class="green">&lt;1% ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Bypass de stepper</td><td class="red">No detectados</td><td class="green">100% bloqueados ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Requests sin QueueIT válido</td><td class="red">No validados</td><td class="green">100% bloqueados ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Distribución temporal</td><td class="red">Pico concentrado</td><td class="green">Curva homogénea ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Tiempo prom. hasta compra</td><td class="red">&lt;2min (bots)</td><td class="green">3-5min (humano) ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Visibilidad transacciones</td><td class="red">0%</td><td class="green">100% ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Errores técnicos (front/gw)</td><td class="dim">Sin baseline</td><td class="green">&lt;3% ✅</td></tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="title-slide" data-background-color="#0a0c14" data-console="end">
@@ -274,14 +297,15 @@
     <path d="M40 10 L66 22 L66 50 Q66 72 40 80 Q14 72 14 50 L14 22 Z" fill="#002b5c" stroke="#f4c430" stroke-width="1" opacity="0.6"/>
     <text x="40" y="52" text-anchor="middle" font-family="Silkscreen,monospace" font-size="20" fill="#f4c430" font-weight="700">OS</text>
   </svg>
-  <div class="win98-title" style="font-size:3.6em"><span class="gold">Boca</span><span style="color:var(--text-dim)">OS</span><span style="display:block;font-size:0.35em;color:var(--text-dim);font-family:'VT323',monospace;font-weight:400;margin-top:8px">sistema operativo</span></div>
-  <div class="terminal" style="max-width:500px;text-align:left;margin-top:24px">
-    <span class="prompt">bocaos $</span> <span class="cmd">summary --2026</span><br><br>
-    <span class="success">✓ Kernel cargado (estrategia definida)</span><br>
-    <span class="success">✓ 3 apuestas core en ejecución</span><br>
-    <span class="success">✓ Pipeline de información conectado</span><br>
-    <span class="success">✓ Métricas end-to-end en implementación</span><br>
-    <span class="info">→ Próximo evento: validación en producción</span>
+  <div class="win98-title" style="font-size:3.6em"><span class="gold">Boca</span><span style="color:var(--text-dim)">OS</span></div>
+  
+  <div class="terminal" style="max-width:560px;text-align:left;margin-top:24px">
+    <span class="prompt">bocaos $</span> <span class="cmd">system --audit</span><br><br>
+    <span class="success">✓ +3 AÑOS LARGO PLAZO: Evolución demostrable</span><br>
+    <span class="success">✓ SISTEMA OPERATIVO: Cómo se define, planifica y prioriza</span><br>
+    <span class="success">✓ CALIDAD Y ESTABILIDAD: Releases ordenados y limpios</span><br>
+    <span class="success">✓ ENTREGA DE VALOR: El scope se cierra con software real</span><br>
+    <span class="info">→ Ready for 2026 deploy</span>
   </div>
   <div class="version-tag" style="margin-top:20px">paisanos · 2026</div>
 </section>
@@ -295,7 +319,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
 <script>
-const CONSOLE_MESSAGES={boot:[{text:"bocaos v2026.1 — booting...",cls:"gold"},{text:"loading kernel modules...",cls:"loading"},{text:"✓ shield_auth initialized",cls:"success"}],kernel:[{text:"✓ core_functions loaded [4]",cls:"success"},{text:"→ mounting KERNEL...",cls:"info"},{text:"→ mounting SCHEDULER...",cls:"info"},{text:"→ mounting RUNTIME...",cls:"info"},{text:"→ mounting RELEASE...",cls:"info"},{text:"✓ all systems nominal",cls:"success"}],context:[{text:"scanning match_day environment...",cls:"loading"},{text:"⚠ anomaly: 60-70% ventas en 5min",cls:"warn"},{text:"⚠ checkout_time < 2min — bot pattern",cls:"warn"},{text:"✗ visibility_layer: not found",cls:"warn"},{text:"→ initiating anti-fraud protocols",cls:"info"}],strategy:[{text:"✓ kernel.strategy loaded",cls:"success"},{text:"→ north_star: venta_distribution_20min",cls:"info"},{text:"→ target Q2: <30% | Q4: <25%",cls:"info"},{text:"✓ priorities bound to kernel",cls:"success"}],bets:[{text:"loading bet_modules...",cls:"loading"},{text:"✓ cookie_binding.so — deployed Q1",cls:"success"},{text:"→ stepper_enforcement.so — compiling",cls:"info"},{text:"→ queueit_validation.so — compiling",cls:"info"},{text:"✓ 3 hypotheses registered",cls:"success"}],gonogo:[{text:"✓ go_nogo_matrix loaded",cls:"success"},{text:"→ filter: impact × viability × control",cls:"info"},{text:"✓ whitelist: 6 ops | blacklist: 8 ops",cls:"success"}],scheduler:[{text:"✓ scheduler.pipeline connected",cls:"success"},{text:"→ transcription_svc: online",cls:"info"},{text:"→ notion_fs: mounted /docs",cls:"info"},{text:"→ jira_pm: write (PM only)",cls:"info"},{text:"→ task_reporting: client display on",cls:"info"},{text:"✓ scope_tracker: LIVE",cls:"success"}],refis:[{text:"→ refi_backend.process spawned",cls:"info"},{text:"→ refi_ux.process spawned",cls:"info"},{text:"✓ dual refinement ready",cls:"success"},{text:"→ scaling: adjusts to init size",cls:"loading"}],runtime:[{text:"✓ runtime.features — 12 steps",cls:"success"},{text:"✓ runtime.fixes — 7 steps",cls:"success"},{text:"✓ runtime.bugs — 6 steps",cls:"success"},{text:"→ 3 parallel processes running",cls:"info"}],flow:[{text:"→ tracing features flow...",cls:"loading"},{text:"✓ checkpoint: GO/NO-GO [3]",cls:"success"},{text:"✓ checkpoint: WALKTHROUGH [9]",cls:"success"},{text:"⊘ SCOPE_LOCK: client validates [11]",cls:"warn"},{text:"✓ pipeline mapped",cls:"success"}],release:[{text:"→ release: 3 checkpoints set",cls:"info"},{text:"✓ qa_internal: pre-client gate",cls:"success"},{text:"⊘ client_validation: scope lock",cls:"warn"},{text:"✓ deploy: jira+github+reporting",cls:"success"}],services:[{text:"✓ notion_fs: ready",cls:"success"},{text:"✓ jira_pm: ready",cls:"success"},{text:"✓ transcription: ready",cls:"success"},{text:"✓ typeform: ready",cls:"success"},{text:"✓ task_reporting: ready",cls:"success"},{text:"✓ github_ci: ready",cls:"success"},{text:"→ 6 services operational",cls:"info"}],metrics:[{text:"→ loading metrics dashboard...",cls:"loading"},{text:"✓ bypass_detection: 3 KPIs",cls:"success"},{text:"✓ performance: 3 KPIs",cls:"success"},{text:"✓ experience: 2 KPIs",cls:"success"},{text:"→ 11 metrics monitored",cls:"info"}],loops:[{text:"✓ loop: metrics → strategy",cls:"success"},{text:"✓ loop: bugs → backlog",cls:"success"},{text:"✓ loop: client → roadmap",cls:"success"},{text:"✓ loop: match_day → learning",cls:"success"},{text:"→ system is self-correcting",cls:"info"}],end:[{text:"═══════════════════════════════",cls:"gold"},{text:"BocaOS v2026.1 — all operational",cls:"success"},{text:"kernel ✓ | scheduler ✓ | runtime ✓ | release ✓",cls:"info"},{text:"→ awaiting next match_day event...",cls:"loading"},{text:"═══════════════════════════════",cls:"gold"}]};
+const CONSOLE_MESSAGES={
+  boot:[{text:"bocaos v2026.1 — booting...",cls:"gold"},{text:"loading kernel modules...",cls:"loading"},{text:"✓ system stability optimized",cls:"success"}],
+  kernel:[{text:"✓ core_functions loaded",cls:"success"},{text:"→ process: team efficiency... 100%",cls:"info"},{text:"✓ all systems nominal",cls:"success"}],
+  context:[{text:"scanning queue_it logs...",cls:"loading"},{text:"⚠ anomaly: 60-70% ventas en 5min",cls:"warn"},{text:"⚠ checkout_time < 2min — bot pattern",cls:"warn"}],
+  bets:[{text:"loading anti-fraud bets...",cls:"loading"},{text:"✓ cookie_binding.so — deployed",cls:"success"},{text:"→ stepper_enforcement.so — compiling",cls:"info"},{text:"→ queueit_validation.so — compiling",cls:"info"}],
+  gonogo:[{text:"✓ go_nogo_matrix loaded",cls:"success"},{text:"→ filtering backlog items...",cls:"info"},{text:"✗ backend mods rejected",cls:"red"}],
+  runtime:[{text:"✓ runtime.features — mounting",cls:"success"},{text:"✓ runtime.fixes — mounting",cls:"success"},{text:"✓ runtime.bugs — mounting",cls:"success"},{text:"→ pipeline synchronized",cls:"info"}],
+  metrics:[{text:"→ loading success metrics...",cls:"loading"},{text:"✓ goal: temporal distribution < 25%",cls:"success"},{text:"✓ goal: visibility 100%",cls:"success"}],
+  end:[{text:"═══════════════════════════════",cls:"gold"},{text:"BocaOS v2026.1 — all operational",cls:"success"},{text:"→ 3 years continuous uptime...",cls:"info"},{text:"═══════════════════════════════",cls:"gold"}]
+};
 let allAdded=new Set();const cl=document.getElementById("console-lines");
 function addMsgs(key){const msgs=CONSOLE_MESSAGES[key];if(!msgs)return;msgs.forEach((m,i)=>{if(allAdded.has(m.text))return;allAdded.add(m.text);setTimeout(()=>{const el=document.createElement("span");el.className="console-line "+m.cls;el.textContent=m.text;cl.appendChild(el);requestAnimationFrame(()=>el.classList.add("visible"));cl.scrollLeft=cl.scrollWidth},i*250)})}
 Reveal.initialize({hash:true,controls:false,progress:true,center:false,transition:"fade",transitionSpeed:"default",backgroundTransition:"fade",width:1280,height:720,margin:0.02});
