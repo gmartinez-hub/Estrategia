@@ -12,44 +12,43 @@
   :root{--boca-blue:#002b5c;--boca-gold:#f4c430;--surface:#0a0c14;--surface-light:#121626;--text:#e8eaf0;--text-mid:#8a8ea4;--text-dim:#4a4e64;--green:#34d399;--red:#f87171;--amber:#fbbf24;--purple:#a78bfa;--cyan:#22d3ee}
   
   .reveal{font-family:'Outfit',sans-serif;color:var(--text)}.reveal .slides{text-align:left}
-  /* Padding ajustado para que la consola no tape el texto */
   .reveal .slides section{padding:28px 50px 80px 50px; box-sizing: border-box;}
   
   .reveal h1,.reveal h2,.reveal h3{font-family:'Outfit',sans-serif;font-weight:800;text-transform:none;letter-spacing:-0.02em}
   .reveal h1{font-size:2.8em;line-height:1.05}.reveal h2{font-size:1.8em;line-height:1.1;margin-bottom:0.3em}.reveal h3{font-size:1.2em;color:var(--boca-gold)}
-  .reveal p,.reveal li{font-size:0.78em;line-height:1.6;color:var(--text-mid)}.reveal .slide-background{background:var(--surface)}
+  .reveal p,.reveal li{font-size:0.75em;line-height:1.6;color:var(--text-mid)}.reveal .slide-background{background:var(--surface)}
   
   .mono{font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.04em}
   .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.12em;padding:4px 12px;border-radius:4px;margin-bottom:16px}
   .tag-gold{background:var(--boca-gold);color:var(--boca-blue)}.tag-blue{background:var(--boca-blue);color:var(--boca-gold);border:1px solid var(--boca-gold)}
   
   .gold{color:var(--boca-gold)}.blue{color:#5b8fd9}.green{color:var(--green)}.red{color:var(--red)}.amber{color:var(--amber)}.purple{color:var(--purple)}.cyan{color:var(--cyan)}.dim{color:var(--text-dim)}.mid{color:var(--text-mid)}
-  .big{font-size:1.2em; color:var(--text)}.small{font-size:0.75em}.tiny{font-size:0.6em}
+  .big{font-size:1.1em; color:var(--text)}.small{font-size:0.75em}.tiny{font-size:0.6em}
   
   .accent-line{width:60px;height:4px;background:var(--boca-gold);margin:12px 0;border-radius:2px}
   .accent-line-wide{width:100%;height:2px;background:linear-gradient(90deg,var(--boca-gold),transparent);margin:14px 0}
   
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
   .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
   
-  .card{background:var(--surface-light);border:1px solid #1e2236;border-radius:10px;padding:14px}
-  .card-gold{background:rgba(244,196,48,0.06);border:1px solid rgba(244,196,48,0.2);border-radius:10px;padding:14px}
-  .card-blue{background:rgba(0,43,92,0.3);border:1px solid rgba(91,143,217,0.2);border-radius:10px;padding:14px}
-  .card-green{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:14px}
-  .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:14px}
-  .card h4{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.9em;margin:0 0 8px 0;color:var(--text)}.card p,.card li{font-size:0.72em;margin:0}
+  .card{background:var(--surface-light);border:1px solid #1e2236;border-radius:10px;padding:18px}
+  .card-gold{background:rgba(244,196,48,0.06);border:1px solid rgba(244,196,48,0.2);border-radius:10px;padding:18px}
+  .card-blue{background:rgba(0,43,92,0.3);border:1px solid rgba(91,143,217,0.2);border-radius:10px;padding:18px}
+  .card-green{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:18px}
+  .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:10px;padding:18px}
+  .card h4{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.95em;margin:0 0 10px 0;color:var(--text)}.card p,.card li{font-size:0.75em;margin:0}
   
-  .terminal{background:#0d0f18;border:1px solid #1e2236;border-radius:10px;padding:14px 18px;font-family:'JetBrains Mono',monospace;font-size:0.58em;line-height:1.7;margin:10px 0}
+  .terminal{background:#0d0f18;border:1px solid #1e2236;border-radius:10px;padding:16px 20px;font-family:'JetBrains Mono',monospace;font-size:0.6em;line-height:1.7;margin:10px 0}
   .terminal .prompt{color:var(--boca-gold)}.terminal .cmd{color:var(--text)}.terminal .output{color:var(--text-dim)}.terminal .success{color:var(--green)}.terminal .error{color:var(--red)}.terminal .info{color:var(--cyan)}
   
   .metric{text-align:center;padding:10px}.metric-value{font-family:'Outfit',sans-serif;font-weight:800;font-size:2em;line-height:1}
   .metric-label{font-family:'JetBrains Mono',monospace;font-size:0.55em;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin-top:6px}
   
-  .reveal table{font-size:0.6em;border-collapse:collapse;width:100%;margin:10px 0}
-  .reveal table th{font-family:'JetBrains Mono',monospace;font-size:0.85em;text-transform:uppercase;letter-spacing:0.06em;color:var(--boca-gold);border-bottom:2px solid var(--boca-gold);padding:6px 10px;text-align:left}
-  .reveal table td{padding:6px 10px;border-bottom:1px solid #1e2236;color:var(--text-mid)}
+  .reveal table{font-size:0.65em;border-collapse:collapse;width:100%;margin:10px 0}
+  .reveal table th{font-family:'JetBrains Mono',monospace;font-size:0.85em;text-transform:uppercase;letter-spacing:0.06em;color:var(--boca-gold);border-bottom:2px solid var(--boca-gold);padding:8px 10px;text-align:left}
+  .reveal table td{padding:8px 10px;border-bottom:1px solid #1e2236;color:var(--text-mid)}
   
-  .clean-list{list-style:none;padding:0;margin:8px 0}.clean-list li{padding:4px 0;font-size:0.72em;border-bottom:1px solid #1a1e30}.clean-list li:last-child{border-bottom:none}
+  .clean-list{list-style:none;padding:0;margin:8px 0}.clean-list li{padding:6px 0;font-size:0.75em;border-bottom:1px solid #1a1e30; line-height: 1.4}.clean-list li:last-child{border-bottom:none}
   .yes-list li::before{content:'[+] ';color:var(--green);font-weight:700;font-family:'JetBrains Mono',monospace}
   .no-list li::before{content:'[-] ';color:var(--red);font-weight:700;font-family:'JetBrains Mono',monospace}
   
@@ -66,21 +65,38 @@
   #boot-console .console-line.visible{opacity:1}
   #boot-console .console-line.success{color:var(--green)}#boot-console .console-line.info{color:var(--cyan)}#boot-console .console-line.warn{color:var(--amber)}#boot-console .console-line.loading{color:var(--text-dim)}#boot-console .console-line.gold{color:var(--boca-gold)}
 
-  /* CSS para el Framework Modular text-only */
-  .mod-col { display: flex; flex-direction: column; gap: 4px; }
-  .mod-header { text-align: center; margin-bottom: 8px; border-bottom: 1px solid #1e2236; padding-bottom: 6px; }
-  .mod-header h4 { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; color: var(--text); }
-  .mod-box { background: var(--surface-light); border: 1px solid #1e2236; border-radius: 4px; padding: 6px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .mod-box.hi { border-color: var(--boca-gold); background: rgba(244,196,48,0.05); }
-  .mod-box.clo { border-color: var(--red); background: rgba(248,113,113,0.05); }
-  .mod-box.dec { border: 1px dashed var(--amber); background: rgba(251,191,36,0.05); }
-  .mod-title { font-family: 'Outfit', sans-serif; font-size: 0.65em; font-weight: 600; color: var(--text); line-height: 1.1; }
-  .mod-sub { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-dim); text-transform: uppercase; }
-  .mod-arrow { text-align: center; color: var(--text-dim); font-size: 0.7em; line-height: 1; margin: -2px 0; }
-  .mod-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 0; }
-  .mod-branch div { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; text-align: center; padding: 2px; border: 1px solid #1e2236; border-radius: 2px; color: var(--text-mid); }
+  /* --- MODULAR FRAMEWORK CSS (ADAPTADO AL DARK THEME DE BOCA) --- */
+  .module { display: flex; align-items: center; gap: 10px; padding: 6px 12px; background: #0d0f18; border: 1px solid #1e2236; border-radius: 6px; margin-bottom: 2px; position: relative; }
+  .module.highlight { border-color: rgba(244,196,48,0.4); background: rgba(244,196,48,0.05); }
+  .module.shared { border-left: 3px solid var(--text-dim); }
+  .module.scope-closure { border: 1px solid var(--red); background: rgba(248,113,113,0.05); }
+  .module.decision { background: rgba(251,191,36,0.05); border: 1px dashed var(--amber); border-radius: 0; }
+  .module.go-nogo { background: rgba(248,113,113,0.05); border: 1px solid rgba(248,113,113,0.3); }
+
+  .module-icon { font-size: 1.1em; flex-shrink: 0; width: 24px; text-align: center; color: var(--text-mid); font-family: 'JetBrains Mono', monospace; }
+  .module-content { flex: 1; min-width: 0; display:flex; flex-direction:column; justify-content:center;}
+  .module-name { font-size: 0.65em; font-weight: 600; color: var(--text); line-height: 1.2; }
+  .module-owner { font-size: 0.5em; font-family: 'JetBrains Mono', monospace; color: var(--text-dim); text-transform:uppercase; margin-top:2px; }
   
-  .reveal ul,.reveal ol{margin-left:0}.reveal ul li,.reveal ol li{margin-bottom:4px}.reveal .slides section .fragment.visible{opacity:1}
+  .module-tools { display: flex; gap: 4px; flex-shrink: 0; }
+  .tool-dot { width: 18px; height: 18px; border-radius: 3px; font-size: 9px; font-weight: 700; font-family: 'JetBrains Mono', monospace; display: flex; align-items: center; justify-content: center; color: #fff; }
+  .tool-dot.notion { background: #333; }
+  .tool-dot.jira { background: #2563eb; }
+  .tool-dot.trans { background: #7c5cbf; }
+  .tool-dot.typeform { background: #06b6d4; }
+  .tool-dot.task { background: #d97706; }
+  .tool-dot.github { background: #555; }
+
+  .arrow { text-align: center; color: #1e2236; font-size: 0.8em; font-family: 'JetBrains Mono', monospace; margin: 0; line-height: 1.2; }
+
+  .branch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 2px 0; }
+  .branch-label { font-size: 0.5em; font-family: 'JetBrains Mono', monospace; text-align: center; padding: 4px 6px; border-radius: 4px; border: 1px solid #1e2236;}
+  .branch-label.yes { color: var(--green); background: rgba(52,211,153,0.05); }
+  .branch-label.no { color: var(--red); background: rgba(248,113,113,0.05); }
+
+  .scalable-tag { font-size: 0.45em; font-family: 'JetBrains Mono', monospace; color: var(--amber); background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); border-radius: 3px; padding: 2px 4px; flex-shrink: 0; }
+
+  .reveal ul,.reveal ol{margin-left:0}.reveal ul li,.reveal ol li{margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -102,114 +118,105 @@
 </section>
 
 <section data-background-color="#0a0c14" data-console="context">
-  <span class="tag tag-blue">CONTEXTO 2026</span>
+  <span class="tag tag-blue">FASE 1 · CONTEXTO 2026</span>
   <h2>El problema prioritario</h2><div class="accent-line"></div>
   <p class="big">Bypass técnico de QueueIT mediante cookie, URLs directas y acceso sin token válido. Los socios legítimos reportan no conseguir entradas sistemáticamente.</p>
   
   <div class="grid-3" style="margin-top:30px">
     <div class="card">
-      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="16" fill="none" stroke="#fbbf24" stroke-width="2"/><path d="M18 6 L18 18 L26 22" stroke="#fbbf24" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
       <div class="metric"><div class="metric-value amber">60-70%</div><div class="metric-label">ventas en primeros 5 min</div></div>
-      <p class="small dim" style="text-align:center">Pico artificial, no refleja salida real</p>
+      <p class="small dim" style="text-align:center; margin-top:8px;">Pico artificial, no refleja salida real de fila</p>
     </div>
     <div class="card">
-      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="36" viewBox="0 0 36 36"><rect x="4" y="8" width="28" height="20" rx="3" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="18" cy="18" r="3" fill="none" stroke="#f87171" stroke-width="1.5"/><line x1="21" y1="15" x2="28" y2="8" stroke="#f87171" stroke-width="1.5"/></svg></div>
       <div class="metric"><div class="metric-value red">&lt;2 min</div><div class="metric-label">tiempo promedio compra</div></div>
-      <p class="small dim" style="text-align:center">Indica automatización (bots)</p>
+      <p class="small dim" style="text-align:center; margin-top:8px;">Velocidad que indica automatización (bots)</p>
     </div>
     <div class="card">
-      <div style="text-align:center;margin-bottom:8px"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 3 L33 11 L33 23 Q33 35 18 37 Q3 35 3 23 L3 11 Z" fill="none" stroke="#f4c430" stroke-width="2"/><line x1="11" y1="20" x2="25" y2="20" stroke="#f4c430" stroke-width="2" stroke-dasharray="3 3"/></svg></div>
       <div class="metric"><div class="metric-value gold">0%</div><div class="metric-label">visibilidad end-to-end</div></div>
-      <p class="small dim" style="text-align:center">Sin métricas de transacciones hoy</p>
+      <p class="small dim" style="text-align:center; margin-top:8px;">No existen métricas de transacciones hoy</p>
     </div>
   </div>
   
   <div style="margin-top:20px">
-    <p class="small"><span class="gold">Prioridad 1:</span> Socio activo sin filtro de asistencia que compite contra bots.<br>
+    <p class="small"><span class="cyan">Para quién resolvemos:</span><br>
+    <span class="gold">Prioridad 1:</span> Socio activo sin filtro de asistencia que compite contra bots.<br>
     <span class="gold">Prioridad 2:</span> Socio con filtro que necesita mejor comunicación.</p>
   </div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="strategy">
-  <span class="tag tag-gold">ESTRATEGIA</span>
-  <h2>Métrica Norte</h2><div class="accent-line"></div>
-  <p class="big">Cerrar los vectores de bypass de QueueIT y lograr que las ventas reflejen el orden real de acceso de socios legítimos y no bots.</p>
+  <span class="tag tag-gold">FASE 2 · ESTRATEGIA</span>
+  <h2>Norte y 3 Apuestas Core</h2>
+  <div class="accent-line"></div>
+  <p class="big"><strong>Objetivo:</strong> Cerrar los vectores de bypass de QueueIT y lograr que las ventas reflejen el orden real de acceso de socios legítimos.</p>
   
-  <div class="card-gold" style="margin-top:20px; text-align:center;">
-    <h4 style="margin-bottom:12px;">Distribución temporal de ventas en primeros 20 minutos</h4>
-    <div class="grid-3" style="margin-top:0;">
-      <div><p class="small dim">Baseline actual</p><p class="big red">~60-70% <span style="font-size:0.6em">en 5min</span></p></div>
-      <div><p class="small dim">Target Q2</p><p class="big amber">&lt;30% <span style="font-size:0.6em">en 5min</span></p></div>
-      <div><p class="small dim">Target Q4</p><p class="big green">&lt;25% <span style="font-size:0.6em">en 5min</span></p></div>
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card-gold">
+      <h4 style="text-align:center">1. Cookie Binding</h4>
+      <p class="small mid">Asociar cookie ↔ socio_id para eliminar 80% del fraude por cookies compartidas.</p>
+      <div style="margin-top:12px">
+        <p class="tiny"><span class="green">Target:</span> <span class="dim">&lt;2% compartidas</span></p>
+        <p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 - Implementado</span></p>
+      </div>
     </div>
-  </div>
-</section>
-
-<section data-background-color="#0a0c14" data-console="bets">
-  <span class="tag tag-gold">ESTRATEGIA · APUESTAS</span>
-  <h2>3 hipótesis core</h2>
-  <p>¿Qué creemos que va a mover la aguja de la Métrica Norte?</p><div class="accent-line-wide"></div>
-  
-  <div class="grid-3">
-    <div class="card">
-      <h4 class="gold">1. Cookie Binding</h4>
-      <p class="small mid">Si asociamos cookie ↔ socio_id, eliminaremos el 80% del fraude por compartir cookies.</p>
-      <ul class="clean-list">
-        <li class="dim">[+] Binding en primer login</li>
-        <li class="dim">[+] Validar en requests críticos</li>
-      </ul>
-      <div style="margin-top:12px"><p class="tiny"><span class="green">Target:</span> <span class="dim">&lt;2% compartidas</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 - Implementado</span></p></div>
+    <div class="card-gold">
+      <h4 style="text-align:center">2. Stepper Obligatorio</h4>
+      <p class="small mid">Forzar pasos secuenciales para eliminar acceso directo a URLs de checkout.</p>
+      <div style="margin-top:12px">
+        <p class="tiny"><span class="green">Target:</span> <span class="dim">Ventas 5min &lt;30%</span></p>
+        <p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 - Testear</span></p>
+      </div>
     </div>
-    <div class="card">
-      <h4 class="gold">2. Stepper Obligatorio</h4>
-      <p class="small mid">Si forzamos pasos secuenciales, eliminaremos el acceso directo a URLs de checkout.</p>
-      <ul class="clean-list">
-        <li class="dim">[+] State machine server-side</li>
-        <li class="dim">[+] Token invalida al saltar</li>
-      </ul>
-      <div style="margin-top:12px"><p class="tiny"><span class="green">Target:</span> <span class="dim">Ventas 5min &lt;30%</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 - Testear</span></p></div>
-    </div>
-    <div class="card">
-      <h4 class="gold">3. Validación QueueIT</h4>
-      <p class="small mid">Si validamos el token en TODOS los endpoints, cerramos bypass de fila.</p>
-      <ul class="clean-list">
-        <li class="dim">[+] Middleware global</li>
-        <li class="dim">[+] Invalidar por inactividad</li>
-      </ul>
-      <div style="margin-top:12px"><p class="tiny"><span class="green">Target:</span> <span class="dim">100% inválidos bloqueados</span></p><p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 - Implementar</span></p></div>
+    <div class="card-gold">
+      <h4 style="text-align:center">3. Validación QueueIT</h4>
+      <p class="small mid">Validar token en TODOS los endpoints para cerrar el bypass de fila.</p>
+      <div style="margin-top:12px">
+        <p class="tiny"><span class="green">Target:</span> <span class="dim">100% tokens bloqueados</span></p>
+        <p class="tiny"><span class="amber">Timeline:</span> <span class="dim">Q1 - Implementar</span></p>
+      </div>
     </div>
   </div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="gonogo">
-  <span class="tag tag-gold">PRIORIZACIÓN</span>
+  <span class="tag tag-gold">FASE 3 · PRIORIZACIÓN</span>
   <h2>Matriz Go / No-Go</h2>
   <p>Filtro estricto para decidir si una propuesta avanza o se descarta.</p><div class="accent-line-wide"></div>
   
   <table>
-    <thead><tr><th>Criterio</th><th><span class="green">GO</span></th><th><span class="amber">Condicional</span></th><th><span class="red">NO GO</span></th></tr></thead>
+    <thead><tr><th>Criterio</th><th><span class="green">🟢 GO</span></th><th><span class="amber">🟡 Condicional</span></th><th><span class="red">🔴 NO GO</span></th></tr></thead>
     <tbody>
       <tr><td style="color:var(--text);font-weight:600">Impacto anti-fraude</td><td>Reduce bypass directamente</td><td>Impacto indirecto a validar</td><td>Sin impacto claro</td></tr>
       <tr><td style="color:var(--text);font-weight:600">Viabilidad operativa</td><td>Se ejecuta en front/gateway</td><td>Ajustes acotados</td><td>Depende backend Boca</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Control promesa</td><td>Boca controla end-to-end</td><td>Manejable front/gw</td><td>Fuera de control</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Control de promesa</td><td>Boca controla end-to-end</td><td>Manejable front/gw</td><td>Fuera de control</td></tr>
     </tbody>
   </table>
+</section>
+
+<section data-background-color="#0a0c14" data-console="rules">
+  <span class="tag tag-gold">FASE 3 · REGLAS DE EJECUCIÓN</span>
+  <h2>Límites explícitos</h2>
+  <div class="accent-line-wide"></div>
   
-  <div class="grid-2" style="margin-top:16px">
+  <div class="grid-2" style="margin-top:20px">
     <div class="card-green">
-      <h4 class="green">Qué SÍ hacer</h4>
+      <h4 class="green">QUÉ SÍ HACER</h4>
       <ul class="clean-list yes-list">
-        <li>Las 3 protecciones core</li>
-        <li>Seguridad contra reventa</li>
-        <li>Checkout rápido / menos errores</li>
+        <li>Implementar las 3 protecciones core</li>
+        <li>Mejoras de seguridad contra reventa</li>
+        <li>Mejoras pago rápido / menos errores</li>
+        <li>Claridad sobre accesos o gestiones</li>
         <li>Métricas end-to-end (visibilidad 100%)</li>
+        <li>Reportería automática de fraude</li>
       </ul>
     </div>
     <div class="card-red">
-      <h4 class="red">Qué NO hacer</h4>
+      <h4 class="red">QUÉ NO HACER</h4>
       <ul class="clean-list no-list">
-        <li>Features ajenas a seguridad</li>
-        <li>Modificar backend o cupos de Boca</li>
+        <li>Features ajenas a seguridad/anti-fraude</li>
+        <li>Tocar funciones que ya rinden bien</li>
+        <li>Modificar cupos, categorías o backend</li>
+        <li>Integración profunda con backend Boca</li>
         <li>Cambios gráficos memeables</li>
         <li>Bloquear socios automáticamente</li>
       </ul>
@@ -217,102 +224,185 @@
   </div>
 </section>
 
-<section data-background-color="#0a0c14" data-console="os">
-  <span class="tag tag-gold">EL SISTEMA</span>
-  <h2>Pipeline de información</h2>
-  <p>Cómo fluye la estrategia hacia la ejecución técnica.</p><div class="accent-line-wide"></div>
+<section data-background-color="#0a0c14" data-console="scheduler">
+  <span class="tag tag-blue">FASE 4 · SISTEMA</span>
+  <h2>Pipeline de Herramientas</h2>
+  <p>Cómo fluye la información antes de entrar al módulo de desarrollo.</p><div class="accent-line-wide"></div>
   
   <div class="terminal">
-    <span class="prompt">bocaos/pipeline $</span> <span class="cmd">trace --path</span><br><br>
+    <span class="prompt">bocaos/pipeline $</span> <span class="cmd">trace --tools</span><br><br>
     <span class="info">[1] TRANSCRIPCIÓN</span> <span class="output">Meet se graba automáticamente</span><br>
-    <span class="info">[2] NOTION</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PM procesa y estructura resumen de estrategia</span><br>
+    <span class="info">[2] NOTION</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PM procesa y estructura el resumen</span><br>
     <span class="info">[3] ENRIQUECIMIENTO</span> <span class="output">PM agrega brief, feedback y matriz Go/No-Go</span><br>
-    <span class="info">[4] JIRA</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PM carga tickets (Devs no tocan)</span><br>
+    <span class="info">[4] JIRA</span> <span class="output">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PM carga tickets (Devs NO tocan)</span><br>
     <span class="info">[5] TASK REPORTING</span> <span class="output">Cliente ve avance en roadmap en vivo</span><br><br>
     <span class="prompt">bocaos/pipeline $</span> <span class="cmd">status</span><br>
     <span class="success">Pipeline nominal. Ready para ejecución modular.</span>
   </div>
 </section>
 
-<section data-background-color="#0a0c14" data-console="modular">
-  <span class="tag tag-gold">EJECUCIÓN</span>
-  <h2>Vertical de Cuenta</h2>
-  <p>Flujos estandarizados para un proyecto de largo plazo.</p><div class="accent-line-wide"></div>
+<section data-background-color="#0a0c14" data-console="modular1">
+  <span class="tag tag-gold">FASE 4 · EJECUCIÓN (VERTICAL CUENTA)</span>
+  <h2>Módulo: <span class="gold">Nuevas Funcionalidades</span></h2>
+  <p>El flujo estándar para iniciativas de largo plazo.</p><div class="accent-line-wide"></div>
   
-  <div class="grid-3">
-    <div class="mod-col">
-      <div class="mod-header"><h4 style="color:var(--boca-gold)">Nuevas Funciones</h4></div>
-      <div class="mod-box"><div><div class="mod-title">Kickoff / Brief</div><div class="mod-sub">PM + Account</div></div><div class="mod-sub">Notion</div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box dec"><div><div class="mod-title">Filtro Estrategia</div><div class="mod-sub">Go / No-Go</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Refi Tech</div><div class="mod-sub">PM + Devs</div></div><div class="mod-sub">Docs</div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Refi UX/UI</div><div class="mod-sub">PM + Design</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Carga Tickets</div><div class="mod-sub">Solo PM</div></div><div class="mod-sub">Jira</div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Planning</div><div class="mod-sub">Equipo</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Desarrollo</div><div class="mod-sub">Devs</div></div><div class="mod-sub">Git</div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box hi"><div><div class="mod-title">Walkthrough</div><div class="mod-sub">Validación Interna</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">QA</div><div class="mod-sub">Equipo</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box clo"><div><div class="mod-title">Cliente Valida</div><div class="mod-sub">Scope Cerrado</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Deploy</div><div class="mod-sub">Producción</div></div></div>
+  <div class="grid-2" style="max-width: 900px; margin: 0 auto; gap: 30px;">
+    <div>
+      <div class="module shared">
+        <span class="module-icon">→</span><div class="module-content"><div class="module-name">Kickoff / Handoff</div><div class="module-owner">PM + Account</div></div>
+        <div class="module-tools"><div class="tool-dot notion">N</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module shared">
+        <span class="module-icon">◉</span><div class="module-content"><div class="module-name">Product Brief / Inception</div><div class="module-owner">PM</div></div>
+        <div class="module-tools"><div class="tool-dot notion">N</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module go-nogo">
+        <span class="module-icon">⊘</span><div class="module-content"><div class="module-name">¿Pasa filtro estrategia?</div><div class="module-owner">Directiva marco</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">⟨/⟩</span><div class="module-content"><div class="module-name">Refi Técnica Backend</div><div class="module-owner">PM + Devs</div></div>
+        <div class="module-tools"><div class="tool-dot trans">T</div><div class="tool-dot notion">N</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">◎</span><div class="module-content"><div class="module-name">Refi UX/UI</div><div class="module-owner">PM + Design</div></div>
+        <div class="module-tools"><div class="tool-dot trans">T</div><div class="tool-dot notion">N</div></div><span class="scalable-tag">~tam</span>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module shared">
+        <span class="module-icon">⬡</span><div class="module-content"><div class="module-name">PM carga Jira</div><div class="module-owner">Solo PM escribe</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div><div class="tool-dot notion">N</div></div>
+      </div>
     </div>
 
-    <div class="mod-col">
-      <div class="mod-header"><h4 style="color:var(--green)">Fixes y Cambios</h4></div>
-      <div class="mod-box"><div><div class="mod-title">Task Reporting</div><div class="mod-sub">PM / Cliente</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Refinamiento</div><div class="mod-sub">General</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Carga Tickets</div><div class="mod-sub">Solo PM</div></div><div class="mod-sub">Jira</div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Planning</div><div class="mod-sub">Equipo</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box dec"><div><div class="mod-title">¿Walkthrough?</div><div class="mod-sub">Decisión PM</div></div></div>
-      <div class="mod-branch"><div>SÍ</div><div>NO</div></div>
-      <div class="mod-box"><div><div class="mod-title">QA</div><div class="mod-sub">Equipo</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Deploy Rápido</div><div class="mod-sub">Producción</div></div></div>
+    <div>
+      <div class="module shared">
+        <span class="module-icon">▦</span><div class="module-content"><div class="module-name">Planning</div><div class="module-owner">PM + Equipo</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module shared">
+        <span class="module-icon">⟨⟩</span><div class="module-content"><div class="module-name">Desarrollo</div><div class="module-owner">Devs + Design</div></div>
+        <div class="module-tools"><div class="tool-dot github">G</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module highlight">
+        <span class="module-icon">⊡</span><div class="module-content"><div class="module-name">Functional Walkthrough</div><div class="module-owner">PM + Equipo</div></div>
+        <div class="module-tools"><div class="tool-dot notion">N</div></div><span class="scalable-tag">~tam</span>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module shared">
+        <span class="module-icon">✓</span><div class="module-content"><div class="module-name">QA Interno</div><div class="module-owner">Equipo</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module scope-closure">
+        <span class="module-icon">◐</span><div class="module-content"><div class="module-name">Cliente Valida (Cierre Scope)</div><div class="module-owner">PM + Cliente</div></div>
+        <div class="module-tools"><div class="tool-dot task">R</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module shared">
+        <span class="module-icon">▲</span><div class="module-content"><div class="module-name">Deploy</div><div class="module-owner">Devs</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div><div class="tool-dot github">G</div><div class="tool-dot task">R</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">◈</span><div class="module-content"><div class="module-name">Check Métricas</div><div class="module-owner">Feedback loop</div></div>
+        <div class="module-tools"><div class="tool-dot notion">N</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-background-color="#0a0c14" data-console="modular2">
+  <span class="tag tag-gold">FASE 4 · EJECUCIÓN (VERTICAL CUENTA)</span>
+  <h2>Módulos: <span class="green">Fixes</span> y <span class="red">Bugs</span></h2>
+  <div class="accent-line-wide"></div>
+  
+  <div class="grid-2" style="max-width: 900px; margin: 0 auto; gap: 40px;">
+    <div>
+      <h4 class="green" style="text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.7em; letter-spacing:0.1em; margin-bottom:12px;">FIXES Y CAMBIOS MENORES</h4>
+      <div class="module">
+        <span class="module-icon">◧</span><div class="module-content"><div class="module-name">Task Reporting</div><div class="module-owner">PM / Cliente identifica</div></div>
+        <div class="module-tools"><div class="tool-dot task">R</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">⟳</span><div class="module-content"><div class="module-name">Refinamiento General</div><div class="module-owner">PM + Equipo</div></div>
+        <div class="module-tools"><div class="tool-dot trans">T</div><div class="tool-dot notion">N</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">⬡</span><div class="module-content"><div class="module-name">PM carga Jira</div><div class="module-owner">Solo PM</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">▦</span><div class="module-content"><div class="module-name">Planning</div><div class="module-owner">PM + Equipo</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module decision">
+        <span class="module-icon">◇</span><div class="module-content"><div class="module-name">¿Requiere Walkthrough?</div><div class="module-owner">PM decide</div></div>
+      </div>
+      <div class="branch"><div class="branch-label yes">Sí → WT</div><div class="branch-label no">No → QA</div></div>
+      <div class="module">
+        <span class="module-icon">✓</span><div class="module-content"><div class="module-name">QA</div><div class="module-owner">Equipo</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">▲</span><div class="module-content"><div class="module-name">Deploy Rápido</div><div class="module-owner">Devs</div></div>
+      </div>
     </div>
 
-    <div class="mod-col">
-      <div class="mod-header"><h4 style="color:var(--red)">Gestión de Bugs</h4></div>
-      <div class="mod-box"><div><div class="mod-title">Reporte Error</div><div class="mod-sub">Typeform</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box dec"><div><div class="mod-title">Bug Triage</div><div class="mod-sub">Clasificación</div></div></div>
-      <div class="mod-branch"><div>PRIOR.</div><div>DESCART.</div></div>
-      <div class="mod-box"><div><div class="mod-title">Carga Tickets</div><div class="mod-sub">PM</div></div><div class="mod-sub">Jira</div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">QA</div><div class="mod-sub">Equipo</div></div></div>
-      <div class="mod-arrow">↓</div>
-      <div class="mod-box"><div><div class="mod-title">Deploy</div><div class="mod-sub">Producción</div></div></div>
+    <div>
+      <h4 class="red" style="text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.7em; letter-spacing:0.1em; margin-bottom:12px;">GESTIÓN DE BUGS</h4>
+      <div class="module">
+        <span class="module-icon">⊕</span><div class="module-content"><div class="module-name">Reporte Typeform</div><div class="module-owner">Cliente / Equipo</div></div>
+        <div class="module-tools"><div class="tool-dot typeform">F</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module decision">
+        <span class="module-icon">◇</span><div class="module-content"><div class="module-name">Bug Triage</div><div class="module-owner">PM clasifica</div></div>
+        <div class="module-tools"><div class="tool-dot notion">N</div></div>
+      </div>
+      <div class="branch"><div class="branch-label yes">Prio →</div><div class="branch-label no">Desc → Fin</div></div>
+      <div class="module">
+        <span class="module-icon">⬡</span><div class="module-content"><div class="module-name">Carga en Jira</div><div class="module-owner">PM</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">✓</span><div class="module-content"><div class="module-name">QA</div><div class="module-owner">Equipo</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="module">
+        <span class="module-icon">▲</span><div class="module-content"><div class="module-name">Deploy</div><div class="module-owner">Devs</div></div>
+        <div class="module-tools"><div class="tool-dot jira">J</div><div class="tool-dot github">G</div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section data-background-color="#0a0c14" data-console="metrics">
-  <span class="tag tag-gold">VALIDACIÓN</span>
+  <span class="tag tag-gold">FASE 5 · RESULTADOS</span>
   <h2>Métricas de Éxito Comparativas</h2>
   <p>Al final de 2026, el proyecto es exitoso si logramos estos cambios en la plataforma.</p><div class="accent-line-wide"></div>
   
   <table>
     <thead><tr><th>Métrica</th><th>Baseline (Hoy)</th><th>Target Q4 2026</th></tr></thead>
     <tbody>
-      <tr><td style="color:var(--text);font-weight:600">Ventas en primeros 5min</td><td class="red">~60-70%</td><td class="green">&lt;25% [ OK ]</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Cookies compartidas</td><td class="dim">No medible</td><td class="green">&lt;1% [ OK ]</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Intentos de bypass stepper</td><td class="red">No detectados</td><td class="green">100% bloqueados [ OK ]</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Requests sin QueueIT válido</td><td class="red">No validados</td><td class="green">100% bloqueados [ OK ]</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Distribución temporal</td><td class="red">Pico concentrado</td><td class="green">Curva homogénea [ OK ]</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Tiempo prom. hasta compra</td><td class="red">&lt;2min (bots)</td><td class="green">3-5min (humano) [ OK ]</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Visibilidad de transacciones</td><td class="red">0%</td><td class="green">100% [ OK ]</td></tr>
-      <tr><td style="color:var(--text);font-weight:600">Errores técnicos (front/gw)</td><td class="dim">Sin baseline</td><td class="green">&lt;3% [ OK ]</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Ventas en primeros 5min</td><td class="red">~60-70%</td><td class="green">&lt;25% ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Cookies compartidas detectadas</td><td class="dim">No medible</td><td class="green">&lt;1% ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Intentos de bypass stepper</td><td class="red">No detectados</td><td class="green">100% bloqueados ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Requests sin QueueIT válido</td><td class="red">No validados</td><td class="green">100% bloqueados ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Distribución temporal</td><td class="red">Pico concentrado</td><td class="green">Curva homogénea ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Tiempo prom. hasta compra</td><td class="red">&lt;2min (bots)</td><td class="green">3-5min (humano) ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Visibilidad de transacciones</td><td class="red">0%</td><td class="green">100% ✅</td></tr>
+      <tr><td style="color:var(--text);font-weight:600">Errores técnicos (front/gw)</td><td class="dim">Sin baseline</td><td class="green">&lt;3% ✅</td></tr>
     </tbody>
   </table>
 </section>
@@ -323,7 +413,7 @@
   <div class="accent-line"></div>
   <p class="big">Este caso representa más de tres años de trabajo continuo en la misma plataforma.</p>
   <div class="card" style="margin-top:24px;">
-    <p class="mid">La persistencia en el tiempo permite mostrar una <strong>evolución real</strong> de un producto, pasando de la construcción inicial a la optimización, seguridad y resiliencia en un ecosistema bajo ataque constante de reventa.</p>
+    <p class="mid">La persistencia en el tiempo nos permite mostrar una <strong>evolución real</strong> de un producto, pasando de la construcción inicial a la optimización, seguridad y resiliencia en un ecosistema que sufre ataques constantes de reventa.</p>
   </div>
 </section>
 
@@ -331,7 +421,7 @@
   <span class="tag tag-blue">CONCLUSIÓN 2</span>
   <h2>Un equipo bien <span class="gold">aceitado</span></h2>
   <div class="accent-line"></div>
-  <p class="big">BocaOS es la demostración de nuestro sistema operativo interno. Hace un año se trabajó en la eficiencia, y hoy este caso muestra el resultado.</p>
+  <p class="big">BocaOS es la demostración en vivo de nuestro sistema operativo interno. Hace un año trabajamos fuerte en la eficiencia, y hoy vemos el resultado.</p>
   <div class="grid-2" style="margin-top:20px;">
     <ul class="clean-list yes-list">
       <li>Cómo se define el cliente (P1 vs P2)</li>
@@ -340,7 +430,7 @@
     </ul>
     <ul class="clean-list yes-list">
       <li>Cómo se ejecuta el trabajo diario</li>
-      <li>Cómo se documenta todo proceso</li>
+      <li>Cómo se conecta la info (Herramientas)</li>
       <li>Cómo se entrega valor al socio</li>
     </ul>
   </div>
@@ -354,11 +444,11 @@
   <div class="grid-2" style="margin-top:24px;">
     <div class="card-green">
       <h4 class="green">Releases Ordenados</h4>
-      <p class="small">El scope se cierra cuando el cliente valida software funcionando. Deploy predecible.</p>
+      <p class="small">El scope se cierra (Scope Lock) cuando el cliente valida software funcionando. El deploy es predecible.</p>
     </div>
     <div class="card-green">
       <h4 class="green">Reducción de Bugs</h4>
-      <p class="small">Mejoras constantes en seguridad y estabilidad, llevando el producto al mínimo margen de error.</p>
+      <p class="small">Mejoras constantes en seguridad y estabilidad, llevando el producto al mínimo margen de error en producción.</p>
     </div>
   </div>
 </section>
@@ -394,9 +484,11 @@ const CONSOLE_MESSAGES={
   context:[{text:"scanning queue_it logs...",cls:"loading"},{text:"⚠ anomaly: 60-70% ventas en 5min",cls:"warn"},{text:"⚠ checkout_time < 2min — bot pattern",cls:"warn"}],
   strategy:[{text:"→ target set: distribution < 25%",cls:"info"},{text:"✓ baseline recorded",cls:"success"}],
   bets:[{text:"loading anti-fraud bets...",cls:"loading"},{text:"✓ cookie_binding — deployed",cls:"success"},{text:"→ stepper_enforcement — compiling",cls:"info"},{text:"→ queueit_validation — compiling",cls:"info"}],
-  gonogo:[{text:"✓ go_nogo_matrix loaded",cls:"success"},{text:"→ filtering backlog items...",cls:"info"},{text:"[-] backend mods rejected",cls:"red"}],
-  os:[{text:"→ mounting pipeline...",cls:"info"},{text:"✓ information flow synchronized",cls:"success"}],
-  modular:[{text:"✓ runtime.features — loaded",cls:"success"},{text:"✓ runtime.fixes — loaded",cls:"success"},{text:"✓ runtime.bugs — loaded",cls:"success"},{text:"→ parallel processing active",cls:"info"}],
+  gonogo:[{text:"✓ go_nogo_matrix loaded",cls:"success"},{text:"→ filtering backlog items...",cls:"info"}],
+  rules:[{text:"[-] backend mods rejected",cls:"red"},{text:"[+] core protections approved",cls:"success"}],
+  scheduler:[{text:"→ mounting pipeline...",cls:"info"},{text:"✓ information flow synchronized",cls:"success"}],
+  modular1:[{text:"✓ runtime.features — loaded",cls:"success"},{text:"→ executing 13 step flow...",cls:"loading"}],
+  modular2:[{text:"✓ runtime.fixes — loaded",cls:"success"},{text:"✓ runtime.bugs — loaded",cls:"success"},{text:"→ parallel processing active",cls:"info"}],
   metrics:[{text:"→ loading success metrics...",cls:"loading"},{text:"✓ goal: temporal distribution < 25%",cls:"success"},{text:"✓ goal: visibility 100%",cls:"success"}],
   close1:[{text:"→ project uptime: 3+ years",cls:"info"},{text:"✓ long-term evolution active",cls:"success"}],
   close2:[{text:"→ running team_efficiency.sh",cls:"info"},{text:"✓ operation: well-oiled",cls:"success"}],
