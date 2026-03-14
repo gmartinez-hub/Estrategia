@@ -116,6 +116,19 @@
 #con .ln{white-space:nowrap;opacity:0;transition:opacity 0.3s;flex-shrink:0}
 #con .ln.v{opacity:1}
 #con .ln.s{color:var(--grn)}#con .ln.i{color:var(--cyn)}#con .ln.w{color:var(--amb)}#con .ln.l{color:var(--tx3)}#con .ln.g{color:var(--gd)}
+
+/* CONCLUSION TOOLTIPS */
+.conc-tooltip{position:absolute;width:220px;background:rgba(20,24,34,0.88);backdrop-filter:blur(20px);border-radius:10px;border:1px solid rgba(244,196,48,0.15);cursor:pointer;transition:all 0.3s ease;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.conc-tooltip:hover{border-color:rgba(244,196,48,0.4);box-shadow:0 4px 20px rgba(244,196,48,0.1)}
+.conc-header{display:flex;align-items:center;gap:6px;padding:10px 12px;font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;color:#fff}
+.conc-badge{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--gd);background:rgba(244,196,48,0.15);padding:2px 6px;border-radius:3px}
+.conc-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,0.55);line-height:1.6}
+.conc-tooltip.open .conc-body{max-height:120px;padding:0 12px 10px}
+.conc-tooltip.open{border-color:var(--gd);background:rgba(20,24,34,0.95)}
+@keyframes notifSlide{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.conc-tooltip:nth-child(1){animation:notifSlide 0.4s 0.3s both}
+.conc-tooltip:nth-child(2){animation:notifSlide 0.4s 0.6s both}
+.conc-tooltip:nth-child(3){animation:notifSlide 0.4s 0.9s both}
 </style>
 </head>
 <body>
@@ -125,7 +138,6 @@
 <section class="title-slide" data-background-color="#000000" data-console="post">
   <div style="font-family:'VT323',monospace;font-size:14px;color:#aaa;text-align:left;max-width:600px;line-height:2">
     <span style="color:var(--gd);font-family:'Silkscreen',monospace">BocaOS</span> BIOS v2026.1<br>
-    Copyright (C) Paisanos Digital<br>
     <br>
     <span style="color:#fff">CPU:</span> Strategy Core @ 3 Hypotheses<br>
     <span style="color:#fff">RAM:</span> Features Pipeline 12-step<br>
@@ -171,7 +183,7 @@
   <div class="bios">
     <div class="bios-header">
       <span>BocaOS BIOS SETUP UTILITY v2026.1</span>
-      <span style="font-weight:400;font-size:12px">Paisanos Digital</span>
+      <span style="font-weight:400;font-size:12px">v2026.1</span>
     </div>
     <div class="bios-body">
       <div class="bios-nav">
@@ -182,12 +194,11 @@
         <a href="#/fixes" class="bios-item"><span class="bios-key">[F5]</span> Fixes y Cambios</a>
         <a href="#/bugs" class="bios-item"><span class="bios-key">[F6]</span> Gestión de Bugs</a>
         <a href="#/loops" class="bios-item"><span class="bios-key">[F7]</span> Feedback Loops</a>
-        <a href="#/leyenda" class="bios-item"><span class="bios-key">[F8]</span> Leyenda del Sistema</a>
-        <a href="#/metricas" class="bios-item"><span class="bios-key">[F9]</span> Métricas 2026</a>
+        <a href="#/metricas" class="bios-item"><span class="bios-key">[F8]</span> Métricas 2026</a>
         <a href="#/desktop" class="bios-item" style="margin-top:8px;border-top:1px solid #555;padding-top:10px"><span class="bios-key">[F12]</span> Iniciar BocaOS Desktop</a>
       </div>
       <div class="bios-detail">
-        <p class="wh" style="font-size:15px;font-weight:700">▸ Sistema Operativo del Equipo de Producto</p>
+        <p class="wh" style="font-size:15px;font-weight:700">▸ BocaOS — Sistema Operativo</p>
         <p>El framework que gobierna cómo Paisanos planifica, refina, ejecuta y entrega el ecosistema digital de <span class="hl">Boca Juniors</span>.</p>
         <p style="margin-top:12px"><span class="hl">KERNEL:</span> Estrategia anti-fraude 2026</p>
         <p><span class="hl">SCHEDULER:</span> Pipeline refi → Jira</p>
@@ -299,35 +310,9 @@
   </div>
 </section>
 
-<!-- ══════════ LEYENDA ══════════ -->
-<section id="leyenda" data-background-color="#080a10" data-console="leg">
-  <div class="hdr"><span class="tag" style="background:rgba(34,211,238,0.1);color:var(--cyn);border:1px solid var(--cyn)">F8 · LEYENDA</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Framework del Sistema</h2><div class="accent"></div>
-  <div class="grid-2">
-    <div class="card">
-      <h4 class="cyn">Tipos de Módulos</h4>
-      <div class="step" style="margin-bottom:5px"><h5>Estándar</h5><p>Proceso regular</p></div>
-      <div class="step hi" style="margin-bottom:5px"><h5>Validación</h5><p>Hito crítico</p></div>
-      <div class="step lock" style="margin-bottom:5px"><h5>Scope Lock</h5><p>Cierre definitivo</p></div>
-      <div class="step dec"><h5>Bifurcación</h5><p>Punto de decisión</p></div>
-    </div>
-    <div class="card">
-      <h4 class="cyn">Herramientas</h4>
-      <ul class="clean-list">
-        <li><span class="gold">Notion</span> — Docs vivos</li>
-        <li><span class="gold">Jira</span> — Tickets (PM only)</li>
-        <li><span class="gold">Transcripción</span> — Input meets</li>
-        <li><span class="gold">Typeform</span> — Bug reports</li>
-        <li><span class="gold">Task Reporting</span> — Vista cliente</li>
-        <li><span class="gold">GitHub/CI</span> — Deploy</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════ MÉTRICAS ══════════ -->
 <section id="metricas" data-background-color="#080a10" data-console="met">
-  <div class="hdr"><span class="tag">F9 · MÉTRICAS</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
+  <div class="hdr"><span class="tag">F8 · MÉTRICAS</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
   <h2>Resultados 2026</h2><div class="accent"></div>
   <table><thead><tr><th>Métrica</th><th>Baseline</th><th>Target</th></tr></thead><tbody>
   <tr><td style="color:var(--tx);font-weight:600">Ventas 5min</td><td class="red">60-70%</td><td class="grn">&lt;25%</td></tr>
@@ -397,29 +382,38 @@
         <div class="mac-icn" style="background:linear-gradient(135deg,#fbbf24,#d97706)">◈</div>
         <div class="mac-lbl">Métricas</div>
       </a>
-      <a href="#/leyenda" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#64748b,#334155)">?</div>
-        <div class="mac-lbl">Leyenda</div>
-      </a>
       <a href="#/bios" class="mac-icon">
         <div class="mac-icn" style="background:linear-gradient(135deg,#000080,#0000c0);border:1px solid #4444aa;font-size:10px;color:#aaa">BIOS</div>
         <div class="mac-lbl">Setup</div>
       </a>
     </div>
 
-    <!-- NOTIFICATION -->
-    <div class="mac-notif">
-      <div class="mac-notif-title">
-        <svg width="12" height="14" viewBox="0 0 80 90"><path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="var(--gd)" stroke="none"/></svg>
-        BocaOS · Sistema
+    <!-- CONCLUSION TOOLTIPS -->
+    <div class="conc-tooltip" id="conc1" style="top:34px;right:12px" onclick="this.classList.toggle('open')">
+      <div class="conc-header">
+        <svg width="10" height="12" viewBox="0 0 80 90"><path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="var(--gd)" stroke="none"/></svg>
+        <span>Proyecto de largo plazo</span>
+        <span class="conc-badge">1/3</span>
       </div>
-      <div class="mac-notif-body">
-        ✓ Todos los módulos operativos<br>
-        ✓ Kernel: estrategia cargada<br>
-        ✓ Anti-fraude: 3 apuestas activas<br>
-        ✓ Pipeline: conectado<br>
-        → Listo para operar
+      <div class="conc-body">Más de tres años de trabajo continuo en la misma plataforma. De construcción inicial a optimización profunda y seguridad de grado militar en un ecosistema bajo ataque constante.</div>
+    </div>
+
+    <div class="conc-tooltip" id="conc2" style="top:130px;right:12px" onclick="this.classList.toggle('open')">
+      <div class="conc-header">
+        <svg width="10" height="12" viewBox="0 0 80 90"><path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="var(--gd)" stroke="none"/></svg>
+        <span>Framework operativo real</span>
+        <span class="conc-badge">2/3</span>
       </div>
+      <div class="conc-body">Prioridades claras, matrices de descarte, ejecución modular paralela, trazabilidad de herramientas y entrega de valor concreta y medible. No es teoría, está funcionando.</div>
+    </div>
+
+    <div class="conc-tooltip" id="conc3" style="top:226px;right:12px" onclick="this.classList.toggle('open')">
+      <div class="conc-header">
+        <svg width="10" height="12" viewBox="0 0 80 90"><path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="var(--gd)" stroke="none"/></svg>
+        <span>Calidad y estabilidad</span>
+        <span class="conc-badge">3/3</span>
+      </div>
+      <div class="conc-body">El scope se cierra cuando el cliente valida software funcionando. El deploy deja de ser emergencia y pasa a ser predecible. Dobles refinamientos llevan al mínimo margen de error.</div>
     </div>
 
     <!-- DOCK -->
@@ -445,7 +439,7 @@
 const M={
 post:[{t:"POST: checking hardware...",c:"l"},{t:"✓ all components detected",c:"s"}],
 boot2:[{t:"loading shield_auth...",c:"l"},{t:"✓ kernel ready",c:"s"},{t:"✓ scheduler ready",c:"s"},{t:"✓ runtime ready",c:"s"},{t:"✓ release ready",c:"s"},{t:"✓ anti-fraud: 3 modules",c:"s"},{t:"✓ metrics: 7 KPIs",c:"s"}],
-bios:[{t:"entering BIOS setup...",c:"g"},{t:"✓ 9 system functions available",c:"s"},{t:"→ select function to configure",c:"i"}],
+bios:[{t:"entering BIOS setup...",c:"g"},{t:"✓ 8 system functions available",c:"s"},{t:"→ select function to configure",c:"i"}],
 strat:[{t:"F1: strategy core loaded",c:"i"},{t:"target: distribution < 25%",c:"s"}],
 gng:[{t:"F2: go/nogo matrix active",c:"i"},{t:"whitelist: 6 | blacklist: 8",c:"s"}],
 pipe:[{t:"F3: pipeline connected",c:"i"},{t:"→ transcription → notion → jira",c:"s"}],
@@ -453,8 +447,7 @@ feat:[{t:"F4: features pipeline mapped",c:"i"},{t:"✓ 12 steps, 3 phases",c:"s"
 fix:[{t:"F5: fixes path ready",c:"i"},{t:"✓ 7 steps, agile deploy",c:"s"}],
 bug:[{t:"F6: bug triage active",c:"i"},{t:"→ typeform → triage → fix",c:"s"}],
 loop:[{t:"F7: feedback loops x4",c:"i"},{t:"✓ self-correcting system",c:"s"}],
-leg:[{t:"F8: framework syntax loaded",c:"i"},{t:"✓ legend ready",c:"s"}],
-met:[{t:"F9: metrics dashboard",c:"i"},{t:"✓ 7 KPIs tracked",c:"s"}],
+met:[{t:"F8: metrics dashboard",c:"i"},{t:"✓ 7 KPIs tracked",c:"s"}],
 end:[{t:"══════════════════════════",c:"g"},{t:"BocaOS DESKTOP — READY",c:"s"},{t:"all modules: operational",c:"i"},{t:"awaiting match_day event...",c:"l"},{t:"══════════════════════════",c:"g"}]
 };
 let A=new Set();const E=document.getElementById("cl");
