@@ -32,7 +32,7 @@
 .card-grn{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:14px}
 .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:8px;padding:14px}
 .hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.btn{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.5em;text-transform:uppercase;letter-spacing:0.08em;color:var(--gd);border:1px solid var(--gd);padding:6px 12px;border-radius:3px;text-decoration:none;cursor:pointer;background:rgba(244,196,48,0.05);transition:all 0.2s}
+.btn{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.5em;text-transform:uppercase;letter-spacing:0.08em;color:var(--gd);border:1px solid var(--gd);padding:6px 12px;border-radius:3px;text-decoration:none;cursor:pointer;background:rgba(244,196,48,0.05);transition:all 0.2s;position:relative;z-index:10}
 .btn:hover{background:var(--gd);color:var(--bl)}
 .btn-sm{padding:4px 8px;font-size:0.45em;border-color:var(--tx3);color:var(--tx2);background:transparent}.btn-sm:hover{background:var(--tx3);color:#fff}
 .acc{background:var(--sf);border:1px solid #1e2236;border-radius:6px;margin-bottom:10px}
@@ -76,7 +76,7 @@
 .bios-header{background:#aaaaaa;color:#000080;padding:4px 12px;font-size:14px;font-weight:700;letter-spacing:0.08em;display:flex;justify-content:space-between}
 .bios-body{display:flex;min-height:380px}
 .bios-nav{width:280px;border-right:2px solid #555555;padding:8px 0}
-.bios-item{display:block;padding:6px 16px;font-size:14px;color:#aaaaaa;text-decoration:none;cursor:pointer;transition:all 0.1s;border:none;background:none;width:100%;text-align:left;font-family:'VT323',monospace;letter-spacing:0.04em}
+.bios-item{display:block;padding:6px 16px;font-size:14px;color:#aaaaaa;text-decoration:none;cursor:pointer;transition:all 0.1s;border:none;background:none;width:100%;text-align:left;font-family:'VT323',monospace;letter-spacing:0.04em;position:relative;z-index:10}
 .bios-item:hover,.bios-item:focus{background:#aaaaaa;color:#000080}
 .bios-item .bios-key{color:#ffff00;margin-right:6px}
 .bios-item:hover .bios-key{color:#000080}
@@ -136,7 +136,7 @@
 <div class="reveal"><div class="slides">
 
 <!-- ══════════ BOOT 1: POST ══════════ -->
-<section class="title-slide" data-background-color="#000000" data-console="post">
+<section id="post" class="title-slide" data-background-color="#000000" data-console="post">
   <div style="font-family:'VT323',monospace;font-size:14px;color:#aaa;text-align:left;max-width:600px;line-height:2">
     <span style="color:var(--gd);font-family:'Silkscreen',monospace">BocaOS</span> BIOS v2026.1<br>
     <br>
@@ -156,7 +156,7 @@
 </section>
 
 <!-- ══════════ BOOT 2: LOADING ══════════ -->
-<section class="title-slide" data-background-color="#0a0c14" data-console="boot2">
+<section id="boot2" class="title-slide" data-background-color="#0a0c14" data-console="boot2">
   <div style="margin-bottom:20px">
     <svg width="80" height="90" viewBox="0 0 80 90" style="filter:drop-shadow(0 0 16px rgba(244,196,48,0.3))">
       <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="var(--gd)" stroke-width="2.5" stroke-dasharray="300" style="animation:shieldDraw 2s ease forwards"/>
