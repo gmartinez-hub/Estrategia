@@ -12,636 +12,227 @@
 *{box-sizing:border-box}
 .reveal{font-family:'Outfit',sans-serif;color:var(--tx)}.reveal .slides{text-align:left}
 .reveal .slides section{padding:20px 40px 64px 40px!important;height:100%;overflow-y:auto!important;overflow-x:hidden}
-.reveal .slides section::-webkit-scrollbar{width:5px}.reveal .slides section::-webkit-scrollbar-thumb{background:#1e2236;border-radius:4px}
 .reveal h2{font-weight:800;font-size:1.4em;margin:0 0 8px;text-transform:none;letter-spacing:-0.02em}
 .reveal p,.reveal li{font-size:0.72em;line-height:1.5;color:var(--tx2);margin:0 0 6px}
 .reveal .slide-background{background:var(--bg)}
-.reveal ul,.reveal ol{margin:0;padding:0;list-style:none}
 .reveal table{font-size:0.58em;border-collapse:collapse;width:100%;margin:10px 0}
-.reveal table th{font-family:'JetBrains Mono',monospace;font-size:0.8em;text-transform:uppercase;color:var(--gd);border-bottom:1px solid var(--gd);padding:6px 8px;text-align:left}
+.reveal table th{font-family:'JetBrains Mono',monospace;color:var(--gd);border-bottom:1px solid var(--gd);padding:6px 8px;text-align:left}
 .reveal table td{padding:6px 8px;border-bottom:1px solid #1e2236;color:var(--tx2)}
-.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.5em;text-transform:uppercase;letter-spacing:0.1em;padding:3px 10px;border-radius:3px;margin-bottom:10px;background:var(--gd);color:var(--bl)}
-.gold{color:var(--gd)}.grn{color:var(--grn)}.red{color:var(--red)}.amb{color:var(--amb)}.cyn{color:var(--cyn)}.dim{color:var(--tx3)}.mid{color:var(--tx2)}
+.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.5em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:10px;background:var(--gd);color:var(--bl)}
+.gold{color:var(--gd)}.grn{color:var(--grn)}.red{color:var(--red)}.amb{color:var(--amb)}.cyn{color:var(--cyn)}.dim{color:var(--tx3)}
 .accent{width:50px;height:3px;background:var(--gd);margin:8px 0 14px;border-radius:2px}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
-.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:10px}
 .card{background:var(--sf);border:1px solid #1e2236;border-radius:8px;padding:14px}
-.card h4{font-size:0.68em;font-weight:700;margin:0 0 5px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.04em}
-.card p{font-size:0.62em;margin:0}
+.card h4{font-size:0.68em;font-weight:700;margin:0 0 5px;font-family:'JetBrains Mono',monospace;text-transform:uppercase}
 .card-gd{background:rgba(244,196,48,0.06);border:1px solid rgba(244,196,48,0.2);border-radius:8px;padding:14px}
 .card-grn{background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:14px}
 .card-red{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:8px;padding:14px}
 .hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.btn{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.5em;text-transform:uppercase;letter-spacing:0.08em;color:var(--gd);border:1px solid var(--gd);padding:6px 12px;border-radius:3px;text-decoration:none;cursor:pointer;background:rgba(244,196,48,0.05);transition:all 0.2s;position:relative;z-index:10}
+.btn{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.5em;color:var(--gd);border:1px solid var(--gd);padding:6px 12px;border-radius:3px;text-decoration:none;cursor:pointer;background:rgba(244,196,48,0.05)}
 .btn:hover{background:var(--gd);color:var(--bl)}
-.btn-sm{padding:4px 8px;font-size:0.45em;border-color:var(--tx3);color:var(--tx2);background:transparent}.btn-sm:hover{background:var(--tx3);color:#fff}
+.btn-sm{padding:4px 8px;font-size:0.45em;border-color:var(--tx3);color:var(--tx2);background:transparent}
 .acc{background:var(--sf);border:1px solid #1e2236;border-radius:6px;margin-bottom:10px}
-.acc summary{padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:0.6em;font-weight:600;color:var(--tx);cursor:pointer;list-style:none;display:flex;justify-content:space-between;text-transform:uppercase;letter-spacing:0.06em}
-.acc summary::-webkit-details-marker{display:none}
-.acc summary::after{content:'[ + ]';color:var(--gd);font-size:0.85em}
-.acc[open] summary::after{content:'[ − ]';color:var(--tx3)}
-.acc[open] summary{border-bottom:1px solid #1e2236}
-.acc-body{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#060810;border-radius:0 0 6px 6px}
+.acc summary{padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:0.6em;color:var(--tx);cursor:pointer;list-style:none;display:flex;justify-content:space-between;text-transform:uppercase}
+.acc summary::after{content:'[ + ]';color:var(--gd)}
+.acc[open] summary::after{content:'[ − ]'}
+.acc-body{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#060810}
 .acc-body.single{grid-template-columns:1fr}
 .step{background:#0a0e16;border:1px solid #1e2236;border-left:3px solid var(--tx3);border-radius:4px;padding:8px 12px}
-.step.hi{border-color:var(--gd);border-left-color:var(--gd);background:rgba(244,196,48,0.04)}
-.step.lock{border-color:var(--red);border-left-color:var(--red);background:rgba(248,113,113,0.04)}
-.step.dec{border:1px dashed var(--amb);border-left:3px solid var(--amb);background:rgba(251,191,36,0.04)}
-.step h5{font-family:'Outfit',sans-serif;font-size:0.75em;font-weight:700;color:var(--tx);margin:0}
+.step.hi{border-color:var(--gd);border-left-color:var(--gd)}
+.step h5{font-size:0.75em;font-weight:700;color:var(--tx);margin:0}
 .step p{font-family:'JetBrains Mono',monospace;font-size:0.5em;color:var(--tx2);margin:2px 0 0}
-.clean-list li{padding:3px 0;font-size:0.65em;border-bottom:1px solid #14182a}.clean-list li:last-child{border-bottom:none}
+.clean-list li{padding:3px 0;font-size:0.65em;border-bottom:1px solid #14182a;list-style:none}
 .title-slide{text-align:center!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;min-height:100%}
 
-/* ========== BOOT ANIMATIONS ========== */
-@keyframes shieldDraw{0%{stroke-dashoffset:300}100%{stroke-dashoffset:0}}
-@keyframes fillUp{0%{clip-path:inset(100% 0 0 0)}100%{clip-path:inset(0)}}
-@keyframes pulseGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(244,196,48,0.2))}50%{filter:drop-shadow(0 0 24px rgba(244,196,48,0.6))}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+/* ANIMATIONS */
 @keyframes barFill{0%{width:0}100%{width:100%}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@keyframes scanline{0%{top:-4px}100%{top:100%}}
-.blink{animation:blink 1s step-end infinite}
+.blink{animation:blink 1s step-end infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-/* BOOT PROGRESS BARS */
+/* BOOT BARS */
 .boot-bar{height:14px;background:#0a1428;border:1px solid #1a3050;border-radius:2px;overflow:hidden;margin:4px 0}
-.boot-fill{height:100%;border-radius:1px;animation:barFill forwards ease-out}
+.boot-fill{height:100%;animation:barFill forwards ease-out}
 .boot-fill.gold{background:linear-gradient(90deg,var(--bl),var(--gd))}
-.boot-fill.blue{background:linear-gradient(90deg,#001a3d,#3b82f6)}
 .boot-row{display:flex;align-items:center;gap:10px;margin:6px 0;opacity:0;animation:fadeIn 0.4s forwards}
-.boot-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--tx3);width:120px;text-align:right;text-transform:uppercase;letter-spacing:0.06em}
-.boot-status{font-family:'JetBrains Mono',monospace;font-size:10px;width:30px;text-align:center}
+.boot-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--tx3);width:120px;text-align:right}
 
-/* ========== BIOS SCREEN ========== */
-.bios{width:100%;max-width:960px;margin:0 auto;background:#000080;border:3px solid #aaaaaa;border-radius:0;font-family:'VT323',monospace;color:#aaaaaa;position:relative;overflow:hidden}
-.bios-header{background:#aaaaaa;color:#000080;padding:4px 12px;font-size:14px;font-weight:700;letter-spacing:0.08em;display:flex;justify-content:space-between}
+/* BIOS */
+.bios{width:100%;max-width:960px;margin:0 auto;background:#000080;border:3px solid #aaaaaa;font-family:'VT323',monospace;color:#aaaaaa}
+.bios-header{background:#aaaaaa;color:#000080;padding:4px 12px;display:flex;justify-content:space-between}
 .bios-body{display:flex;min-height:380px}
 .bios-nav{width:280px;border-right:2px solid #555555;padding:8px 0}
-.bios-item{display:block;padding:6px 16px;font-size:14px;color:#aaaaaa;text-decoration:none;cursor:pointer;transition:all 0.1s;border:none;background:none;width:100%;text-align:left;font-family:'VT323',monospace;letter-spacing:0.04em;position:relative;z-index:10}
-.bios-item:hover,.bios-item:focus{background:#aaaaaa;color:#000080}
-.bios-item .bios-key{color:#ffff00;margin-right:6px}
-.bios-item:hover .bios-key{color:#000080}
-.bios-detail{flex:1;padding:12px 16px;font-size:13px;line-height:1.6;border-left:none}
-.bios-detail p{margin:6px 0;color:#aaaaaa}
-.bios-detail .hl{color:#ffff00}
-.bios-detail .wh{color:#ffffff}
+.bios-item{display:block;padding:6px 16px;font-size:14px;color:#aaaaaa;text-decoration:none;width:100%;text-align:left;border:none;background:none;cursor:pointer}
+.bios-item:hover{background:#aaaaaa;color:#000080}
+.bios-detail{flex:1;padding:12px 16px;font-size:13px}
 .bios-footer{background:#555555;color:#ffffff;padding:4px 12px;font-size:12px;display:flex;justify-content:space-between}
-.bios-footer span{color:#ffff00}
 
-/* ========== macOS DESKTOP ========== */
+/* macOS DESKTOP */
 .mac {
   width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  background: url('fondo.jpg') center/cover;
-  border-radius: 10px;
-  border: 1px solid #2a3a5a;
+  height: 100%;
+  background: url('fondo.jpg') center/cover no-repeat;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
 }
-.mac-menu{display:flex;align-items:center;height:28px;background:rgba(0,43,92,0.9);backdrop-filter:blur(20px);padding:0 12px;font-family:'Outfit',sans-serif;font-size:10px;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.1);border-radius:10px 10px 0 0}
-.mac-menu .apple{font-family:'Silkscreen',monospace;font-size:10px;color:var(--gd);font-weight:700;position:absolute;left:50%;transform:translateX(-50%)}
-.mac-menu .right{margin-left:auto;display:flex;gap:12px;align-items:center}
-.mac-dot{width:10px;height:10px;border-radius:50%;}
-.mac-dot.close{background:#ff5f56;}
-.mac-dot.min{background:#ffbd2e;}
-.mac-dot.max{background:#27c93f;}
-.mac-desktop{padding:20px 24px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px 12px;position:relative; z-index: 10;}
-.mac-icon{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;text-decoration:none;transition:transform 0.15s}
-.mac-icon:hover{transform:scale(1.08)}
-.mac-icn{width:48px;height:48px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;font-family:'Silkscreen',monospace;box-shadow:0 2px 8px rgba(0,0,0,0.3)}
-.mac-lbl{font-family:'Outfit',sans-serif;font-size:9px;color:rgba(255,255,255,0.85);text-align:center;text-shadow:0 1px 3px rgba(0,0,0,0.5)}
-.mac-dock{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:6px 12px;background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border-radius:14px;border:1px solid rgba(255,255,255,0.15); z-index: 10;}
-.mac-dock .mac-icn{width:40px;height:40px;border-radius:10px;font-size:14px}
-.mac-dock .mac-icn:hover{transform:scale(1.2) translateY(-4px);transition:transform 0.15s}
-/* Notification */
-.mac-notif{position:absolute;top:30px;right:12px;width:220px;background:rgba(30,30,40,0.85);backdrop-filter:blur(20px);border-radius:10px;border:1px solid rgba(255,255,255,0.12);padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.4); z-index: 10;}
-.mac-notif-title{font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:6px}
-.mac-notif-body{font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,0.6);line-height:1.5}
-/* Shield watermark */
-.mac-shield{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.04;pointer-events:none; z-index: 1;}
+.mac-menu{display:flex;align-items:center;height:28px;background:rgba(0,43,92,0.9);backdrop-filter:blur(20px);padding:0 12px;font-size:10px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.1)}
+.mac-menu .apple{position:absolute;left:50%;transform:translateX(-50%);font-weight:700;color:var(--gd)}
+.mac-menu .right{margin-left:auto;display:flex;gap:12px}
+.mac-dot{width:11px;height:11px;border-radius:50%;margin-right:6px}
+.mac-dot.close{background:#ff5f56}.mac-dot.min{background:#ffbd2e}.mac-dot.max{background:#27c93f}
+.mac-desktop{flex:1;padding:40px;display:grid;grid-template-columns:repeat(auto-fill, minmax(80px, 1fr));grid-auto-rows: 90px;gap:20px;z-index:10}
+.mac-icon{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;text-decoration:none;transition:transform 0.2s}
+.mac-icon:hover{transform:scale(1.1)}
+.mac-icn{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+.mac-lbl{font-size:10px;color:#fff;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,0.8)}
+.mac-dock{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:10px;padding:8px 15px;background:rgba(255,255,255,0.15);backdrop-filter:blur(20px);border-radius:18px;border:1px solid rgba(255,255,255,0.2);z-index:20}
+.mac-dock .mac-icn{width:42px;height:42px;font-size:16px}
+.easter-egg{position:absolute!important;z-index:15}
+.easter-egg .mac-icn{background-color:#fff!important;background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;border:none!important}
 
-/* ========== BOOT CONSOLE ========== */
-#con{position:fixed;bottom:0;left:0;right:0;height:40px;background:#060810ee;border-top:1px solid #1a1e2e;z-index:100;display:flex;align-items:center;padding:0 16px;gap:8px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:10px;backdrop-filter:blur(8px)}
-#con .ci{color:var(--gd);font-size:9px;opacity:0.5;flex-shrink:0;font-family:'Silkscreen',monospace}
-#con .cl{display:flex;gap:14px;overflow:hidden;flex:1;mask-image:linear-gradient(90deg,transparent 0%,black 4%,black 92%,transparent 100%)}
-#con .ln{white-space:nowrap;opacity:0;transition:opacity 0.3s;flex-shrink:0}
-#con .ln.v{opacity:1}
-#con .ln.s{color:var(--grn)}#con .ln.i{color:var(--cyn)}#con .ln.w{color:var(--amb)}#con .ln.l{color:var(--tx3)}#con .ln.g{color:var(--gd)}
-
-/* CONCLUSION TOOLTIPS */
-.conc-tooltip{position:absolute;width:220px;background:rgba(20,24,34,0.88);backdrop-filter:blur(20px);border-radius:10px;border:1px solid rgba(244,196,48,0.15);cursor:pointer;transition:all 0.3s ease;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.3); z-index: 15;}
-.conc-tooltip:hover{border-color:rgba(244,196,48,0.4);box-shadow:0 4px 20px rgba(244,196,48,0.1)}
-.conc-header{display:flex;align-items:center;gap:6px;padding:10px 12px;font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;color:#fff}
-.conc-badge{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--gd);background:rgba(244,196,48,0.15);padding:2px 6px;border-radius:3px}
-.conc-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,0.55);line-height:1.6}
-.conc-tooltip.open .conc-body{max-height:120px;padding:0 12px 10px}
-.conc-tooltip.open{border-color:var(--gd);background:rgba(20,24,34,0.95)}
-@keyframes notifSlide{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
-#conc1{animation:notifSlide 0.4s 0.3s both}
-#conc2{animation:notifSlideLeft 0.4s 0.7s both}
-#conc3{animation:notifSlide 0.4s 1.1s both}
-
-/* 1. Ocultar los easter eggs si su diapositiva no es la activa */
-section:not(.present) .easter-egg {
-  opacity: 0 !important;
-  pointer-events: none;
-}
-
-/* 2. Estética de los iconos y arreglo de los logos */
-.easter-egg {
-  position: absolute !important;
-  z-index: 5;
-  transition: opacity 0.3s ease; /* Transición suave por si acaso */
-}
-.easter-egg .mac-icn {
-  border: none !important;
-  border-radius: 12px !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
-  background-size: cover !important; /* Cambiado de contain a cover */
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-}
-.easter-egg:hover {
-  z-index: 20;
-  transform: scale(1.15);
-}
-
-/* 3. Nuevas posiciones (calculadas para caer en los huecos de la grilla) */
-.mac > a.easter-egg:nth-of-type(1) { top: 35%; left: 20%; } /* Encarta */
-.mac > a.easter-egg:nth-of-type(2) { top: 65%; left: 22%; } /* Strapi */
-.mac > a.easter-egg:nth-of-type(3) { top: 30%; left: 40%; } /* Clarity */
-.mac > a.easter-egg:nth-of-type(4) { top: 75%; left: 42%; } /* Huawei */
-.mac > a.easter-egg:nth-of-type(5) { top: 35%; left: 60%; } /* Queue-it */
-.mac > a.easter-egg:nth-of-type(6) { top: 65%; left: 62%; } /* Senti */
-.mac > a.easter-egg:nth-of-type(7) { top: 30%; left: 80%; } /* Paisanos */
-  
-/* 4. Arreglo del fondo de Córdoba y Zoom NASA */
-#tablero-nasa img {
-  transition: transform 1.5s ease-in-out;
-  transform-origin: center;
-}
+/* REVELADO CORDOBA */
 #cordoba-reveal {
-  opacity: 0;
-  display: none; /* Se activa por JS */
   position: absolute;
   inset: 0;
-  z-index: 20;
+  display: none;
+  z-index: 100;
+  background: #000;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
-@keyframes notifSlideLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+#cordoba-img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.2); transition: transform 2s ease-out; }
 
-/* ========== macOS NOTES APP MODAL ========== */
-.mac-window { 
-  display:none; 
-  position:absolute; 
-  top:50%; 
-  left:50%; 
-  transform:translate(-50%, -50%) scale(0.95); 
-  width:320px; 
-  background:rgba(255,255,255,0.95); /* Color claro para parecerse a Notes */
-  backdrop-filter:blur(20px); 
-  border-radius:10px; 
-  border:1px solid rgba(0,0,0,0.15); 
-  box-shadow:0 10px 40px rgba(0,0,0,0.6); 
-  z-index:100; 
-  opacity:0; 
-  transition:all 0.2s ease; 
-  overflow:hidden; 
-}
-.mac-window.show { 
-  display:block; 
-  opacity:1; 
-  transform:translate(-50%, -50%) scale(1); 
-}
-.mac-win-header { 
-  height:28px; 
-  background:rgba(240,240,245,0.8); 
-  display:flex; 
-  align-items:center; 
-  padding:0 12px; 
-  gap:6px; 
-  border-bottom:1px solid rgba(0,0,0,0.1); 
-}
-.mac-dot { 
-  width:10px; 
-  height:10px; 
-  border-radius:50%; 
-  cursor:pointer; 
-}
-.mac-dot.close { background:#ff5f56; }
-.mac-dot.min { background:#ffbd2e; }
-.mac-dot.max { background:#27c93f; }
-.mac-win-body { 
-  padding:20px; 
-  font-family:'Outfit', sans-serif; 
-  color:#222; 
-  min-height:140px; 
-  background: #fdfdfd;
-}
-.mac-win-body .date { 
-  font-size:10px; 
-  color:#8a8ea4; 
-  margin-bottom:12px; 
-  font-family:'JetBrains Mono', monospace; 
-  text-transform:uppercase; 
-}
+/* CONSOLE */
+#con{position:fixed;bottom:0;left:0;right:0;height:35px;background:rgba(6,8,16,0.9);border-top:1px solid #1a1e2e;z-index:1000;display:flex;align-items:center;padding:0 15px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gd)}
+.cl{margin-left:10px;display:flex;gap:15px;overflow:hidden}
+.ln{opacity:0;transition:opacity 0.3s;white-space:nowrap}.ln.v{opacity:1}
+.ln.s{color:var(--grn)}.ln.i{color:var(--cyn)}.ln.w{color:var(--amb)}
+
+/* TOOLTIPS */
+.conc-tooltip{position:absolute;width:220px;background:rgba(20,24,34,0.9);backdrop-filter:blur(15px);border-radius:10px;border:1px solid rgba(244,196,48,0.2);padding:10px;cursor:pointer;z-index:100}
+.conc-header{display:flex;justify-content:space-between;font-size:9px;font-weight:700;margin-bottom:5px}
+.conc-badge{color:var(--gd);background:rgba(244,196,48,0.1);padding:2px 5px;border-radius:3px}
+.conc-body{font-size:8px;color:rgba(255,255,255,0.7);display:none}.conc-tooltip.open .conc-body{display:block}
+
+/* NOTES */
+.mac-window{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);z-index:200}
+.mac-window.show{display:block}
+.mac-win-header{height:30px;background:#e5e5e5;display:flex;align-items:center;padding:0 10px}
+.mac-win-body{padding:20px;color:#333;font-family:'Kalam',cursive}
 </style>
 </head>
 <body>
 <div class="reveal"><div class="slides">
 
-<section id="post" class="title-slide" data-background-color="#000000" data-console="post">
-  <div style="font-family:'VT323',monospace;font-size:14px;color:#aaa;text-align:left;max-width:600px;line-height:2">
-    <span style="color:var(--gd);font-family:'Silkscreen',monospace">BocaOS</span> BIOS v2026.1<br>
-    <br>
-    <span style="color:#fff">CPU:</span> Strategy Core @ 3 Hypotheses<br>
-    <span style="color:#fff">RAM:</span> Features Pipeline 12-step<br>
-    <span style="color:#fff">CACHE:</span> Fixes Module 7-step<br>
-    <span style="color:#fff">IRQ:</span> Bug Handler w/ Triage<br>
-    <span style="color:#fff">I/O:</span> Information Pipeline 5-stage<br>
-    <span style="color:#fff">BUS:</span> Feedback Loop System x4<br>
-    <span style="color:#fff">GPU:</span> Metrics Dashboard 7 KPI<br>
-    <br>
-    <span style="color:var(--grn)">All POST checks passed</span><br>
-    <br>
-    <span style="color:var(--gd)">Press ENTER to enter BIOS Setup<span class="blink">_</span></span>
+<section id="post" class="title-slide" data-background-color="#000" data-console="post">
+  <div style="font-family:'VT323',monospace;font-size:14px;color:#aaa;text-align:left;line-height:1.8">
+    <span style="color:var(--gd)">BocaOS</span> BIOS v2026.1<br><br>
+    CPU: Strategy Core @ 3 Hypotheses<br>RAM: Pipeline 12-step<br>
+    <span style="color:var(--grn)">All POST checks passed</span><br><br>
+    <a href="#/boot2" class="btn" style="border-radius:0;font-size:14px">▶ INICIAR</a>
   </div>
-  <div style="margin-top:20px"><a href="#/boot2" class="btn" style="font-family:'VT323',monospace;font-size:14px;padding:8px 24px;border-radius:0;border-color:#aaa;color:#aaa">▶ INICIAR</a></div>
 </section>
 
-<section id="boot2" class="title-slide" data-background-color="#0a0c14" data-console="boot2">
-  <div style="margin-bottom:20px">
-    <svg width="80" height="90" viewBox="0 0 80 90" style="filter:drop-shadow(0 0 16px rgba(244,196,48,0.3))">
-      <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="var(--gd)" stroke-width="2.5" stroke-dasharray="300" style="animation:shieldDraw 2s ease forwards"/>
-      <path d="M40 10 L66 22 L66 50 Q66 72 40 80 Q14 72 14 50 L14 22 Z" fill="var(--bl)" style="animation:fillUp 1.5s ease 0.8s forwards;clip-path:inset(100% 0 0 0)"/>
-      <text x="40" y="52" text-anchor="middle" font-family="Silkscreen,monospace" font-size="18" fill="var(--gd)" font-weight="700" style="opacity:0;animation:fadeIn 0.5s 2s forwards">OS</text>
-    </svg>
+<section id="boot2" class="title-slide" data-console="boot2">
+  <div style="font-family:'Silkscreen',monospace;font-size:24px;color:var(--gd);margin-bottom:30px">BocaOS</div>
+  <div style="width:350px">
+    <div class="boot-row" style="animation-delay:0.2s"><span class="boot-label">KERNEL</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:1s"></div></div></div>
+    <div class="boot-row" style="animation-delay:0.5s"><span class="boot-label">ANTI-FRAUDE</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:1.5s"></div></div></div>
+    <div class="boot-row" style="animation-delay:1s"><span class="boot-label">METRICAS</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:0.8s"></div></div></div>
   </div>
-
-  <div style="font-family:'Silkscreen',monospace;font-size:28px;color:var(--gd);margin-bottom:20px">BocaOS</div>
-
-  <div style="width:400px;text-align:left">
-    <div class="boot-row" style="animation-delay:0.3s"><span class="boot-label">KERNEL</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:1.5s;animation-delay:0.3s"></div></div><span class="boot-status grn" style="opacity:0;animation:fadeIn 0.3s 1.8s forwards">OK</span></div>
-    <div class="boot-row" style="animation-delay:0.8s"><span class="boot-label">SCHEDULER</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:1.2s;animation-delay:0.8s"></div></div><span class="boot-status grn" style="opacity:0;animation:fadeIn 0.3s 2s forwards">OK</span></div>
-    <div class="boot-row" style="animation-delay:1.3s"><span class="boot-label">RUNTIME</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:1.8s;animation-delay:1.3s"></div></div><span class="boot-status grn" style="opacity:0;animation:fadeIn 0.3s 3.1s forwards">OK</span></div>
-    <div class="boot-row" style="animation-delay:1.8s"><span class="boot-label">RELEASE</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:1s;animation-delay:1.8s"></div></div><span class="boot-status grn" style="opacity:0;animation:fadeIn 0.3s 2.8s forwards">OK</span></div>
-    <div class="boot-row" style="animation-delay:2.3s"><span class="boot-label">ANTI-FRAUDE</span><div class="boot-bar" style="flex:1"><div class="boot-fill blue" style="animation-duration:2s;animation-delay:2.3s"></div></div><span class="boot-status grn" style="opacity:0;animation:fadeIn 0.3s 4.3s forwards">OK</span></div>
-    <div class="boot-row" style="animation-delay:2.8s"><span class="boot-label">MÉTRICAS</span><div class="boot-bar" style="flex:1"><div class="boot-fill gold" style="animation-duration:1.4s;animation-delay:2.8s"></div></div><span class="boot-status grn" style="opacity:0;animation:fadeIn 0.3s 4.2s forwards">OK</span></div>
-  </div>
-
-  <div style="margin-top:20px;opacity:0;animation:fadeIn 0.5s 4.5s forwards"><a href="#/bios" class="btn">ENTRAR A BIOS</a></div>
+  <div style="margin-top:30px;opacity:0;animation:fadeIn 0.5s 2.5s forwards"><a href="#/bios" class="btn">ENTRAR A BIOS</a></div>
 </section>
 
-<section id="bios" data-background-color="#000040" data-console="bios" style="padding:12px 20px 60px!important;display:flex;align-items:center;justify-content:center">
+<section id="bios" data-background-color="#000040" data-console="bios">
   <div class="bios">
-    <div class="bios-header">
-      <span>BocaOS BIOS SETUP UTILITY v2026.1</span>
-      <span style="font-weight:400;font-size:12px">v2026.1</span>
-    </div>
+    <div class="bios-header"><span>BocaOS BIOS SETUP UTILITY</span><span>v2026</span></div>
     <div class="bios-body">
       <div class="bios-nav">
-        <a href="#/estrategia" class="bios-item"><span class="bios-key">[F1]</span> Estrategia General</a>
-        <a href="#/gonogo" class="bios-item"><span class="bios-key">[F2]</span> Matriz Go / No-Go</a>
-        <a href="#/pipeline" class="bios-item"><span class="bios-key">[F3]</span> Pipeline de Info</a>
-        <a href="#/cuenta" class="bios-item"><span class="bios-key">[F4]</span> Nuevas Funcionalidades</a>
-        <a href="#/fixes" class="bios-item"><span class="bios-key">[F5]</span> Fixes y Cambios</a>
-        <a href="#/bugs" class="bios-item"><span class="bios-key">[F6]</span> Gestión de Bugs</a>
-        <a href="#/design" class="bios-item"><span class="bios-key">[F7]</span> Diseño Iterativo</a>
-        <a href="#/tableros" class="bios-item"><span class="bios-key">[F8]</span> Tableros de Control</a>
-        <a href="#/metricas" class="bios-item"><span class="bios-key">[F9]</span> Métricas 2026</a>
-        <a href="#/bootdesktop" class="bios-item" style="margin-top:8px;border-top:1px solid #555;padding-top:10px"><span class="bios-key">[F12]</span> Iniciar BocaOS Desktop</a>
+        <a href="#/estrategia" class="bios-item">Estrategia General</a>
+        <a href="#/gonogo" class="bios-item">Matriz Go/No-Go</a>
+        <a href="#/pipeline" class="bios-item">Pipeline de Info</a>
+        <a href="#/tableros" class="bios-item">Tableros de Control</a>
+        <a href="#/bootdesktop" class="bios-item" style="color:var(--gd);margin-top:20px">▶ Iniciar Desktop</a>
       </div>
-      <div class="bios-detail">
-        <p class="wh" style="font-size:15px;font-weight:700">▸ BocaOS — Sistema Operativo</p>
-        <p>El framework que gobierna cómo Paisanos planifica, refina, ejecuta y entrega el ecosistema digital de <span class="hl">Boca Juniors</span>.</p>
-        <p style="margin-top:12px"><span class="hl">KERNEL:</span> Estrategia anti-fraude 2026</p>
-        <p><span class="hl">SCHEDULER:</span> Pipeline refi → Jira</p>
-        <p><span class="hl">RUNTIME:</span> 3 flujos paralelos</p>
-        <p><span class="hl">RELEASE:</span> QA → Cliente → Deploy</p>
-        <p style="margin-top:12px;color:#555555">────────────────────────────</p>
-        <p><span class="wh">Métrica Norte:</span> Distribución temporal ventas 20min</p>
-        <p><span class="wh">Target Q4:</span> <span class="hl">&lt;25%</span> ventas en 5min</p>
-        <p><span class="wh">Apuestas:</span> Queue-IT · WAF · Middleware · Stepper</p>
-        <p style="margin-top:12px;color:#555555">────────────────────────────</p>
-        <p style="color:var(--grn)">● Sistema operativo: ACTIVO</p>
-        <p style="color:var(--grn)">● Temporada: 2026</p>
-      </div>
+      <div class="bios-detail"><p style="color:#fff">BocaOS Kernel 2026.1</p><p>Framework de planificación Paisanos para Boca Juniors. Foco en seguridad anti-bypass y distribución de carga.</p></div>
     </div>
-    <div class="bios-footer">
-      <span>← → Seleccionar</span>
-      <span>ENTER Entrar</span>
-      <span>ESC Volver</span>
-      <span>F12 Iniciar</span>
-    </div>
+    <div class="bios-footer"><span>[ENTER] Seleccionar</span><span>[F12] Boot OS</span></div>
   </div>
 </section>
 
-<section id="estrategia" data-background-color="#080a10" data-console="strat">
+<section id="estrategia" data-console="strat">
   <div class="hdr"><span class="tag">F1 · ESTRATEGIA</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Contexto y Apuestas</h2><div class="accent"></div>
+  <h2>Apuestas 2026</h2><div class="accent"></div>
   <div class="grid-2">
-    <div class="card-red"><h4 class="red">Problema</h4><p>Bypass de QueueIT. 60-70% de ventas en 5min por bots. Socios legítimos no acceden.</p></div>
-    <div class="card-grn"><h4 class="grn">Métrica Norte</h4><p>Distribución temporal de ventas en 20min. Target Q4: &lt;25% en primeros 5 minutos.</p></div>
+    <div class="card-red"><h4>Problema</h4><p>70% ventas en 5min (Bots). Bypass masivo.</p></div>
+    <div class="card-grn"><h4>Meta</h4><p>Ventas distribuidas en 20min. Target <25% inicial.</p></div>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
-    <div class="card-gd"><h4 class="gold" style="font-size:0.58em">A. Mitigación desde Queue-IT</h4><p style="font-size:0.52em">Configuración del filtrado de bots desde el dashboard de QueueIT.</p><p style="font-size:0.46em;color:var(--grn);margin-top:3px">✓ Implementado Q1</p></div>
-    <div class="card-gd"><h4 class="gold" style="font-size:0.58em">B. Endurecimiento de WAF</h4><p style="font-size:0.52em">Límites de peticiones por IP para evitar scraping.</p><p style="font-size:0.46em;color:var(--amb);margin-top:3px">→ En progreso</p></div>
-    <div class="card-gd"><h4 class="gold" style="font-size:0.58em">C. Middleware de la Aplicación</h4><p style="font-size:0.52em">Vinculación de QueueIT IDs con usuarios autenticados para evitar la reutilización de cookies.</p><p style="font-size:0.46em;color:var(--amb);margin-top:3px">→ En progreso</p></div>
-    <div class="card-gd"><h4 class="gold" style="font-size:0.58em">D. Stepper</h4><p style="font-size:0.52em">Pasos obligatorios. Bloquear /checkout directo.</p><p style="font-size:0.46em;color:var(--amb);margin-top:3px">→ En progreso</p></div>
+  <div class="grid-2" style="margin-top:10px">
+    <div class="card"><h4>WAF + Middleware</h4><p>Control de IPs y vinculación de IDs.</p></div>
+    <div class="card"><h4>Stepper Checkout</h4><p>Bloqueo de acceso directo a pago.</p></div>
   </div>
 </section>
 
-<section id="gonogo" data-background-color="#080a10" data-console="gng">
-  <div class="hdr"><span class="tag">F2 · FILTRO</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Matriz Go / No-Go</h2><div class="accent"></div>
-  <div class="grid-2">
-    <div class="card-grn"><h4 class="grn">Qué SÍ</h4><ul class="clean-list"><li>✓ 3 protecciones core</li><li>✓ Mejoras anti-reventa</li><li>✓ Métricas end-to-end</li><li>✓ Mejoras checkout</li><li>✓ Reportería fraude</li></ul></div>
-    <div class="card-red"><h4 class="red">Qué NO</h4><ul class="clean-list"><li>✕ Features sin impacto en seguridad</li><li>✕ Tocar backend Boca</li><li>✕ Bloquear socios auto</li><li>✕ Cambios gráficos sensibles</li></ul></div>
-  </div>
-  <table style="margin-top:10px"><thead><tr><th>Criterio</th><th class="grn">Go</th><th class="red">No Go</th></tr></thead><tbody>
-  <tr><td style="color:var(--tx);font-weight:600">Impacto</td><td>Reduce bypass</td><td>Sin impacto</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Viabilidad</td><td>Front + Gateway</td><td>Cambios estructurales</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Control</td><td>E2E controlado</td><td>Fuera de control</td></tr></tbody></table>
-</section>
-
-<section id="pipeline" data-background-color="#080a10" data-console="pipe">
-  <div class="hdr"><span class="tag">F3 · PIPELINE</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>De la reunión a Jira</h2><div class="accent"></div>
-  <details class="acc" open>
-    <summary><span class="cyn">FLUJO DE CAPTURA</span></summary>
-    <div class="acc-body single">
-      <div class="step"><h5>1. Transcripción</h5><p>Meet se graba → texto crudo</p></div>
-      <div class="step"><h5>2. Notion</h5><p>PM estructura resumen</p></div>
-      <div class="step"><h5>3. Enriquecimiento</h5><p>PM agrega brief + feedback cliente</p></div>
-      <div class="step hi"><h5>4. Jira</h5><p>PM carga tickets — Devs solo leen</p></div>
-      <div class="step"><h5>5. Task Reporting</h5><p>Cliente ve roadmap compartido</p></div>
+<section id="tableros" data-console="tableros">
+  <div class="hdr"><span class="tag">F8 · CONTROL</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
+  <h2>Mission Control</h2><div class="accent"></div>
+  <div id="tablero-nasa" style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer" onclick="startLaunch()">
+    <img src="control-mision.jpg" style="width:100%;display:block" alt="NASA">
+    <div id="nasa-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center">
+      <div style="color:var(--gd);font-family:Silkscreen;font-size:16px">▶ CLICK PARA LANZAR</div>
     </div>
-  </details>
-  <div style="display:flex;border-radius:6px;overflow:hidden;border:1px solid #1e2236;margin-top:10px">
-    <div style="flex:1;padding:7px;text-align:center;font-size:0.55em;font-weight:600;background:rgba(251,191,36,0.06);color:var(--amb)">Scope Vivo<br><span style="font-size:0.8em;opacity:0.6;font-weight:400">muta libremente</span></div>
-    <div style="flex:1;padding:7px;text-align:center;font-size:0.55em;font-weight:600;background:rgba(244,196,48,0.06);color:var(--gd);border-left:1px solid #1e2236;border-right:1px solid #1e2236">Validación<br><span style="font-size:0.8em;opacity:0.6;font-weight:400">ajustes sí, features no</span></div>
-    <div style="flex:1;padding:7px;text-align:center;font-size:0.55em;font-weight:600;background:rgba(52,211,153,0.06);color:var(--grn)">Cerrado<br><span style="font-size:0.8em;opacity:0.6;font-weight:400">cambios = nuevo ítem</span></div>
+    <div id="countdown-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.8);display:none;flex-direction:column;align-items:center;justify-content:center">
+      <div id="count-num" style="font-size:80px;color:var(--gd);font-family:Silkscreen">3</div>
+    </div>
+    <div id="cordoba-reveal"><img src="cordoba.jpg" id="cordoba-img" alt="Córdoba"></div>
   </div>
 </section>
 
-<section id="cuenta" data-background-color="#080a10" data-console="feat">
-  <div class="hdr"><span class="tag">F4 · FEATURES</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Nuevas Funcionalidades</h2><div class="accent"></div>
-  <details class="acc"><summary><span class="dim">01.</span> DEFINICIÓN</summary><div class="acc-body"><div class="step"><h5>Kickoff + Brief</h5><p>PM + Account → Notion</p></div><div class="step dec"><h5>Filtro Go/No-Go</h5><p>Directiva marco</p></div></div></details>
-  <details class="acc"><summary><span class="dim">02.</span> REFINAMIENTO</summary><div class="acc-body single"><div class="step"><h5>Refi Técnica</h5><p>PM + Devs → riesgos</p></div><div class="step"><h5>Refi UX/UI</h5><p>PM + Design → experiencia</p></div><div class="step"><h5>Carga Jira</h5><p>Solo PM escribe</p></div></div></details>
-  <details class="acc" open><summary><span class="dim">03.</span> EJECUCIÓN</summary><div class="acc-body"><div class="step"><h5>Planning + Dev</h5><p>Sprint asignado</p></div><div class="step hi"><h5>Walkthrough</h5><p>Validación interna</p></div><div class="step"><h5>QA Interno</h5><p>Criterios de aceptación</p></div><div class="step lock"><h5>Cliente Valida</h5><p>SCOPE LOCK</p></div><div class="step hi"><h5>Deploy</h5><p>Release + comunicación</p></div></div></details>
-</section>
-
-<section id="fixes" data-background-color="#080a10" data-console="fix">
-  <div class="hdr"><span class="tag">F5 · FIXES</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Fixes y Cambios Menores</h2><div class="accent"></div>
-  <details class="acc" open><summary><span class="grn">01.</span> IDENTIFICACIÓN</summary><div class="acc-body single"><div class="step"><h5>Task Reporting</h5><p>PM o Cliente levanta</p></div><div class="step"><h5>Refi General</h5><p>Revisión rápida</p></div><div class="step"><h5>Carga Jira</h5><p>Backlog operativo</p></div></div></details>
-  <details class="acc" open><summary><span class="grn">02.</span> EJECUCIÓN</summary><div class="acc-body"><div class="step dec"><h5>¿Walkthrough?</h5><p>PM decide</p></div><div class="step"><h5>QA</h5><p>Verificar</p></div><div class="step hi" style="grid-column:span 2"><h5>Deploy Rápido</h5><p>Producción → Log Jira → Reporting</p></div></div></details>
-</section>
-
-<section id="bugs" data-background-color="#080a10" data-console="bug">
-  <div class="hdr"><span class="tag" style="background:rgba(248,113,113,0.15);color:var(--red);border:1px solid #f8717144">F6 · BUGS</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Gestión de Bugs</h2><div class="accent"></div>
-  <details class="acc" open><summary><span class="red">01.</span> TRIAGE</summary><div class="acc-body"><div class="step lock"><h5>Reporte Typeform</h5><p>Formulario estructurado</p></div><div class="step dec"><h5>Bug Triage</h5><p>Priorizado o Descartado</p></div></div></details>
-  <details class="acc" open><summary><span class="red">02.</span> RESOLUCIÓN</summary><div class="acc-body"><div class="step"><h5>Carga + QA</h5><p>Fix asignado</p></div><div class="step hi"><h5>Deploy Fix</h5><p>Restaurar estabilidad</p></div></div></details>
-  <div class="card" style="margin-top:8px;border-color:#f8717133"><p style="font-size:0.58em;color:var(--red)">Descartado → documentar motivo en Notion + notificar reportante</p></div>
-</section>
-
-<section id="design" data-background-color="#080a10" data-console="design">
-  <div class="hdr"><span class="tag" style="background:rgba(167,139,250,0.15);color:var(--pur);border:1px solid #a78bfa44">F7 · DISEÑO</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Estrategia de Diseño Iterativo</h2><div class="accent"></div>
-  <p style="margin-bottom:12px;font-size:0.65em">Para evitar trabarnos buscando la "perfección" inicial, proponemos un enfoque de fases:</p>
-  <details class="acc" open><summary><span class="gold">FASE 1.</span> Solución Funcional <span class="dim">(La versión "Cautelosa")</span></summary><div class="acc-body single"><div class="step"><h5>Objetivo: Velocidad y seguridad</h5><p>Se presenta la propuesta más sencilla que cumple el objetivo central. Ideal para destrabar y salir a producción rápido — la versión más chica para que funcione.</p></div></div></details>
-  <details class="acc" open><summary><span class="gold">FASE 2.</span> Propuesta Superadora <span class="dim">(Mejora Continua)</span></summary><div class="acc-body single"><div class="step"><h5>Objetivo: Evolución y calidad</h5><p>En paralelo o tras la Fase 1, presentamos una versión mejorada con UX refinado y nuevas features. Iteración basada en datos y feedback real.</p></div></div></details>
-</section>
-
-
-<section id="tableros" data-background-color="#080a10" data-console="tableros">
-  <div class="hdr"><span class="tag" style="background:rgba(34,211,238,0.15);color:var(--cyn);border:1px solid #22d3ee44">F8 · TABLEROS</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Tableros de Control</h2><div class="accent"></div>
-  
-<div id="tablero-nasa" style="position:relative; border-radius:8px; overflow:hidden; cursor:pointer; border:1px solid #1e2236; margin-top:8px" onclick="startCountdown()">
-    <img src="control-mision.jpg" style="width:100%; display:block; border-radius:8px" alt="Mission Control"/>
-    
-    <div id="nasa-overlay" style="position:absolute; inset:0; background:rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; transition:all 0.5s">
-      <div style="text-align:center">
-        <div style="font-family:Silkscreen,monospace; font-size:14px; color:var(--gd); text-shadow:0 2px 10px rgba(0,0,0,0.8)">▶ CLICK PARA LANZAR</div>
-      </div>
-    </div>
-    
-    <div id="countdown-overlay" style="position:absolute; inset:0; background:rgba(0,0,0,0.85); display:none; align-items:center; justify-content:center; flex-direction:column">
-      <div id="countdown-num" style="font-family:Silkscreen,monospace; font-size:120px; color:var(--gd); text-shadow:0 0 40px rgba(244,196,48,0.6); transition:all 0.3s"></div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--tx3); margin-top:8px; letter-spacing:0.2em">MISSION CONTROL — LANZAMIENTO</div>
-    </div>
-    
-    <div id="cordoba-reveal" style="position:absolute; inset:0; display:none; overflow:hidden; border-radius:8px">
-      <img src="cordoba.jpg" style="width:100%; height:100%; object-fit:cover; transform:scale(1.5); transition:transform 1.5s ease-out" id="cordoba-img" alt="Córdoba"/>
-    </div>
-  </div>
-  
-  <p style="font-size:0.5em;color:var(--tx3);margin-top:8px;text-align:center;font-family:'JetBrains Mono',monospace">Click en la imagen para iniciar la secuencia</p>
-</section>
-
-<section id="metricas" data-background-color="#080a10" data-console="met">
-  <div class="hdr"><span class="tag">F9 · MÉTRICAS</span><a href="#/bios" class="btn btn-sm">BIOS</a></div>
-  <h2>Resultados 2026</h2><div class="accent"></div>
-  <table><thead><tr><th>Métrica</th><th>Baseline</th><th>Target</th></tr></thead><tbody>
-  <tr><td style="color:var(--tx);font-weight:600">Ventas 5min</td><td class="red">60-70%</td><td class="grn">&lt;25%</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Cookies compartidas</td><td class="dim">Sin medición</td><td class="grn">&lt;1%</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Bypass directo</td><td class="red">Abierto</td><td class="grn">100% bloqueado</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Evasión de fila</td><td class="red">Sin validar</td><td class="grn">100% bloqueado</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Checkout time</td><td class="red">&lt;2min (bot)</td><td class="grn">3-5min (humano)</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Trazabilidad</td><td class="red">0%</td><td class="grn">100%</td></tr>
-  <tr><td style="color:var(--tx);font-weight:600">Errores 5XX</td><td class="dim">Inconsistente</td><td class="grn">&lt;2%</td></tr></tbody></table>
-  <div style="margin-top:10px;text-align:right"><a href="#/bootdesktop" class="btn">▶ INICIAR DESKTOP</a></div>
-</section>
-
-
-<section id="bootdesktop" class="title-slide" data-background-color="#000000" data-console="bootvid" style="padding:0!important;overflow:hidden!important">
-  <div id="boot-video-wrap" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000">
-   <img id="boot-vid" src="IMG_7883.gif" style="width:100%;height:100%;object-fit:cover;opacity:0.9" alt="Boot">
-    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.35)">
-      <svg width="60" height="68" viewBox="0 0 80 90" style="filter:drop-shadow(0 0 20px rgba(244,196,48,0.5));animation:pulseGlow 2s ease-in-out infinite">
-        <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="var(--gd)" stroke-width="2.5"/>
-        <path d="M40 10 L66 22 L66 50 Q66 72 40 80 Q14 72 14 50 L14 22 Z" fill="var(--bl)" stroke="var(--gd)" stroke-width="1" opacity="0.7"/>
-        <text x="40" y="52" text-anchor="middle" font-family="Silkscreen,monospace" font-size="18" fill="var(--gd)" font-weight="700">OS</text>
-      </svg>
-      <div style="font-family:Silkscreen,monospace;font-size:22px;color:var(--gd);margin-top:12px;text-shadow:0 2px 10px rgba(0,0,0,0.8)">Iniciando BocaOS</div>
-      <div style="width:200px;margin-top:16px">
-        <div class="boot-bar" style="height:8px;border-color:#333"><div class="boot-fill gold" style="animation-duration:6s;animation-delay:0.5s"></div></div>
-      </div>
-      <div style="margin-top:20px;opacity:0;animation:fadeIn 0.4s 6.5s forwards">
-        <a href="#/desktop" class="btn" style="background:rgba(244,196,48,0.15)">▶ ENTRAR AL ESCRITORIO</a>
-      </div>
-    </div>
+<section id="bootdesktop" class="title-slide" data-console="bootvid">
+  <div style="text-align:center">
+    <div style="font-family:Silkscreen;font-size:20px;color:var(--gd);margin-bottom:20px">Cargando Interfaz...</div>
+    <div class="boot-bar" style="width:250px;margin:0 auto"><div class="boot-fill gold" style="animation-duration:3s"></div></div>
+    <div style="margin-top:30px;opacity:0;animation:fadeIn 0.5s 3.2s forwards"><a href="#/desktop" class="btn">ENTRAR AL SISTEMA</a></div>
   </div>
 </section>
 
-<section id="desktop" class="title-slide" data-background-color="#060810" data-console="end" style="padding:8px 16px 56px!important">
-
-  <div class="mac"> 
-    
+<section id="desktop" class="title-slide" style="padding:0!important">
+  <div class="mac">
     <div class="mac-menu">
-      <div style="display:flex; gap:6px;">
-        <div class="mac-dot close"></div>
-        <div class="mac-dot min"></div>
-        <div class="mac-dot max"></div>
-      </div>
+      <div style="display:flex"><div class="mac-dot close"></div><div class="mac-dot min"></div><div class="mac-dot max"></div></div>
       <span class="apple">⊙ BOCAOS</span>
-      <span class="right">
-        <span style="font-weight:700; color:#fff;">Paisanos</span>
-        <span>●</span>
-        <span style="font-family:'JetBrains Mono',monospace; font-size:9px;">Temporada 2026</span>
-      </span>
+      <span class="right"><span>Paisanos</span><span>●</span><span>2026</span></span>
     </div>
-
-    </div> <div style="font-family:'JetBrains Mono',monospace;font-size:0.35em;color:var(--tx3);margin-top:8px;letter-spacing:0.08em">paisanos · boca juniors · temporada 2026</div>
-</section>
-
-    <svg class="mac-shield" width="200" height="230" viewBox="0 0 80 90">
-      <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="var(--gd)" stroke-width="1"/>
-    </svg>
-
+    
     <div class="mac-desktop">
-      <a href="#/estrategia" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#f4c430,#c49a1a)">⊙</div>
-        <div class="mac-lbl">Estrategia</div>
-      </a>
-      <a href="#/gonogo" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#34d399,#059669)">⊘</div>
-        <div class="mac-lbl">Go/No-Go</div>
-      </a>
-      <a href="#/pipeline" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#22d3ee,#0891b2)">⟳</div>
-        <div class="mac-lbl">Pipeline</div>
-      </a>
-      <a href="#/cuenta" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">▦</div>
-        <div class="mac-lbl">Features</div>
-      </a>
-      <a href="#/fixes" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#10b981,#047857)">⟨⟩</div>
-        <div class="mac-lbl">Fixes</div>
-      </a>
-      <a href="#/bugs" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#f87171,#dc2626)">!</div>
-        <div class="mac-lbl">Bugs</div>
-      </a>
-      <a href="#/design" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">◇</div>
-        <div class="mac-lbl">Diseño</div>
-      </a>
-      <a href="#/tableros" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#22d3ee,#0e7490)">◉</div>
-        <div class="mac-lbl">Tableros</div>
-      </a>
-      <a href="#/metricas" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#fbbf24,#d97706)">◈</div>
-        <div class="mac-lbl">Métricas</div>
-      </a>
-      <a href="#/bios" class="mac-icon">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#000080,#0000c0);border:1px solid #4444aa;font-size:10px;color:#aaa">BIOS</div>
-        <div class="mac-lbl">Setup</div>
-      </a>
-    <div class="mac-icon" onclick="openNotes(event)">
-        <div class="mac-icn" style="background:#fdfdfd; border:1px solid rgba(255,255,255,0.3); display:flex; flex-direction:column; overflow:hidden;">
-          <div style="background:#f4c430; height:12px; width:100%; box-shadow:0 1px 2px rgba(0,0,0,0.1); z-index:1;"></div>
-          <div style="flex:1; width:100%; display:flex; flex-direction:column; gap:4px; padding:6px 5px;">
-            <div style="background:#cbd5e1; height:2px; width:85%; border-radius:2px;"></div>
-            <div style="background:#cbd5e1; height:2px; width:100%; border-radius:2px;"></div>
-            <div style="background:#cbd5e1; height:2px; width:60%; border-radius:2px;"></div>
-          </div>
-        </div>
-        <div class="mac-lbl">Notas</div>
-      </div>
+      <a href="#/estrategia" class="mac-icon"><div class="mac-icn" style="background:linear-gradient(135deg,#f4c430,#c49a1a)">⊙</div><div class="mac-lbl">Estrategia</div></a>
+      <a href="#/tableros" class="mac-icon"><div class="mac-icn" style="background:linear-gradient(135deg,#22d3ee,#0e7490)">◉</div><div class="mac-lbl">Tableros</div></a>
+      <a href="#/bios" class="mac-icon"><div class="mac-icn" style="background:#222;font-size:10px">BIOS</div><div class="mac-lbl">Setup</div></a>
+      <div class="mac-icon" onclick="openNotes()"><div class="mac-icn" style="background:#fff"><div style="height:10px;background:var(--gd);width:100%"></div></div><div class="mac-lbl">Notas</div></div>
+
+      <div class="mac-icon easter-egg" style="top:50px;right:40px"><div class="mac-icn" style="background:url('encarta.png')"></div><div class="mac-lbl">Encarta</div></div>
+      <div class="mac-icon easter-egg" style="top:150px;right:40px"><div class="mac-icn" style="background:url('strapi.png')"></div><div class="mac-lbl">Strapi</div></div>
+      <div class="mac-icon easter-egg" style="top:250px;right:40px"><div class="mac-icn" style="background:url('clarity.png')"></div><div class="mac-lbl">Clarity</div></div>
+      <div class="mac-icon easter-egg" style="top:350px;right:40px"><div class="mac-icn" style="background:url('paisanos.png')"></div><div class="mac-lbl">Paisanos</div></div>
     </div>
 
-<a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
-      <div class="mac-icn" style="background:url('encarta.png') center/cover; border:1px solid rgba(255,255,255,0.15)"></div>
-      <div class="mac-lbl">Encarta</div>
-    </a>
-
-    <a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
-      <div class="mac-icn" style="background:url('strapi.png') center/cover; border:1px solid rgba(255,255,255,0.15)"></div>
-      <div class="mac-lbl">Strapi</div>
-    </a>
-
-    <a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
-      <div class="mac-icn" style="background:url('clarity.png') center/cover; border:1px solid rgba(255,255,255,0.15)"></div>
-      <div class="mac-lbl">Clarity</div>
-    </a>
-
-    <a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
-      <div class="mac-icn" style="background:url('huawei.png') center/cover; border:1px solid rgba(255,255,255,0.15)"></div>
-      <div class="mac-lbl">Huawei</div>
-    </a>
-
-    <a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
-      <div class="mac-icn" style="background:url('queue-it.png') center/cover; border:1px solid rgba(255,255,255,0.15)"></div>
-      <div class="mac-lbl">Queue-it</div>
-    </a>
-
-    <a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
-      <div class="mac-icn" style="background:url('sentri.png') center/cover; border:1px solid rgba(255,255,255,0.15)"></div>
-      <div class="mac-lbl">Sentri</div>
-    </a>
-
-    <a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
-      <div class="mac-icn" style="background:url('paisanos.png') center/cover; border:1px solid rgba(255,255,255,0.15)"></div>
-      <div class="mac-lbl">Paisanos</div>
-    </a>
-
-    <div class="conc-tooltip" id="conc1" style="top:32px;right:12px" onclick="this.classList.toggle('open')">
-      <div class="conc-header">
-        <svg width="10" height="12" viewBox="0 0 80 90"><path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="var(--gd)" stroke="none"/></svg>
-        <span>Proyecto de largo plazo</span>
-        <span class="conc-badge">1/3</span>
-      </div>
-      <div class="conc-body">Más de tres años de trabajo continuo. Hace un año se trabajó fuerte en mejorar la eficiencia del equipo: se redefinió la planificación de releases, se ordenó la relación con el cliente y se elevaron los estándares de calidad. Hoy funciona como un relojito.</div>
-    </div>
-
-    <div class="conc-tooltip" id="conc2" style="bottom:80px;left:14px" onclick="this.classList.toggle('open')">
-      <div class="conc-header">
-        <svg width="10" height="12" viewBox="0 0 80 90"><path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="var(--gd)" stroke="none"/></svg>
-        <span>Sistema operativo del equipo</span>
-        <span class="conc-badge">2/3</span>
-      </div>
-      <div class="conc-body">Este caso muestra cómo funciona un equipo de producto bien aceitado: cómo se define el cliente, cómo se planifica, cómo se prioriza, cómo se ejecuta y cómo se entrega valor. Un buen sistema de trabajo transforma completamente el rendimiento.</div>
-    </div>
-
-    <div class="conc-tooltip" id="conc3" style="bottom:80px;right:12px" onclick="this.classList.toggle('open')">
-      <div class="conc-header">
-        <svg width="10" height="12" viewBox="0 0 80 90"><path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="var(--gd)" stroke="none"/></svg>
-        <span>Futuro y estrategia</span>
-        <span class="conc-badge">3/3</span>
-      </div>
-      <div class="conc-body">Boca es un proyecto donde siempre costó proponer. Ahora tomamos una estrategia donde definimos dónde podemos y dónde no. Foco en mejoras constantes en seguridad y estabilidad.</div>
+    <div class="conc-tooltip" style="bottom:100px;right:30px" onclick="this.classList.toggle('open')">
+      <div class="conc-header"><span>ESTRATEGIA</span><span class="conc-badge">1/3</span></div>
+      <div class="conc-body">Foco en seguridad y estabilidad para eventos masivos.</div>
     </div>
 
     <div class="mac-dock">
-      <a href="#/estrategia"><div class="mac-icn" style="background:linear-gradient(135deg,#f4c430,#c49a1a)">⊙</div></a>
-      <a href="#/pipeline"><div class="mac-icn" style="background:linear-gradient(135deg,#22d3ee,#0891b2)">⟳</div></a>
-      <a href="#/cuenta"><div class="mac-icn" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">▦</div></a>
-      <a href="#/metricas"><div class="mac-icn" style="background:linear-gradient(135deg,#fbbf24,#d97706)">◈</div></a>
-      <a href="#/bios"><div class="mac-icn" style="background:linear-gradient(135deg,#000080,#0000c0);border:1px solid #4444aa;font-size:9px;color:#aaa">SYS</div></a>
+      <a href="#/estrategia"><div class="mac-icn" style="background:var(--gd)">⊙</div></a>
+      <a href="#/tableros"><div class="mac-icn" style="background:var(--cyn)">◉</div></a>
+      <div class="mac-icn" style="background:#fff" onclick="openNotes()">✎</div>
     </div>
 
     <div id="notes-app" class="mac-window">
-      <div class="mac-win-header">
-        <div class="mac-dot close" onclick="closeNotes()"></div>
-        <div class="mac-dot min"></div>
-        <div class="mac-dot max"></div>
-      </div>
-      <div class="mac-win-body">
-        <div class="date">15 de abril</div>
-        <div style="font-family:'Kalam', cursive; font-size: 18px; font-weight: 400; color: #222;">Día deportivo....</div>
-      </div>
+      <div class="mac-win-header"><div class="mac-dot close" onclick="closeNotes()"></div></div>
+      <div class="mac-win-body">Día deportivo... Boca Juniors x Paisanos.</div>
     </div>
-
   </div>
-
-  <div style="font-family:'JetBrains Mono',monospace;font-size:0.35em;color:var(--tx3);margin-top:8px;letter-spacing:0.08em">paisanos · boca juniors · temporada 2026</div>
 </section>
 
 </div></div>
@@ -651,88 +242,39 @@ section:not(.present) .easter-egg {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
 <script>
 const M={
-post:[{t:"POST: checking hardware...",c:"l"},{t:"✓ all components detected",c:"s"}],
-boot2:[{t:"loading shield_auth...",c:"l"},{t:"✓ kernel ready",c:"s"},{t:"✓ scheduler ready",c:"s"},{t:"✓ runtime ready",c:"s"},{t:"✓ release ready",c:"s"},{t:"✓ anti-fraud: 3 modules",c:"s"},{t:"✓ metrics: 7 KPIs",c:"s"}],
-bios:[{t:"entering BIOS setup...",c:"g"},{t:"✓ 10 system functions available",c:"s"},{t:"→ select function to configure",c:"i"}],
-strat:[{t:"F1: strategy core loaded",c:"i"},{t:"target: distribution < 25%",c:"s"}],
-gng:[{t:"F2: go/nogo matrix active",c:"i"},{t:"whitelist: 6 | blacklist: 8",c:"s"}],
-pipe:[{t:"F3: pipeline connected",c:"i"},{t:"→ transcription → notion → jira",c:"s"}],
-feat:[{t:"F4: features pipeline mapped",c:"i"},{t:"✓ 12 steps, 3 phases",c:"s"}],
-fix:[{t:"F5: fixes path ready",c:"i"},{t:"✓ 7 steps, agile deploy",c:"s"}],
-bug:[{t:"F6: bug triage active",c:"i"},{t:"→ typeform → triage → fix",c:"s"}],
-design:[{t:"F7: diseño iterativo loaded",c:"i"},{t:"✓ fase 1: funcional | fase 2: superadora",c:"s"}],
-tableros:[{t:"F8: tableros de control",c:"i"},{t:"→ mission control: standby",c:"l"},{t:"✓ dashboard ready for launch",c:"s"}],
-bootvid:[{t:"booting BocaOS Desktop...",c:"g"},{t:"loading La Bombonera wallpaper...",c:"l"},{t:"✓ desktop environment ready",c:"s"}],
-met:[{t:"F9: metrics dashboard",c:"i"},{t:"✓ 7 KPIs tracked",c:"s"}],
-end:[{t:"══════════════════════════",c:"g"},{t:"BocaOS DESKTOP — READY",c:"s"},{t:"all modules: operational",c:"i"},{t:"awaiting match_day event...",c:"l"},{t:"══════════════════════════",c:"g"}]
+  post:[{t:"POST: hardware check...",c:"i"},{t:"✓ all modules ready",c:"s"}],
+  boot2:[{t:"loading kernel...",c:"i"},{t:"✓ auth system active",c:"s"}],
+  bios:[{t:"BIOS menu active",c:"w"}],
+  tableros:[{t:"NASA mission control standby",c:"i"}],
+  strat:[{t:"Strategy core loaded",c:"s"}]
 };
-let A=new Set();const E=document.getElementById("cl");
-function add(k){const ms=M[k];if(!ms)return;ms.forEach((m,i)=>{if(A.has(m.t))return;A.add(m.t);setTimeout(()=>{const el=document.createElement("span");el.className="ln "+m.c;el.textContent=m.t;E.appendChild(el);requestAnimationFrame(()=>el.classList.add("v"));E.scrollLeft=E.scrollWidth},i*200)})}
+function add(k){const ms=M[k];if(!ms)return;ms.forEach((m,i)=>{setTimeout(()=>{const el=document.createElement("span");el.className="ln "+m.c;el.textContent=m.t;document.getElementById("cl").appendChild(el);setTimeout(()=>el.classList.add("v"),50)},i*300)})}
 
-function startCountdown(){
-  const overlay = document.getElementById('countdown-overlay');
-  const numEl = document.getElementById('countdown-num');
-  const nasaOv = document.getElementById('nasa-overlay');
-  const cordobaEl = document.getElementById('cordoba-reveal');
-  const cordobaImg = document.getElementById('cordoba-img');
-  
-  const nasaImg = document.querySelector('#tablero-nasa img'); 
-
-  nasaOv.style.display='none';
-  overlay.style.display='flex';
-  
-  overlay.style.opacity = '1';
-  cordobaEl.style.opacity = '0';
-  if(nasaImg) nasaImg.style.transform = 'scale(1)';
-  
-  let count=5;
-  numEl.textContent='T-'+count;
-  
-  const interval=setInterval(()=>{
-    count--;
-    if(count>0){
-      numEl.textContent='T-'+count;
-      numEl.style.transform='scale(1.3)';
-      setTimeout(()=>numEl.style.transform='scale(1)',200);
-    } else if(count===0){
-      numEl.textContent='LANZAMIENTO';
-      numEl.style.fontSize='48px';
-      numEl.style.color='var(--grn)';
-      
-      if(nasaImg) nasaImg.style.transform='scale(3.5)'; 
-      
-    } else {
-      clearInterval(interval);
-      
-      overlay.style.transition = 'opacity 0.8s ease';
-      overlay.style.opacity = '0';
-      
-      cordobaEl.style.display='block';
-      setTimeout(()=>{
-        cordobaEl.style.opacity='1';
-        cordobaImg.style.transform='scale(1)';
-      }, 50);
-      
-      setTimeout(()=> {
-        overlay.style.display='none';
-      }, 800);
+function startLaunch(){
+  document.getElementById('nasa-overlay').style.display='none';
+  const ov=document.getElementById('countdown-overlay');
+  const num=document.getElementById('count-num');
+  const rev=document.getElementById('cordoba-reveal');
+  ov.style.display='flex';
+  let c=3;
+  const t=setInterval(()=>{
+    c--;
+    if(c>0) num.textContent=c;
+    else {
+      clearInterval(t);
+      ov.style.display='none';
+      rev.style.display='block';
+      setTimeout(()=>{rev.style.opacity='1';document.getElementById('cordoba-img').style.transform='scale(1)'},50);
     }
   },1000);
 }
 
-function openNotes(e) {
-  e.preventDefault();
-  document.getElementById('notes-app').classList.add('show');
-}
+function openNotes(){document.getElementById('notes-app').classList.add('show')}
+function closeNotes(){document.getElementById('notes-app').classList.remove('show')}
 
-function closeNotes() {
-  document.getElementById('notes-app').classList.remove('show');
-}
-
-Reveal.initialize({hash:true,controls:false,progress:true,center:false,transition:"fade",width:1280,height:720,margin:0.02});
+Reveal.initialize({hash:true,controls:false,progress:true,center:false,transition:"fade",width:1200,height:700});
 Reveal.on("slidechanged",e=>{const k=e.currentSlide.getAttribute("data-console");if(k)add(k)});
-const f=Reveal.getCurrentSlide().getAttribute("data-console");if(f)add(f);
+add(Reveal.getCurrentSlide().getAttribute("data-console"));
 </script>
 </body>
 </html>
-
