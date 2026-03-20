@@ -159,10 +159,9 @@ section:not(.present) .easter-egg {
   border: none !important;
   border-radius: 12px !important;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
-  background-size: contain !important;
+  background-size: cover !important; /* Cambiado de contain a cover */
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-color: #ffffff !important; 
 }
 .easter-egg:hover {
   z-index: 20;
@@ -185,9 +184,10 @@ section:not(.present) .easter-egg {
 }
 #cordoba-reveal {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
-  background-color: #000; /* Fondo sólido para tapar el mapa anterior */
-  z-index: 10;
+  display: none; /* Se activa por JS */
+  position: absolute;
+  inset: 0;
+  z-index: 20;
 }
 @keyframes notifSlideLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
 
