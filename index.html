@@ -467,12 +467,8 @@ section:not(.present) .easter-egg {
 <section id="desktop" class="title-slide" data-background-color="#060810" data-console="end" style="padding:8px 16px 56px!important">
 
   <div class="mac">
-    <div class="mac-menu">
+<div class="mac-menu">
       <span class="apple">⊙ BocaOS</span>
-      <span class="bold">Finder</span>
-      <span>Archivo</span>
-      <span>Editar</span>
-      <span>Vista</span>
       <span class="right">
         <span class="dim">Paisanos</span>
         <span>●</span>
@@ -525,10 +521,17 @@ section:not(.present) .easter-egg {
         <div class="mac-icn" style="background:linear-gradient(135deg,#000080,#0000c0);border:1px solid #4444aa;font-size:10px;color:#aaa">BIOS</div>
         <div class="mac-lbl">Setup</div>
       </a>
-      <a href="#" class="mac-icon" onclick="openNotes(event)">
-        <div class="mac-icn" style="background:linear-gradient(135deg,#fde047,#d97706);color:#000;">📝</div>
+    <div class="mac-icon" onclick="openNotes(event)">
+        <div class="mac-icn" style="background:#fdfdfd; border:1px solid rgba(255,255,255,0.3); display:flex; flex-direction:column; overflow:hidden;">
+          <div style="background:#f4c430; height:12px; width:100%; box-shadow:0 1px 2px rgba(0,0,0,0.1); z-index:1;"></div>
+          <div style="flex:1; width:100%; display:flex; flex-direction:column; gap:4px; padding:6px 5px;">
+            <div style="background:#cbd5e1; height:2px; width:85%; border-radius:2px;"></div>
+            <div style="background:#cbd5e1; height:2px; width:100%; border-radius:2px;"></div>
+            <div style="background:#cbd5e1; height:2px; width:60%; border-radius:2px;"></div>
+          </div>
+        </div>
         <div class="mac-lbl">Notas</div>
-      </a>
+      </div>
     </div>
 
     <a href="#" class="mac-icon easter-egg" onclick="event.preventDefault();this.style.transform='scale(1.3) rotate(360deg)';setTimeout(()=>this.style.transform='',500)">
