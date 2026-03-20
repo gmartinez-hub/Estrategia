@@ -595,12 +595,14 @@ function startCountdown(){
   const nasaOv = document.getElementById('nasa-overlay');
   const cordobaEl = document.getElementById('cordoba-reveal');
   const cordobaImg = document.getElementById('cordoba-img');
-  const nasaImg = document.querySelector('#tablero-nasa img'); // Buscamos la imagen de la NASA
+  
+  // Atrapamos la imagen del mapa de la NASA
+  const nasaImg = document.querySelector('#tablero-nasa img'); 
 
   nasaOv.style.display='none';
   overlay.style.display='flex';
   
-  // Reseteamos opacidad por si se lanza varias veces
+  // Reseteamos las opacidades
   overlay.style.opacity = '1';
   cordobaEl.style.opacity = '0';
   if(nasaImg) nasaImg.style.transform = 'scale(1)';
@@ -619,7 +621,7 @@ function startCountdown(){
       numEl.style.fontSize='48px';
       numEl.style.color='var(--grn)';
       
-      // En T-0 hacemos el Zoom In al mapa de la NASA
+      // ZOOOOOM al mapa de la NASA en T-0
       if(nasaImg) nasaImg.style.transform='scale(3.5)'; 
       
     } else {
@@ -636,7 +638,7 @@ function startCountdown(){
         cordobaImg.style.transform='scale(1)';
       }, 50);
       
-      // Ocultamos totalmente el overlay negro cuando termina de desvanecerse
+      // Matamos el overlay negro cuando termina de desvanecerse
       setTimeout(()=> {
         overlay.style.display='none';
       }, 800);
