@@ -169,6 +169,9 @@ section:not(.present) .easter-egg {
 }
 
 /* 3. Nuevas posiciones (calculadas para caer en los huecos de la grilla) */
+@media (max-width: 1024px) {
+  .easter-egg { display: none !important; }
+}
 .mac > a.easter-egg:nth-of-type(1) { top: 35%; left: 20%; } /* Encarta */
 .mac > a.easter-egg:nth-of-type(2) { top: 65%; left: 22%; } /* Strapi */
 .mac > a.easter-egg:nth-of-type(3) { top: 30%; left: 40%; } /* Clarity */
@@ -496,9 +499,6 @@ section:not(.present) .easter-egg {
       </span>
     </div>
 
-    </div> <div style="font-family:'JetBrains Mono',monospace;font-size:0.35em;color:var(--tx3);margin-top:8px;letter-spacing:0.08em">paisanos · boca juniors · temporada 2026</div>
-</section>
-
     <svg class="mac-shield" width="200" height="230" viewBox="0 0 80 90">
       <path d="M40 2 L74 18 L74 52 Q74 78 40 88 Q6 78 6 52 L6 18 Z" fill="none" stroke="var(--gd)" stroke-width="1"/>
     </svg>
@@ -735,4 +735,3 @@ const f=Reveal.getCurrentSlide().getAttribute("data-console");if(f)add(f);
 </script>
 </body>
 </html>
-
